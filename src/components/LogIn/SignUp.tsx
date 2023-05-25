@@ -1,11 +1,12 @@
 import { useState, ReactElement, ChangeEvent, FormEvent, useContext } from "react";
 import styled from "styled-components";
 import { UserContext } from "../../App";
-
+import { useNavigate } from 'react-router-dom'
 const SignUp = (): ReactElement => {
     const {username, setUsername} = useContext(UserContext)
     const [password, setPassword] = useState<string>("");
     const [confirmPassword, setConfirmPassword] = useState<string>("");
+    const navigate = useNavigate();
 
     const handleChangeUsername = (event: ChangeEvent<HTMLInputElement>) => {
         setUsername(event.target.value);
@@ -25,11 +26,11 @@ const SignUp = (): ReactElement => {
             alert("Passwords do not match");
             return;
         }
-        localStorage.setItem("username", JSON.stringify({ username, password }));
-        setUsername("");
+        setUsername(username); 
+        localStorage.setItem("user", JSON.stringify({ username, password }));
         setPassword("");
         setConfirmPassword("");
-        alert("Signed Up");
+        navigate("/home");
     };
 
     return (

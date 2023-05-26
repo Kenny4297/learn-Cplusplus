@@ -1,10 +1,11 @@
 export interface Slide {
-    LessonNumber: number;
     SlideNumber: number;
     SlideTitle: string;
     disc: string;
     img?: string; // '?' indicates that img is optional
 }
+
+export const Lesson1DataTitle = "Introduction To C++";
 
 const Lesson1Data = [
     {

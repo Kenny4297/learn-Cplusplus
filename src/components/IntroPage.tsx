@@ -51,6 +51,10 @@ const IntroPage = ():ReactElement => {
                     <p>---Send to tutorial slides</p>
 
                     <button onClick={() => navigate('/Home')}>Go to Home Page</button>
+
+                    <button onClick={() => navigate('/lesson1')}>Go to Lesson 1</button>
+
+                    <button>Test?</button>
                 </Username>
             )}
         </>

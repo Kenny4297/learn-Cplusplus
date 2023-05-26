@@ -1,6 +1,7 @@
 import "./index.css";
 import HomePage from './components/HomePage';
 import IntroPage from "./components/IntroPage";
+import IntroductionToCPlusPlus from './components/Lessons/Lesson1/IntroductionToC++';
 import { createContext, Dispatch, SetStateAction, useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -29,6 +30,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<IntroPage />} />
                     <Route path="/home" element={<HomePage />} />
+                    <Route path="/lesson1" element={<IntroductionToCPlusPlus />} />
                 </Routes>
             </Router>
         </UserContext.Provider>

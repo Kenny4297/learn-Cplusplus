@@ -19,7 +19,7 @@ const HomePage =() => {
 
             <p>List of the lessons below. We will start working on the first lesson</p>
 
-            <button>Test?</button>
+            <button onClick={() => {console.log(`Navigating to /lesson/1`); navigate(`/lesson/1`);}}>Go to Lesson 1</button>
 
         </Container>
     )

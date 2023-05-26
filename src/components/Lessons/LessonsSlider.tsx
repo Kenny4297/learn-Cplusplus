@@ -1,19 +1,22 @@
 import styled from 'styled-components';
-import {IoIosQuote} from "react-icons/io";
-import { Slide } from './LessonData/Lesson1Data';
+import { LessonSlideInterface } from './LessonData/Lesson1Data';
+import { useEffect } from 'react'
 
 //This is the lessonsSlider itself that will be passed into IntroToCPlusPlus
 
 interface SlideProps {
-    slide: Slide;
+    slide: LessonSlideInterface;
 }
 
 const LessonsSlider = ({slide}: SlideProps) => {
-    console.log(slide)
+    useEffect(() => {
+        console.log("Testing Lesson Slider?")
+    }, [])
     const { SlideNumber, SlideTitle, disc, img } = slide;
 
     return (
         <Container>
+            <p>testing lessonsSlider</p>
             <Title>
                 <h1>{SlideTitle}</h1>
             </Title>

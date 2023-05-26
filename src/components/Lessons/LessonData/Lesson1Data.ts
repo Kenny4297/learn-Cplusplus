@@ -1,4 +1,4 @@
-export interface Slide {
+export interface LessonSlideInterface {
     SlideNumber: number;
     SlideTitle: string;
     disc: string;
@@ -7,7 +7,7 @@ export interface Slide {
 
 export const Lesson1DataTitle = "Introduction To C++";
 
-const Lesson1Data = [
+export const Lesson1Data = [
     {
         SlideNumber: 1,
         SlideTitle: "Introduction to C++: Origin and Usage",
@@ -69,5 +69,3 @@ const Lesson1Data = [
         disc : `In conclusion, C++ is a powerful, versatile, and efficient programming language that is widely used in a variety of application domains. It provides the convenience of high-level features while still granting the programmer a high degree of control. Despite the steep learning curve and manual memory management, its wide application and performance make it an enduring and important language in the world of programming.`
     },
 ];
-
-export default Lesson1Data;

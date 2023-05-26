@@ -1,9 +1,11 @@
 import "./index.css";
 import HomePage from './components/HomePage';
 import IntroPage from "./components/IntroPage";
-import IntroductionToCPlusPlus from './components/Lessons/Lesson1/IntroductionToC++';
 import { createContext, Dispatch, SetStateAction, useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { LessonTemplate } from "./components/Lessons";
+import QuizTemplate from "./components/Lessons/Quizzes"
+import Test from './components/Lessons/Test'
 
 export const UserContext = createContext<{
     username: string;
@@ -30,7 +32,8 @@ function App() {
                 <Routes>
                     <Route path="/" element={<IntroPage />} />
                     <Route path="/home" element={<HomePage />} />
-                    <Route path="/lesson1" element={<IntroductionToCPlusPlus />} />
+                    <Route path="/lesson/:lessonNumber" element={<LessonTemplate />} />
+                    <Route path="/quiz/:quizNumber" element={<QuizTemplate />} />
                 </Routes>
             </Router>
         </UserContext.Provider>

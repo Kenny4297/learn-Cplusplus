@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 const IntroPage = ():ReactElement => {
     const navigate = useNavigate();
-    const { username, setUsername } = useContext(UserContext);
+    const { userData, setUserData } = useContext(UserContext);
+    const { username } = userData;
 
     const [formData, setFormData] = useState<{username: string}>({
         username: ''
@@ -14,7 +15,7 @@ const IntroPage = ():ReactElement => {
     const handleSubmit = (event: FormEvent): void => {
         event.preventDefault();
 
-        setUsername(formData.username)
+        setUserData(prevState => ({ ...prevState, username: formData.username }));
     }
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {

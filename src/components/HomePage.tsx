@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 
 const HomePage =() => {
-    const { username } = useContext(UserContext);
+    const { userData } = useContext(UserContext);
+    const { username } = userData;
 
     const navigate = useNavigate()
 
@@ -20,7 +21,7 @@ const HomePage =() => {
             <p>List of the lessons below. We will start working on the first lesson</p>
 
             <button onClick={() => {console.log(`Navigating to /lesson/1`); navigate(`/lesson/1`);}}>Go to Lesson 1</button>
-            <button onClick={() => {console.log(`Navigating to /quiz/1`); navigate(`/quiz/1`);}}>Go to Quiz 1</button>
+            <button onClick={() => {navigate(`/quiz/1`)}}>Go to Quiz 1</button>
 
         </Container>
     )

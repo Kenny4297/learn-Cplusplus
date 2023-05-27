@@ -40,12 +40,18 @@ function App() {
         ? JSON.parse(storedUserData) 
         : defaultUser;
 
-    const [userData, setUserData] = useState<string>(storedUser);
+        const [userData, setUserData] = useState<{
+            username: string;
+            lessonsCompleted: Record<string, 'yes' | 'no'>;
+            quizScores: Record<string, number>;
+            projectsCompleted: Record<string, 'yes' | 'no'>;
+        }>(storedUser);
 
     // Update the storedUserData in localStorage every time userData changes
     useEffect(() => {
         localStorage.setItem('user', JSON.stringify(userData));
     }, [userData]);
+    
     return (
         <UserContext.Provider value={{ userData, setUserData }}>
             <Router>

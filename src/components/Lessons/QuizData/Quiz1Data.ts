@@ -12,7 +12,7 @@ export interface QuizSlideInterface {
 
 export const Quiz1DataTitle = "Introduction To C++";
 
-const Quiz1Data = [
+export const Quiz1Data = [
     {
         QuizLessonNumber: 1,
         QuestionNumber: 1,
@@ -166,5 +166,3 @@ const Quiz1Data = [
     //  QUIZ 2
     
 ];
-
-export default Quiz1Data;

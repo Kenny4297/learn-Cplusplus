@@ -11,7 +11,10 @@ type QuizParams = {
 }
 
 const getQuizData = async (quizNumber: number) => {
+  console.log("fetching quiz data")
   const module = await import(`./QuizData/Quiz${quizNumber}Data`);
+  console.log(module)
+  console.log(module.Quiz1Data)
   return module;
 }
 
@@ -22,7 +25,7 @@ const Quizzes = () => {
     
     const [currentSlide, setCurrentSlide] = useState(0);
     const [quizData, setQuizData] = useState<QuizSlideInterface[] |null>(null);
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    // const [isSubmitted, setIsSubmitted] = useState(false);
 
     const [totalScore, setTotalScore] = useState(0);
 
@@ -41,10 +44,10 @@ const Quizzes = () => {
       if (quizData && currentSlide === quizData.length - 1 && !quizSliderRef.current?.hasAnsweredCurrentQuestion()) {
         alert("You must answer the last question before submitting the quiz.");
       } else {
-        navigate(`/scores/${quizNumber}`, { state: { totalScore } });
+        navigate(`/scores/${quizNumber}`, { state: { totalScore, quizNumber } });
       }
     };
-    
+
     useEffect(() => {
       const fetchQuizData = async () => {
 

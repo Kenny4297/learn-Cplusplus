@@ -1,15 +1,12 @@
 import Lessons from './Lessons';
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react'
 
 const LessonTemplate = () => {
-  console.log("Lesson Template Rendering test?")
 
     const navigate = useNavigate();
       return (
         <Container>
-          <p>LessonTemplate</p>
           <Lessons />
           <BackButton>
             <button onClick={() => navigate("/home")}>Back</button>

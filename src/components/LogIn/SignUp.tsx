@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useState, ReactElement, ChangeEvent, FormEvent, useContext } from "react";
 import styled from "styled-components";
 import { UserContext } from "../../App";

@@ -4,3 +4,4 @@ export { default as LessonTemplate } from './LessonTemplate'
 export { default as QuizSlider } from './QuizSlider';
 export { default as QuizTemplate} from './QuizTemplate';
 export { default as Quizzes} from './QuizTemplate'
+export { default as ScoresTemplate } from './ScoresTemplate'

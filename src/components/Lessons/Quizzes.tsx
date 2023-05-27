@@ -1,41 +1,32 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import QuizSlider from './QuizSlider';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styled from 'styled-components';
-import { QuizSlide } from './QuizData/Quiz1Data';
+import { Quiz1DataTitle, QuizSlideInterface } from './QuizData/Quiz1Data';
 
-interface QuizProps {
-    quiz: QuizSlide[];
-}
 
-type Params = {
+type QuizParams = {
     quizNumber: string;
 }
 
-const getQuizData = async (quizNumber: string): Promise<QuizSlide[]> => {
+const getQuizData = async (quizNumber: number) => {
   const module = await import(`./QuizData/Quiz${quizNumber}Data`);
-  return module.QuizData;
+  return module;
 }
 
 const Quizzes = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [quizData, setQuizData] = useState<QuizSlide[]>([]);
-    const { quizNumber } = useParams<Params>();
+
+    const { quizNumber } = useParams<QuizParams>();
+    const navigate = useNavigate();
     
-    useEffect(() => {
-      const fetchQuizData = async () => {
-          if (!quizNumber) {
-              console.error("No quiz number provided");
-              return;
-          }
-  
-          const data = await getQuizData(quizNumber);
-          setQuizData(data);
-      }
-  
-      fetchQuizData();
-  }, [quizNumber]);
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [quizData, setQuizData] = useState<QuizSlideInterface[] |null>(null);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const [totalScore, setTotalScore] = useState(0);
+
+    const quizSliderRef = useRef<any>(null);
 
     const nextSlide = () => {
         setCurrentSlide((oldSlide) => oldSlide + 1);
@@ -45,13 +36,38 @@ const Quizzes = () => {
         setCurrentSlide((oldSlide) => oldSlide - 1);
     };
 
+    const handleSubmit = () => {
+      // If the user is on the last page and hasn't answered the question yet, show an alert
+      if (quizData && currentSlide === quizData.length - 1 && !quizSliderRef.current?.hasAnsweredCurrentQuestion()) {
+        alert("You must answer the last question before submitting the quiz.");
+      } else {
+        navigate(`/scores/${quizNumber}`, { state: { totalScore } });
+      }
+    };
+    
+    useEffect(() => {
+      const fetchQuizData = async () => {
+
+        const data = await getQuizData(Number(quizNumber));
+
+        setQuizData(data.Quiz1Data);
+      }
+  
+      fetchQuizData();
+    }, [quizNumber]);
+
+    if (!quizData) {
+      return <p>Loading...</p> // Or a loading spinner
+  }
+
+
     return (
       <Container id="quizzes">
         <Title>
-          {/* assuming quizData has a title property */}
-          <h1 className="blue" aria-label="Quizzes">{quizData?.[0]?.QuizTitle}</h1>
+          <h1 className="blue" aria-label="Quizzes">{Quiz1DataTitle}</h1>
         </Title>
-        <QuizSlider slide={quizData[currentSlide]} />
+        <QuizSlider ref={quizSliderRef} slide={quizData[currentSlide]} onCorrectAnswer={() => setTotalScore(totalScore + 1)} />
+
         <Buttons>
           <ButtonWrapper>
             {currentSlide !== 0 && (
@@ -61,11 +77,17 @@ const Quizzes = () => {
             )}
           </ButtonWrapper>
           <ButtonWrapper>
-            {currentSlide !== quizData.length - 1 && (
+            {currentSlide !== quizData.length - 1 ? (
               <button onClick={nextSlide} aria-label="Next slide">
                 <IoIosArrowForward />
               </button>
-            )}
+            ) : (
+              <button
+                  onClick={handleSubmit}
+              >
+                  Submit!
+              </button>
+          )}
           </ButtonWrapper>
         </Buttons>
       </Container>

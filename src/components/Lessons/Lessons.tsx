@@ -6,23 +6,19 @@ import { LessonSlideInterface } from "./LessonData/Lesson1Data";
 import { useParams, useNavigate } from "react-router-dom";
 import { Lesson1DataTitle } from "./LessonData/Lesson1Data";
 
-// Define the interface for your parameters
+
 type LessonParams = {
     lessonNumber: string;
 };
 
 const getLessonData = async (lessonNumber: number) => {
-    console.log(`Getting data for lesson ${lessonNumber}`);
     const module = await import(`./LessonData/Lesson${lessonNumber}Data`);
-    console.log(`Got data: ${JSON.stringify(module)}`);
-    console.log(module)
     return module;
 };
 
 const Lessons = () => {
-    // Use the defined interface when calling useParams
+
     const { lessonNumber } = useParams<LessonParams>();
-    console.log(`Lesson Number: ${lessonNumber}`);
     const navigate = useNavigate();
 
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -39,13 +35,16 @@ const Lessons = () => {
     };
 
     useEffect(() => {
-        // Convert lessonNumber to a number before passing it to getLessonData
-        getLessonData(Number(lessonNumber)).then((data) => {
-            console.log(`Got data in useEffect ${JSON.stringify(data)}`);
-            // setLessonData(data);
-            setLessonData(data.Lesson1Data);
-        });
-    }, [lessonNumber]);
+      const fetchLessonData = async () => {
+          // Convert lessonNumber to a number before passing it to getLessonData
+          const data = await getLessonData(Number(lessonNumber));
+          console.log(`Got data in useEffect ${JSON.stringify(data)}`);
+          // setLessonData(data);
+          setLessonData(data.Lesson1Data);
+      };
+      
+      fetchLessonData();
+  }, [lessonNumber]);
 
     if (!lessonData) {
         return <p>Loading...</p> // Or a loading spinner

@@ -1,1 +1,0 @@
-export {default as Quiz1Data } from './Quiz1Data';

@@ -1,23 +1,32 @@
 import styled from 'styled-components';
-import { QuizSlide } from './QuizData/Quiz1Data';
-import { useState} from 'react'
-
-//This is the lessonsSlider itself that will be passed into IntroToCPlusPlus
+import { QuizSlideInterface } from './QuizData/Quiz1Data';
+import { useState, useImperativeHandle, forwardRef } from 'react'
 
 interface QuizSlideProps {
-    slide: QuizSlide;
+    slide: QuizSlideInterface;
+    onCorrectAnswer: () => void;
 }
 
-const QuizSlider = ({slide}: QuizSlideProps) => {
+const QuizSlider = forwardRef<{}, QuizSlideProps>((props, ref) => {
+    const { slide, onCorrectAnswer } = props;
+
     const { QuestionNumber, QuizTitle, question, answer1, answer2, answer3, answer4, correct, img } = slide;
 
     const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
     const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
 
-    const handleAnswerClick = (answer: string) => {
+    useImperativeHandle(ref, () => ({
+        hasAnsweredCurrentQuestion: () => selectedAnswer !== null
+      }));
+
+      const handleAnswerClick = (answer: string) => {
         setSelectedAnswer(answer);
-        setIsCorrect(answer === correct);
-    };
+        const correctAnswer = answer === correct;
+        setIsCorrect(correctAnswer);
+        if (correctAnswer) {
+          onCorrectAnswer();
+        }
+      };
 
     return (
         <Container>
@@ -48,7 +57,7 @@ const QuizSlider = ({slide}: QuizSlideProps) => {
             </Answers>
         </Container>
     );
-};
+});
 
 export default QuizSlider;
 

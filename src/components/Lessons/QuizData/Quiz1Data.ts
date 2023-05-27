@@ -1,4 +1,4 @@
-export interface QuizSlide {
+export interface QuizSlideInterface {
     QuestionNumber: number;
     QuizTitle: string;
     question: string;

@@ -4,11 +4,11 @@ import { useEffect } from 'react'
 
 //This is the lessonsSlider itself that will be passed into IntroToCPlusPlus
 
-interface SlideProps {
+interface LessonSlideProps {
     slide: LessonSlideInterface;
 }
 
-const LessonsSlider = ({slide}: SlideProps) => {
+const LessonsSlider = ({slide}: LessonSlideProps) => {
     useEffect(() => {
         console.log("Testing Lesson Slider?")
     }, [])

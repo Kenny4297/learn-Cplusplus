@@ -2,6 +2,7 @@ export interface LessonSlideInterface {
     SlideNumber: number;
     SlideTitle: string;
     disc: string;
+    code?: string;
     img?: string; // '?' indicates that img is optional
 }
 
@@ -12,7 +13,7 @@ export const Lesson1Data = [
         SlideNumber: 1,
         SlideTitle: "Introduction to C++: Origin and Usage",
         // img : Olu,
-        disc : `C++ is a high-level, general-purpose programming language that is recognized for its versatility and performance. Created by Bjarne Stroustrup at Bell Labs in 1985, it was an enhancement of the C language and added object-oriented features, among others. Today, C++ is widely used in system software, application software, high-performance server and client applications, and even in video games.`
+        disc : `C++ is a high-level, general-purpose programming language that is recognized for its versatility and performance. Created by Bjarne Stroustrup at Bell Labs in 1985, it was an enhancement of the C language and added object-oriented features, among others. Today, C++ is widely used in system software, application software, high-performance server and client applications, and even in video games.`,
     },
     {
         SlideNumber: 2,

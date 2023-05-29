@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { QuizSlideInterface } from './QuizData/Quiz1Data';
-import { useState, useImperativeHandle, forwardRef } from 'react'
+import { useState, useImperativeHandle, forwardRef, useEffect } from 'react'
 
 interface QuizSlideProps {
     slide: QuizSlideInterface;
@@ -27,6 +27,11 @@ const QuizSlider = forwardRef<{}, QuizSlideProps>((props, ref) => {
           onCorrectAnswer();
         }
       };
+
+      useEffect(() => {
+        setSelectedAnswer(null);
+        setIsCorrect(null);
+    }, [slide]);
 
     return (
         <Container>

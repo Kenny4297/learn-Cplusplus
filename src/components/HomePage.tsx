@@ -27,6 +27,8 @@ const HomePage =() => {
 
             <button onClick={() => {navigate(`/challenge/2`)}}>Go to Challenge 2</button>
 
+            <button onClick={() => {navigate(`/lesson/3`)}}>Go to Lesson 3</button>
+
         </Container>
     )
 }

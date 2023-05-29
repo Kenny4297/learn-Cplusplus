@@ -11,9 +11,9 @@ type QuizParams = {
 
 const getQuizData = async (quizNumber: number) => {
     console.log("fetching quiz data");
+    console.log(quizNumber)
     const module = await import(`./QuizData/Quiz${quizNumber}Data`);
-    console.log(module);
-    console.log(module.Quiz1Data);
+    console.log(module.data);
     return {
       data: module[`Quiz${quizNumber}Data`], 
       title: module[`Quiz${quizNumber}DataTitle`]
@@ -68,8 +68,11 @@ const Quizzes = () => {
     useEffect(() => {
       const fetchQuizData = async () => {
           const quiz = await getQuizData(Number(quizNumber));
+          console.log(quizNumber)
           setQuizData(quiz.data);
           setQuizTitle(quiz.title);
+          console.log(quiz.data)
+          console.log(quiz.title)
       };
 
       fetchQuizData();

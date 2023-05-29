@@ -1,18 +1,34 @@
 import styled from 'styled-components';
 import { LessonSlideInterface } from './LessonData/Lesson1Data';
-import { useEffect } from 'react'
-
-//This is the lessonsSlider itself that will be passed into IntroToCPlusPlus
-
+import { useEffect } from 'react';
+import ReactPlayer from 'react-player';
 interface LessonSlideProps {
     slide: LessonSlideInterface;
 }
 
+// In your LessonsSlider component...
 const LessonsSlider = ({slide}: LessonSlideProps) => {
     useEffect(() => {
         console.log("Testing Lesson Slider?")
     }, [])
     const { SlideNumber, SlideTitle, disc, img } = slide;
+
+    const renderContent = () => {
+        const isURL = (string: string) => {
+            try {
+                new URL(string);
+                return true;
+            } catch (_) {
+                return false;
+            }
+        };
+
+        if (isURL(disc)) {
+            return <ReactPlayer url={disc} playing controls width="100%" height="auto" />;
+        } else {
+            return <p>{disc}</p>;
+        }
+    };
 
     return (
         <Container>
@@ -21,9 +37,7 @@ const LessonsSlider = ({slide}: LessonSlideProps) => {
                 <h1>{SlideTitle}</h1>
             </Title>
 
-            <Text>
-                {disc}
-            </Text>
+            {renderContent()}
             {img && <img src={img} alt={SlideTitle} />}
             <p>{SlideNumber}</p>
         </Container>
@@ -48,8 +62,3 @@ const Title = styled.div`
     margin-top: 5rem;
     margin-bottom: 5rem;
 `;
-
-const Text = styled.div`
-    text-align: center;
-`;
-

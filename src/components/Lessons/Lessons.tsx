@@ -4,8 +4,6 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styled from "styled-components";
 import { LessonSlideInterface } from "./LessonData/Lesson1Data";
 import { useParams, useNavigate } from "react-router-dom";
-import { Lesson1DataTitle } from "./LessonData/Lesson1Data";
-
 
 type LessonParams = {
     lessonNumber: string;
@@ -13,11 +11,13 @@ type LessonParams = {
 
 const getLessonData = async (lessonNumber: number) => {
     const module = await import(`./LessonData/Lesson${lessonNumber}Data`);
-    return module;
+    return {
+        data: module[`Lesson${lessonNumber}Data`], 
+        title: module[`Lesson${lessonNumber}DataTitle`]
+    };
 };
 
 const Lessons = () => {
-
     const { lessonNumber } = useParams<LessonParams>();
     const navigate = useNavigate();
 
@@ -25,6 +25,10 @@ const Lessons = () => {
     const [lessonData, setLessonData] = useState<LessonSlideInterface[] | null>(
         null
     );
+    const [lessonTitle, setLessonTitle] = useState('');
+
+    // Array of lessons without quizzes
+    const noQuizLessons = ["2"]; // Add other lesson numbers as needed
 
     const nextSlide = () => {
         setCurrentSlide((oldSlide) => oldSlide + 1);
@@ -35,26 +39,24 @@ const Lessons = () => {
     };
 
     useEffect(() => {
-      const fetchLessonData = async () => {
-          // Convert lessonNumber to a number before passing it to getLessonData
-          const data = await getLessonData(Number(lessonNumber));
-          console.log(`Got data in useEffect ${JSON.stringify(data)}`);
-          // setLessonData(data);
-          setLessonData(data.Lesson1Data);
-      };
-      
-      fetchLessonData();
-  }, [lessonNumber]);
+        const fetchLessonData = async () => {
+            const lesson = await getLessonData(Number(lessonNumber));
+            setLessonData(lesson.data);
+            setLessonTitle(lesson.title);
+        };
+
+        fetchLessonData();
+    }, [lessonNumber]);
 
     if (!lessonData) {
-        return <p>Loading...</p> // Or a loading spinner
+        return <p>Loading...</p>
     }
 
     return (
         <Container id="lessons">
             <Title>
                 <h1 className="blue" aria-label="Lessons">
-                    {Lesson1DataTitle}
+                    {lessonTitle}
                 </h1>
             </Title>
             <LessonsSlider slide={lessonData[currentSlide]} />
@@ -72,11 +74,19 @@ const Lessons = () => {
                             <IoIosArrowForward />
                         </button>
                     ) : (
-                        <button
-                            onClick={() => navigate(`/quiz/${lessonNumber}`)}
-                        >
-                            Take the Quiz!
-                        </button>
+                        lessonNumber && noQuizLessons.includes(lessonNumber) ? (
+                            <button
+                                onClick={() => navigate(`/challenge/${lessonNumber}`)}
+                            >
+                                Go to Challenge!
+                            </button>
+                        ) : (
+                            <button
+                                onClick={() => navigate(`/quiz/${lessonNumber}`)}
+                            >
+                                Take the Quiz!
+                            </button>
+                        )
                     )}
                 </ButtonWrapper>
             </Buttons>
@@ -85,6 +95,7 @@ const Lessons = () => {
 };
 
 export default Lessons;
+
 
 const Container = styled.div`
     border: 2px solid green;

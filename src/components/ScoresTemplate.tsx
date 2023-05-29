@@ -1,8 +1,6 @@
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { UserContext } from '../../App';
+import { UserContext } from '../App';
 import { useContext, useEffect } from 'react';
-
-
 
 type QuizParams = {
     quizNumber: string;

@@ -162,7 +162,4 @@ export const Quiz1Data = [
 
         correct: "It allows the developer to use high-level features with a high degree of control"
     },
-
-    //  QUIZ 2
-    
 ];

@@ -20,8 +20,12 @@ const HomePage =() => {
 
             <p>List of the lessons below. We will start working on the first lesson</p>
 
-            <button onClick={() => {console.log(`Navigating to /lesson/1`); navigate(`/lesson/1`);}}>Go to Lesson 1</button>
+            <button onClick={() => {navigate(`/lesson/1`)}}>Go to Lesson 1</button>
             <button onClick={() => {navigate(`/quiz/1`)}}>Go to Quiz 1</button>
+
+            <button onClick={() => {navigate(`/lesson/2`)}}>Go to Lesson 2</button>
+
+            <button onClick={() => {navigate(`/challenge/2`)}}>Go to Challenge 2</button>
 
         </Container>
     )

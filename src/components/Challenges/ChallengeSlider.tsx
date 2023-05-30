@@ -2,6 +2,7 @@ import { ChallengeSlideInterface } from './ChallengeData/Challenge2Data';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import styled from 'styled-components';
+import { useState } from 'react';
 
 interface ChallengeSlideProps {
     slide: ChallengeSlideInterface;
@@ -15,6 +16,8 @@ const ChallengeSlider = ({slide}: ChallengeSlideProps) => {
         border: '5px solid blue',
         width: '21rem',
     };
+
+    const [showSolution, setShowSolution] = useState(false);
 
     return (
         <Container>
@@ -30,7 +33,21 @@ const ChallengeSlider = ({slide}: ChallengeSlideProps) => {
 
             <Description>{desc2}</Description>
 
-            {solution && <Solution>{solution}</Solution>}
+            {solution && 
+                <>
+                    <button onClick={() => setShowSolution(!showSolution)}>
+                        {showSolution ? 'Hide Solution' : 'Show Solution'}
+                    </button>
+
+                    {showSolution && 
+                        <Solution>
+                            <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
+                                {solution}
+                            </SyntaxHighlighter>
+                        </Solution>
+                    }
+                </>
+}
         </Container>
     );
 };

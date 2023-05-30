@@ -3,6 +3,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import styled from 'styled-components';
 import { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 interface ChallengeSlideProps {
     slide: ChallengeSlideInterface;
@@ -25,7 +26,9 @@ const ChallengeSlider = ({slide}: ChallengeSlideProps) => {
                 <h1>{title}</h1>
             </Title>
 
-            <Description>{desc1}</Description>
+            <Description>
+                <ReactMarkdown>{desc1}</ReactMarkdown>
+            </Description>
 
             <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
                 {code}

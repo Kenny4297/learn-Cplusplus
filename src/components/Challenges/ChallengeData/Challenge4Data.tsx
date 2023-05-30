@@ -36,7 +36,8 @@ export const Challenge4Data = [
             // ADD CODE: What can we 'return' to make sure the program has successfully completed execution without any errors?
         }
         `,
-        desc2: `Try running the program in your terminal! Good luck! Remember to troubleshoot your issues with Google or AI! Only check the solution when you have figured it out, or if AI or Google were not able to help!`,
+        desc2: `Try running the program in your terminal! Good luck! Remember to troubleshoot your issues with Google or AI! Only check the solution when you have figured it out, or if AI or Google were not able to help! <br> 
+        Extra Credit: Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! `,
         solution: `
         #include <iostream>
         #include <string>

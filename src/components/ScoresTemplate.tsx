@@ -17,7 +17,8 @@ const ScoresTemplate = () => {
     let quizIndex = quizIndexString as keyof typeof userData.quizScores;
 
     const { userData, setUserData } = useContext(UserContext);
-    // const { username } = userData;
+    
+    const quizWithChallenges: string[] = ["2", "4", "5", "6"];
 
     useEffect(() => {
         console.log("useEffect triggering")
@@ -47,6 +48,8 @@ const ScoresTemplate = () => {
             <p>Your score was {totalScore} / 10!</p>
             <button onClick={() => navigate(`/quiz/${quizNumber}`)}>Retake quiz</button>
             <button onClick={() => navigate(`/lesson/${quizNumber}`)}>Study lesson</button>
+            { quizNumber && quizWithChallenges.includes(quizNumber) &&
+            <button onClick={() => navigate(`/challenge/${quizNumber}`)}>Lesson Challenge</button>}
             <button onClick={() => navigate('/Home')}>Go to Home Page</button>
         </>
     )

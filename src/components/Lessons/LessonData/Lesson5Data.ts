@@ -60,48 +60,36 @@ export const Lesson5Data = [
 
     {
         SlideNumber: 6,
-        SlideTitle: "Else statement",
-        disc: `In C++, the 'else' statement is used in conjunction with an 'if' statement to define a block of code to be executed if the condition in the 'if' statement is false. Basically, 'if' tests a condition and 'else' specifies what should happen when that condition is not met. It acts as a fallback or default behavior when the 'if' condition fails.`,
+        SlideTitle: "else if / else statement",
+        disc: `In C++, the 'if', 'else if', and 'else' statements form a powerful trio for handling different conditions. The 'if' statement tests a condition, and if that condition is true, the code block following the 'if' statement is executed. If the condition is false, the program moves on to the 'else if' statement, if one is present. The 'else if' statement tests a new condition, distinct from the 'if' statement's condition. This allows your program to handle multiple, specific scenarios, checking each 'else if' condition in order until one is found to be true or all have been found to be false. If all conditions in 'if' and 'else if' statements are false, and an 'else' statement is present, the code block following the 'else' statement is executed. Essentially, 'if' and 'else if' test specific conditions, while 'else' specifies a default behavior when no conditions are met.`,
         code:`
-        std::cout << "Enter first number: ";
-        std::cin >> num1; // User enters 0
-
-        // Num1 is 0
-
-        if(num2 > 1) {
-            std::cout << "Yes, num1 is in fact greater than 1"; 
+        if (operation == '+') {
+            std::cout << "The result is: " << num1 + num2 << std::endl;
+        } else if (operation == '-') {
+            std::cout << "The result is: " << num1 - num2 << std::endl;
+        } else if (operation == '*') {
+            std::cout << "The result is: " << num1 * num2 << std::endl;
+        } else if (operation == '/') {
+            if(num2 != 0) {
+                std::cout << "The result is: " << num1 / num2 << std::endl;
+            } else {
+                std::cout << "Error! Division by zero is not allowed." << std::endl;
+            }
         } else {
-            std::cout << "No, num1 is not in fact greater than 1"; // This line would execute, since 0 is not greater than 1
-        }`
+            std::cout << "Error! Invalid operator." << std::endl;
+        }
+    `
     },
 
     {
         SlideNumber: 7,
-        SlideTitle: "String Concatenation",
-        disc: `After capturing all user inputs, we want to stitch together a sentence or a paragraph. In C++, we can concatenate, or join, strings using the + operator or simply by using the << operator with **std::cout**. For instance, **"The " << adjective << " " << noun << " " << verb << " " << preposition << " the " << noun2 << ".\n";** joins together the user's inputs into a complete sentence. It looks funky now, but it will look completely normal when the program is run!`,
+        SlideTitle: "std:endl",
+        disc: `In C++, the std::endl is an output manipulator used to insert a newline character into the output and flush the output buffer. It is commonly used with std::cout to end the current line and move the cursor to the start of the next line in the console. For instance, **std::cout << "Hello, World!" << std::endl;** would print the message "Hello, World!" to the console and then start a new line. This is especially useful when you want to separate different pieces of output, or when you want to ensure that subsequent output appears on a new line. <br> 
+        
+        You might be asking what the difference between **\n** and **std:endl** is. In C++, both **\n** and **std::endl** are used to insert a new line when displaying output to the console. You can use **\n** within a string that's being printed, like so: **std::cout << "Hello\nWorld";**. On the other hand, **std::endl** is typically used outside of strings and directly with the **std::cout** stream, like so: **std::cout << "Hello" << std::endl << "World";**. I wouldn't worry too much about this for now.`,
         code:`
-        std::cout << "\nHere's your story:\n\n";
-        std::cout << "The " << adjective << " " << noun << " " << verb << " " << preposition << " the " << noun2 << ".\n";    
-        }`
-    },
-
-    {
-        SlideNumber: 8,
-        SlideTitle: "Formatting and Styling Output",
-        disc: `Neatly formatting our output helps make it more readable. Notice how we've used \n (newline) characters in our output strings? These help to break up the output, putting different sections on separate lines in the console. \n is an example of an escape sequence, a series of characters that represents a special command.`,
-        code:`
-        std::cout << "\nHere's your story:\n\n";
-        std::cout << "The " << adjective << " " << noun << " " << verb << " " << preposition << " the " << noun2 << ".\n";    
-        }`
-    },
-
-    {
-        SlideNumber: 9,
-        SlideTitle: "The Main Function",
-        disc: `In C++, every program must have a main() function. This is the entry point of the program, the place where execution begins. Our **main()** function contains all of our program's logic, from declaring variables, capturing user input, and finally outputting the completed Mad Libs story.`,
-        code:`
-        int main() {
-        // Code goes here!
+        if (operation == '+') {
+            std::cout << "The result is: " << num1 + num2 << std::endl;
         }`
     },
 ]

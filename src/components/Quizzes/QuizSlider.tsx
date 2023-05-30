@@ -19,16 +19,17 @@ const QuizSlider = forwardRef<{}, QuizSlideProps>((props, ref) => {
         hasAnsweredCurrentQuestion: () => selectedAnswer !== null
       }));
 
-      const handleAnswerClick = (answer: string) => {
+    const handleAnswerClick = (answer: string) => {
+        if (selectedAnswer !== null) return;  // Add this line. It will return from the function if an answer is already selected
         setSelectedAnswer(answer);
         const correctAnswer = answer === correct;
         setIsCorrect(correctAnswer);
         if (correctAnswer) {
           onCorrectAnswer();
         }
-      };
+    };
 
-      useEffect(() => {
+    useEffect(() => {
         setSelectedAnswer(null);
         setIsCorrect(null);
     }, [slide]);

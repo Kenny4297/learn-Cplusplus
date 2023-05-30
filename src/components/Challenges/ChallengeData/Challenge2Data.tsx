@@ -17,7 +17,8 @@ export const Challenge2Data = [
             std::cout << "Hello, World!";
             return 0;
         }`,
-        desc2: `Then in your terminal, run the code. You should see 'Hello World' outputted to the terminal! (if you did not you may need to become a developer for a moment and troubleshoot!). Don't worry about what all of this means, we will go through this in the next lesson.`,
+        desc2: `Then in your terminal, run the code. You should see 'Hello World' outputted to the terminal! (if you did not you may need to become a developer for a moment and troubleshoot!). Don't worry about what all of this means, we will go through this in the next lesson. <br> 
+        Extra Credit: Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! `,
         solution: ""
     }
 ];

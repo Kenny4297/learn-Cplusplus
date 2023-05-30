@@ -1,5 +1,5 @@
 
-export const Quiz4DataTitle = "Hello, World!";
+export const Quiz4DataTitle = "Mad Libs";
 
 export const Quiz4Data = [
     {

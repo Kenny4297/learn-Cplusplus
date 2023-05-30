@@ -36,6 +36,18 @@ const HomePage =() => {
 
             <button onClick={() => {navigate(`/challenge/4`)}}>Go to Challenge 4</button>
 
+            <button onClick={() => {navigate(`/lesson/5`)}}>Go to Lesson 5</button>
+
+            <button onClick={() => {navigate(`/quiz/5`)}}>Go to Quiz 5</button>
+
+            <button onClick={() => {navigate(`/challenge/5`)}}>Go to Challenge 5</button>
+
+            <button onClick={() => {navigate(`/lesson/6`)}}>Go to Lesson 6</button>
+
+            <button onClick={() => {navigate(`/quiz/6`)}}>Go to Quiz 6</button>
+
+            <button onClick={() => {navigate(`/challenge/6`)}}>Go to Challenge 6</button>
+
         </Container>
     )
 }

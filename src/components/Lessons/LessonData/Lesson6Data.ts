@@ -7,6 +7,43 @@ export const Lesson6Data = [
         disc: `We have reached our last project before I let you free in the wild! You have learned so much and I'm so excited to see what else you can create! This lesson will be about creating a guess game. Here are the parameters: <br> 
         The user competes against the bug machine, I mean the computer. The user starts with 4 lives and they guess a number from 1 to 10. The computer has a secret number that you are trying to guess. If you guess the number before your lives run out, you win! If not, the computer wins! Let's take a look at what you need to know to beat the computer!
         `,
+        code:`
+        #include <iostream>
+        #include <ctime>
+        #include <cstdlib>
+        
+        int main() {
+            srand(static_cast<unsigned int>(time(0)));  // Seed random number generator.
+        
+            int target = rand() % 10 + 1;  // Generate target number: a random integer between 1 and 10.
+            int guess;  // Variable to hold user's guess.
+            int lives = 4;  // User starts with 4 lives.
+        
+            std::cout << "Welcome to the Guess the Number game!\\n";
+            std::cout << "Guess a number between 1 and 10.\\n";
+            std::cout << "You have " << lives << " lives.\\n";
+        
+            while (lives > 0) {
+                std::cout << "Enter your guess: ";
+                std::cin >> guess;
+        
+                if (guess == target) {
+                    std::cout << "Correct, you win!\\n";
+                    return 0;  // End the game if the user guessed correctly.
+                } else {
+                    --lives;  // Decrement the user's lives.
+                    if (lives > 0) {
+                        std::cout << "Sorry, " << guess << " was not the right number! Guess again!\\n";
+                        std::cout << "You have " << lives << " lives left.\\n";
+                    } else {
+                        std::cout << "Sorry, " << guess << " was not the right number and you have run out of lives! Game Over!\\n";
+                        return 0;  // End the game if the user has run out of lives.
+                    }
+                }
+            }
+        
+            return 0;
+        }`
     },
     {
         SlideNumber: 2,

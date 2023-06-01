@@ -1,10 +1,15 @@
 import "./index.css";
 import HomePage from './components/HomePage';
-import IntroPage from "./components/IntroPage";
+// import IntroPage from "./components/IntroPage";
 import { createContext, Dispatch, SetStateAction, useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LessonTemplate, QuizTemplate, ScoresTemplate } from "./components/Lessons";
-import ChallengeTemplate from './components/Challenges/ChallengeTemplate'
+import ChallengeLoader from "./components/Challenges/ChallengeLoader"
+import SiteTutorial from "./components/Tutorials/SiteTutorial";
+import QuizTutorial from "./components/Tutorials/QuizTutorial";
+import LessonTutorial from "./components/Tutorials/LessonTutorial";
+import ChallengeTutorial from "./components/Tutorials/ChallengeTutorial";
+import Header from "./components/Header";
 
 export const UserContext = createContext<{
     userData: {
@@ -54,18 +59,26 @@ function App() {
     }, [userData]);
     
     return (
-        <UserContext.Provider value={{ userData, setUserData }}>
-            <Router>
-                <Routes>
-                    <Route path="/" element={<IntroPage />} />
-                    <Route path="/home" element={<HomePage />} />
+        <>
+        <div className="wrapper">
+            <Header />
+            <UserContext.Provider value={{ userData, setUserData }}>
+                <Router>
+                    <Routes>
+                    <Route path="/" element={<HomePage />} />
                     <Route path="/lesson/:lessonNumber" element={<LessonTemplate />} />
                     <Route path="/quiz/:quizNumber" element={<QuizTemplate />} />
                     <Route path="/scores/:quizNumber" element={<ScoresTemplate />} />
-                    <Route path="/challenge/:challengeNumber" element={<ChallengeTemplate />} />
-                </Routes>
-            </Router>
-        </UserContext.Provider>
+                    <Route path="/challenge/:challengeNumber" element={<ChallengeLoader />} />
+                    <Route path="/siteTutorial" element={<SiteTutorial />} />
+                    <Route path="/lessonTutorial" element={<LessonTutorial />} />
+                    <Route path="/quizTutorial" element={<QuizTutorial />} />
+                    <Route path="/challengeTutorial" element={<ChallengeTutorial />} />
+                    </Routes>
+                </Router>
+            </UserContext.Provider>
+        </div>
+        </>
     );
 }
 

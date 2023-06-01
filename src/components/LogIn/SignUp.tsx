@@ -32,7 +32,7 @@ const SignUp = (): ReactElement => {
         localStorage.setItem("user", JSON.stringify({ username, password }));
         setPassword("");
         setConfirmPassword("");
-        navigate("/home");
+        navigate("/");
     };
 
     return (

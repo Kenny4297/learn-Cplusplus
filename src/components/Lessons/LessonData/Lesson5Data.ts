@@ -6,6 +6,38 @@ export const Lesson5Data = [
         SlideTitle: "Build a Calculator",
         disc: `In this project, we will be building a calculator that will be able to perform simple mathematical functions. As in any programming language, we will be using the fundamentals that we have learned and building on top of them. Feel free to visit the previous lessons to get a better understanding of the concepts discussed, since moving forward without being somewhat comfortable is dangerous!
         `,
+        code: `
+        #include <iostream>
+                        
+        int main() {
+            int num1, num2;
+            char operation;
+
+            std::cout << "Enter first number: ";
+            // ADD CODE: Finish capturing the first number
+
+            std::cout << "Enter an operator (+, -, *, /): ";
+            // ADD CODE: save the operation to the variable 'operation
+
+            //ADD CODE: Get a second number from the user and capture it as well. HINT: This will be two lines of code!
+
+            if (operation == '+') {
+                std::cout << "The result is: " << num1 + num2 << std::endl;
+            } else if (operation == '-') {
+                // ADD CODE: If the operation is '-', but tract the two numbers
+            } else if (operation == '*') {
+                // ADD CODE: Add an 'else if' condition that checks if the operation is a '*'
+                std::cout << "The result is: " << num1 * num2 << std::endl;
+            } else if (operation == '/') {
+                // ADD CODE: add a conditional check to see if num2 != 0
+                    std::cout << "The result is: " << num1 / num2 << std::endl;
+                // ADD CODE: Print a message to the user saying that division by 0 is not allowed
+            } else {
+                std::cout << "Error! Invalid operator." << std::endl;
+            }
+
+            // ADD CODE: Can you remember what we need to add at the end of a function?
+        }`
     },
     {
         SlideNumber: 2,

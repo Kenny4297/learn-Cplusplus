@@ -6,6 +6,41 @@ export const Lesson4Data = [
         SlideTitle: "Mad Libs",
         disc: `Congratulations on Creating your first C++ program! As stated before, we will continue creating projects by adding new concepts as we go. This lesson will set us up with the information needed to create a [Mad Libs](https://en.wikipedia.org/wiki/Mad_Libs) project. <br> The most important aspect of a developer is to know the steps needed to create a project, not necessarily how to do the steps themselves. Know what needs to be done is a skill developed as you create more projects. This lesson will show you how to create the Mad Libs project, but it sill be up to you to try to put it together! Don't worry if this sounds difficult at first, I promise that it will get easier as we create more projects! Let's begin!
         `,
+        code:
+        `
+        #include <iostream>
+        #include <string>
+
+        int main() {
+            std::string noun;
+            std::string noun2;
+            std::string verb;
+            std::string adjective;
+            std::string preposition;
+
+            std::cout << "Welcome to C++ Mad Libs!\\n\\n";
+            
+            std::cout << "Enter a noun: ";
+            std::getline(std::cin, noun);
+
+            std::cout << "Enter a second noun: ";
+            std::getline(std::cin, noun2);
+
+            std::cout << "Enter a verb: ";
+            std::getline(std::cin, verb);
+
+            std::cout << "Enter an adjective: ";
+            std::getline(std::cin, adjective);
+
+            std::cout << "Enter a preposition: ";
+            std::getline(std::cin, preposition);
+
+            std::cout << "\\nHere's your story:\\n\\n";
+            std::cout << "The " << adjective << " " << noun << " " << verb << " " << preposition << " the " << noun2 << ".\\n";
+            
+            return 0;
+        }
+        `
     },
     {
         SlideNumber: 2,

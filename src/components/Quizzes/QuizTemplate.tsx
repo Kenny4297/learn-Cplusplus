@@ -8,7 +8,7 @@ const QuizTemplate = () => {
         <Container>
         <Quizzes />
         <BackButton>
-            <button onClick={() => navigate("/home")}>Back</button>
+            <button onClick={() => navigate("/")}>Back</button>
         </BackButton>
         </Container>
     );

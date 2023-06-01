@@ -37,7 +37,7 @@ const LogIn = (): ReactElement => {
             // Check if user exists in localStorage and password matches
             if(storedUser && storedUser.username === username && storedUser.password === password) {
 
-                navigate("/home");
+                navigate("/");
             } else {
                 setUsername("");
                 setPassword("");

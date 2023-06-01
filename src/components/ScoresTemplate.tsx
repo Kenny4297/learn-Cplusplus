@@ -2,9 +2,9 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { UserContext } from '../App';
 import { useContext, useEffect } from 'react';
 
-type QuizParams = {
-    quizNumber: string;
-}
+// type QuizParams = {
+//     quizNumber: string;
+// }
 
 const ScoresTemplate = () => {
     const navigate = useNavigate();
@@ -18,7 +18,7 @@ const ScoresTemplate = () => {
 
     const { userData, setUserData } = useContext(UserContext);
     
-    const quizWithChallenges: string[] = ["2", "4", "5", "6"];
+    const quizWithChallenges: string[] = ["2", "4", "5", "6", "7"];
 
     useEffect(() => {
         console.log("useEffect triggering")
@@ -50,7 +50,7 @@ const ScoresTemplate = () => {
             <button onClick={() => navigate(`/lesson/${quizNumber}`)}>Study lesson</button>
             { quizNumber && quizWithChallenges.includes(quizNumber) &&
             <button onClick={() => navigate(`/challenge/${quizNumber}`)}>Lesson Challenge</button>}
-            <button onClick={() => navigate('/Home')}>Go to Home Page</button>
+            <button onClick={() => navigate('/')}>Go to Home Page</button>
         </>
     )
 }

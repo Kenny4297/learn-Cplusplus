@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import QuizSlider from "./QuizSlider";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 import styled from "styled-components";
 import { QuizSlideInterface } from "./QuizData/Quiz1Data";
 
@@ -44,10 +44,6 @@ const Quizzes = () => {
         }
     };
 
-    const prevSlide = () => {
-        setCurrentSlide((oldSlide) => oldSlide - 1);
-    };
-
     const handleSubmit = () => {
         // If the user is on the last page and hasn't answered the question yet, show an alert
         if (
@@ -68,18 +64,15 @@ const Quizzes = () => {
     useEffect(() => {
       const fetchQuizData = async () => {
           const quiz = await getQuizData(Number(quizNumber));
-          console.log(quizNumber)
           setQuizData(quiz.data);
           setQuizTitle(quiz.title);
-          console.log(quiz.data)
-          console.log(quiz.title)
       };
 
       fetchQuizData();
   }, [quizNumber]);
 
     if (!quizData) {
-        return <p>Loading...</p>; // Or a loading spinner
+        return <p>Loading...</p>; 
     }
 
     return (
@@ -97,13 +90,6 @@ const Quizzes = () => {
 
             <Buttons>
                 <ButtonWrapper>
-                    {currentSlide !== 0 && (
-                        <button onClick={prevSlide} aria-label="Previous slide">
-                            <IoIosArrowBack />
-                        </button>
-                    )}
-                </ButtonWrapper>
-                <ButtonWrapper>
                     {currentSlide !== quizData.length - 1 ? (
                         <button onClick={nextSlide} aria-label="Next slide">
                             <IoIosArrowForward />
@@ -120,27 +106,45 @@ const Quizzes = () => {
 export default Quizzes;
 
 const Container = styled.div`
-    border: 2px solid green;
+    /* border: 2px solid green; */
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-width: 80%;
 `;
 
 const Title = styled.div`
     text-align: center;
+    h1 {
+        color: var(--gray);
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
 `;
 
 const Buttons = styled.div`
     display: flex;
     justify-content: center;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     margin: 0 auto;
+    button {
+        background-color: var(--blue);
+        border: none;
+        border-radius: 2px;
+        padding: .2rem;
+    }
 `;
 
 const ButtonWrapper = styled.div`
     display: inline-block;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     margin-left: 1rem;
     margin-right: 1rem;
     width: 1.25rem;
+    button {
+        color: white;
+        &:hover {
+        cursor: pointer;
+      }
+    }
 `;

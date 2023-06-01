@@ -1,30 +1,34 @@
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function ChallengeLoader() {
-  const { challengeNumber } = useParams();
+    const { challengeNumber } = useParams();
 
-  const [Challenge, setChallenge] = useState<React.FC | null>(null);
+    const [Challenge, setChallenge] = useState<React.FC | null>(null);
 
-  useEffect(() => {
-    const loadChallenge = async () => {
-      try {
-        const { default: ImportedChallenge } = await import(`./Challenge${challengeNumber}`);
-        setChallenge(() => ImportedChallenge);
-      } catch (error) {
-        console.error(`Couldn't load challenge ${challengeNumber}`, error);
-      }
-    };
-  
-    loadChallenge();
-  }, [challengeNumber]);
-  
+    useEffect(() => {
+        const loadChallenge = async () => {
+            try {
+                const { default: ImportedChallenge } = await import(
+                    `./Challenge${challengeNumber}`
+                );
+                setChallenge(() => ImportedChallenge);
+            } catch (error) {
+                console.error(
+                    `Couldn't load challenge ${challengeNumber}`,
+                    error
+                );
+            }
+        };
 
-  if (Challenge === null) {
-    return <div>Loading...</div>;
-  }
+        loadChallenge();
+    }, [challengeNumber]);
 
-  return <Challenge />;
+    if (Challenge === null) {
+        return <div>Loading...</div>;
+    }
+
+    return <Challenge />;
 }
 
 export default ChallengeLoader;

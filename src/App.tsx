@@ -1,8 +1,7 @@
 import "./index.css";
 import HomePage from './components/HomePage';
-// import IntroPage from "./components/IntroPage";
 import { createContext, Dispatch, SetStateAction, useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { LessonTemplate, QuizTemplate, ScoresTemplate } from "./components/Lessons";
 import ChallengeLoader from "./components/Challenges/ChallengeLoader"
 import SiteTutorial from "./components/Tutorials/SiteTutorial";
@@ -10,6 +9,8 @@ import QuizTutorial from "./components/Tutorials/QuizTutorial";
 import LessonTutorial from "./components/Tutorials/LessonTutorial";
 import ChallengeTutorial from "./components/Tutorials/ChallengeTutorial";
 import Header from "./components/Header";
+import styled from 'styled-components';
+import ScrollToTop from './components/ScrollToTop';
 
 export const UserContext = createContext<{
     userData: {
@@ -38,9 +39,7 @@ function App() {
     const storedUserData = localStorage.getItem('user');
     const defaultUser = {
         username: "",
-        lessonsCompleted: {lesson1: 'no', lesson2: 'no', lesson3: 'no', lesson4: 'no', lesson5: 'no', lesson6: 'no', lesson7: 'no', lesson8: 'no', lesson9: 'no', lesson10: 'no'},
         quizScores: {quiz1: 0, quiz2: 0, quiz3: 0, quiz4: 0, quiz5: 0, quiz6: 0, quiz7: 0, quiz8: 0, quiz9: 0, quiz10: 0},
-        projectsCompleted: {project1: 'no', /* other projects */}
     };
     const storedUser = storedUserData 
         ? JSON.parse(storedUserData) 
@@ -61,9 +60,12 @@ function App() {
     return (
         <>
         <div className="wrapper">
-            <Header />
+            <HeaderContainer>
+                <Header />
+            </HeaderContainer>
             <UserContext.Provider value={{ userData, setUserData }}>
                 <Router>
+                    <ScrollToTop />
                     <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/lesson/:lessonNumber" element={<LessonTemplate />} />
@@ -83,3 +85,7 @@ function App() {
 }
 
 export default App;
+
+const HeaderContainer = styled.div`
+    /* height: 5rem; */
+`

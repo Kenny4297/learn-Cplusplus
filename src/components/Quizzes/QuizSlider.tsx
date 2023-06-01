@@ -36,39 +36,42 @@ const QuizSlider = forwardRef<{}, QuizSlideProps>((props, ref) => {
 
     return (
         <Container>
-            <QuestionTitle>
-                <h1>{QuestionNumber}: {QuizTitle}</h1>
-            </QuestionTitle>
-
             <Question>
                 {question}
             </Question>
 
-            <Answers>
-                {[answer1, answer2, answer3, answer4].map((answer, index) => (
-                    <button
-                        key={index}
-                        onClick={() => handleAnswerClick(answer)}
-                        style={{
-                            backgroundColor: selectedAnswer === answer
-                                ? isCorrect
-                                    ? "green"
-                                    : "red"
-                                : "transparent"
-                        }}
-                    >
-                        {answer}
-                    </button>
-                ))}
-            </Answers>
+            {[answer1, answer2, answer3, answer4].filter(answer => answer).map((answer, index) => (
+                <AnswerButton
+                    key={index}
+                    onClick={() => handleAnswerClick(answer)}
+                    style={{
+                        backgroundColor: selectedAnswer === answer
+                            ? isCorrect
+                                ? "green"
+                                : "red"
+                            : "transparent"
+                    }}
+                >
+                    {answer}
+                </AnswerButton>
+            ))}
         </Container>
     );
 });
 
 export default QuizSlider;
 
+const AnswerButton = styled.button`
+    border: 2px solid green;
+    margin-bottom: .5rem;
+    border-radius: .2rem;
+    padding: .25rem;
+    color: var(--gray);
+    width: 25rem;
+`;
+
 const Container = styled.div`
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     width:80%;
     height: 100%;
     font-size: .5rem;
@@ -78,18 +81,17 @@ const Container = styled.div`
     align-items: center;
 `;
 
-const QuestionTitle = styled.div`
-    border: 2px solid green;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-`;
-
-const Question = styled.div`
+const Question = styled.h2`
     text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    color: var(--gray);
 `;
 
 const Answers = styled.div`
-    
+    display: flex;
+    flex-direction: column;
 
 `
 

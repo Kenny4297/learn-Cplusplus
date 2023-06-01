@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { CSSProperties } from 'styled-components';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
@@ -8,17 +8,18 @@ const Challenge4Component = () => {
     const navigate = useNavigate();
     const [showSolution, setShowSolution] = useState(false);
 
-    const customStyle = {
+    const customStyle: CSSProperties = {
         backgroundColor: 'black',
         borderRadius: '5px',
         border: '5px solid blue',
-        width: '21rem',
+        width: 'auto',
+        marginBottom: '2rem'
     };
 
     return (
         <Container>
             <Title>
-                <h1>Creating your very own Mad Libs!</h1>
+                Creating your very own Mad Libs!
             </Title>
 
             <Description>
@@ -26,40 +27,40 @@ const Challenge4Component = () => {
             </Description>
 
             <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
-                {`
-                #include <iostream>
-                // ADD CODE: What do we need to add to allow strings from user input?
-                
-                int main() {
-                    std::string noun;
-                    std::string noun2;
-                    // ADD CODE: Let's create a verb variable to store the verb from the user.
-                    std::string adjective;
-                    std::string preposition;
+                {
+`#include <iostream>
+// ADD CODE: What do we need to add to allow strings from user input?
 
-                    std::cout << "Welcome to C++ Mad Libs!\\n\\n";
-                    
-                    std::cout << "Enter a noun: ";
-                    std::getline(std::cin, noun);
+int main() {
+    std::string noun;
+    std::string noun2;
+    // ADD CODE: Let's create a verb variable to store the verb from the user.
+    std::string adjective;
+    std::string preposition;
 
-                    // ADD CODE: Out put a message asking the user to enter a noun
-                    std::getline(std::cin, noun2);
+    std::cout << "Welcome to C++ Mad Libs!\\n\\n";
+    
+    std::cout << "Enter a noun: ";
+    std::getline(std::cin, noun);
 
-                    std::cout << "Enter a verb: ";
-                    std::getline(std::cin, verb);
+    // ADD CODE: Output a message asking the user to enter another noun
+    std::getline(std::cin, noun2);
 
-                    std::cout << "Enter an adjective: ";
-                    // ADD CODE: Let's finish capturing the users adjective
+    std::cout << "Enter a verb: ";
+    std::getline(std::cin, verb);
 
-                    // ADD CODE: Display a message to have the user enter a preposition
-                    // ADD CODE: Finish capturing the users adjective
+    std::cout << "Enter an adjective: ";
+    // ADD CODE: Let's finish capturing the users adjective
 
-                    std::cout << "\\nHere's your story:\\n\\n";
-                    std::cout << "The " << adjective << " " << noun << " " << verb << " " << preposition << " the " << noun2 << ".\\n";
-                    
-                    // ADD CODE: What can we 'return' to make sure the program has successfully completed execution without any errors?
-                }
-                `}
+    // ADD CODE: Display a message to have the user enter a preposition
+    // ADD CODE: Finish capturing the users preposition
+
+    std::cout << "\\nHere's your story:\\n\\n";
+    std::cout << "The " << adjective << " " << noun << " " << verb << " " 
+    << preposition << " the " << noun2 << ".\\n";
+    /* ADD CODE: What can we 'return' to make sure the program
+    has successfully completed execution without any errors? */
+}`}
             </SyntaxHighlighter>
 
             <Description>
@@ -75,56 +76,74 @@ const Challenge4Component = () => {
             </button>
 
             {showSolution && 
-                <Solution>
                     <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
-                        {`
-                        #include <iostream>
-                        #include <string>
+                        
+{`#include <iostream>
+#include <string>
 
-                        int main() {
-                            std::string noun;
-                            std::string noun2;
-                            std::string verb;
-                            std::string adjective;
-                            std::string preposition;
+int main() {
+    std::string noun;
+    std::string noun2;
+    std::string verb;
+    std::string adjective;
+    std::string preposition;
 
-                            std::cout << "Welcome to C++ Mad Libs!\\n\\n";
-                            
-                            std::cout << "Enter a noun: ";
-                            std::getline(std::cin, noun);
+    std::cout << "Welcome to C++ Mad Libs!\\n\\n";
+    
+    std::cout << "Enter a noun: ";
+    std::getline(std::cin, noun);
 
-                            std::cout << "Enter a second noun: ";
-                            std::getline(std::cin, noun2);
+    std::cout << "Enter a second noun: ";
+    std::getline(std::cin, noun2);
 
-                            std::cout << "Enter a verb: ";
-                            std::getline(std::cin, verb);
+    std::cout << "Enter a verb: ";
+    std::getline(std::cin, verb);
 
-                            std::cout << "Enter an adjective: ";
-                            std::getline(std::cin, adjective);
+    std::cout << "Enter an adjective: ";
+    std::getline(std::cin, adjective);
 
-                            std::cout << "Enter a preposition: ";
-                            std::getline(std::cin, preposition);
+    std::cout << "Enter a preposition: ";
+    std::getline(std::cin, preposition);
 
-                            std::cout << "\\nHere's your story:\\n\\n";
-                            std::cout << "The " << adjective << " " << noun << " " << verb << " " << preposition << " the " << noun2 << ".\\n";
-                            
-                            return 0;
-                        }
-                        `}
+    std::cout << "\\nHere's your story:\\n\\n";
+    std::cout << "The " << adjective << " " << noun << " " << verb << " " 
+    << preposition << " the " << noun2 << ".\\n";
+    
+    return 0;
+}`}
                     </SyntaxHighlighter>
-                </Solution>
             }
-
-            <button onClick={() => navigate(`/lesson/4`)}>Study lesson</button>
-            <button onClick={() => navigate('/')}>Go to Home Page</button>
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', border: '2px solid green', marginBottom:'4rem'}}>
+                <button onClick={() => navigate(`/lesson/4`)}>Review lesson</button>
+                <button onClick={() => navigate('/')}>Go to Home Page</button>
+            </div>
         </Container>
     );
 };
 
 export default Challenge4Component;
 
-const Container = styled.div``;
-const Title = styled.div``;
-const Description = styled.div``;
-const Solution = styled.div``;
-const ExtraCredit = styled.div``;
+const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%
+
+`;
+
+const Title = styled.h1`
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+`;
+
+const Description = styled.div`
+    margin-bottom: 2rem;
+    text-align: center;
+`;
+
+const ExtraCredit = styled.div`
+    margin-bottom: 2rem;
+`;

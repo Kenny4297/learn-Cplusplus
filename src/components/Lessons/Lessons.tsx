@@ -84,7 +84,7 @@ const Lessons = () => {
                             <button
                                 onClick={() => navigate(`/quiz/${lessonNumber}`)}
                             >
-                                Take the Quiz!
+                                Quiz
                             </button>
                         )
                     )}
@@ -102,6 +102,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-width: 80%; 
 `;
 
 const Title = styled.div`
@@ -121,4 +122,7 @@ const ButtonWrapper = styled.div`
     margin-left: 1rem;
     margin-right: 1rem;
     width: 1.25rem;
+    button {
+        color: var(--gray);
+    }
 `;

@@ -20,15 +20,19 @@ export default LessonTemplate;
 const Container = styled.div`
     border: 2px solid purple;
     margin: 0 auto;
-    height: 90vh;
     width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: var(--lightBackground);
+    height: 100%;
 `;
 
 const BackButton = styled.div`
     margin-top: 2rem;
+    button {
+      color: white;
+    }
 `;
 

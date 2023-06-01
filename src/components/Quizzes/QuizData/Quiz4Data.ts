@@ -36,7 +36,7 @@ export const Quiz4Data = [
         QuestionNumber: 3,
         QuizTitle: "std::getline()",
 
-        question: "Why do we use std::getline() in our Mad Libs program?",
+        question: "When would we use std::getline()?",
 
         answer1: "To declare variables.",
         answer2: "To display output.",
@@ -50,7 +50,7 @@ export const Quiz4Data = [
         QuestionNumber: 4,
         QuizTitle: "std::string",
 
-        question: "What is the purpose of std::string in C++?",
+        question: "What is the purpose of std::string?",
 
         answer1: "To store and manipulate sequences of characters.",
         answer2: "To capture user input.",
@@ -94,7 +94,7 @@ export const Quiz4Data = [
         QuizTitle: "\n",
        
 
-        question: "What is the role of \n in our output strings?",
+        question: "What is the role of '\\n' in our output strings?",
 
         answer1: "It indicates the end of the program.",
         answer2: "It joins strings together.",

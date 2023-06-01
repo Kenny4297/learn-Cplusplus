@@ -9,13 +9,15 @@ interface LessonSlideProps {
     slide: LessonSlideInterface;
 }
 
-// In your LessonsSlider component...
 const LessonsSlider = ({slide}: LessonSlideProps) => {
     const customStyle = {
         backgroundColor: 'black',
         borderRadius: '5px',
-        border: '5px solid blue',
-        width: '21rem',
+        // border: '5px solid blue',
+        width: 'auto',
+        height: 'auto',
+        maxHeight:'20rem',
+        margin: 'auto'
     };
 
     useEffect(() => {
@@ -34,7 +36,7 @@ const LessonsSlider = ({slide}: LessonSlideProps) => {
         };
 
         if (isURL(disc)) {
-            return <ReactPlayer url={disc} playing controls width="100%" height="auto" />;
+            return <ReactPlayer url={disc} playing controls width="100%" height="100%" />;
         } else {
             return (<>
                 <ReactMarkdown linkTarget="_blank">{disc}</ReactMarkdown>
@@ -44,22 +46,26 @@ const LessonsSlider = ({slide}: LessonSlideProps) => {
 
     return (
         <Container>
-            <p>testing lessonsSlider</p>
             <Title>
                 <h1>{SlideTitle}</h1>
             </Title>
-
-            <Desc >
-                {renderContent()}
-            </Desc>
+            
             {img && <img src={img} alt={SlideTitle} />}
-            <p>{SlideNumber}</p>
-            { code && 
-            <Code>
-                <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
-                    {code}
-                </SyntaxHighlighter>
-            </Code>}
+            { code ? (
+                <div style={{display: 'flex', border: '3px solid purple', height:'20rem'}}>
+                    <DescCode >
+                        {renderContent()}
+                    </DescCode>
+                    <Code>
+                        <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
+                            {code}
+                        </SyntaxHighlighter>
+                    </Code>
+                </div>) : (
+                    <DescNoCode>
+                        {renderContent()}
+                    </DescNoCode>
+                )}
         </Container>
     );
 };
@@ -68,21 +74,48 @@ export default LessonsSlider;
 
 const Container = styled.div`
     border: 2px solid blue;
-    width:80%;
-    height: 100%;
     font-size: .5rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
+    color: white;
+    /* height: 200vh; */
 `;
 
 const Title = styled.div`
     border: 2px solid green;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 `;
 
-const Desc = styled.div``;
+const DescCode = styled.div`
+    width: 50%;
+    padding: 2rem;
+    text-align: center;
+    line-height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items:center;
 
-const Code = styled.div``;
+`
+
+const DescNoCode = styled.div`
+    border: 2px solid blue;
+    text-align: center;
+    width: 80%;
+    height: 75%;
+    padding: 2rem;
+    box-sizing: border-box;
+    line-height: 1.6rem;
+
+    /* padding-bottom: 4rem; */
+    
+`;
+
+const Code = styled.div`
+    border: 2px solid green;
+    margin: 0 auto;
+    display: flex;
+`;

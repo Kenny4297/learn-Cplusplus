@@ -17,16 +17,30 @@ const QuizTemplate = () => {
 export default QuizTemplate;
 
 const Container = styled.div`
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     margin: 0 auto;
-    height: 90vh;
+    height: 95vh;
     width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: var(--lightBackground);
+    /* height: 100%; */
+
 `;
 
 const BackButton = styled.div`
     margin-top: 2rem;
+    margin-bottom: 3rem;
+    button {
+      color: white;
+      background-color: var(--purple);
+      padding: .2rem;
+      border-radius: 2px;
+      border: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
 `;

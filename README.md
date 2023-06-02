@@ -1,6 +1,6 @@
 # Weather Wizard
 
-(Screen shot comming soon!)
+(Screen shot coming soon!)
 ## Table of Contents
 - [License](#license)
 - [Project Overview](#project-overview)

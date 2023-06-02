@@ -23,7 +23,7 @@ const LessonsSlider = ({slide}: LessonSlideProps) => {
     useEffect(() => {
         console.log("Testing Lesson Slider?")
     }, [])
-    const { SlideNumber, SlideTitle, disc, img, code } = slide;
+    const { SlideTitle, disc, img, code } = slide;
 
     const renderContent = () => {
         const isURL = (string: string) => {

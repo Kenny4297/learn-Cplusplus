@@ -1,6 +1,6 @@
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { UserContext } from '../App';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import styled from 'styled-components';
 
     interface QuizParams {
@@ -50,6 +50,7 @@ const ScoresTemplate = () => {
                 return updatedUserData;
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [totalScore, quizIndex]);
 
     return (

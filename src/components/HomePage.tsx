@@ -11,7 +11,7 @@ const HomePage = () => {
     const { userData, setUserData } = useContext(UserContext);
     const { username } = userData;
     const navigate = useNavigate();
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
     const [formData, setFormData] = useState<{username: string}>({
         username: ''
     })
@@ -21,10 +21,7 @@ const HomePage = () => {
         if (storedUser) {
             const parsedUser = JSON.parse(storedUser); // Parse the storedUser string into an object
             setUserData(parsedUser); // Set the entire userData state with the parsedUser object
-            setLoading(false);
-        } else {
-            setLoading(false);
-        }
+        } 
     }, [setUserData]);
 
     const handleSubmit = (event: FormEvent): void => {

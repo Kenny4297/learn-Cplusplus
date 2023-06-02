@@ -1,7 +1,7 @@
 import "./index.css";
 import HomePage from './components/HomePage';
 import { createContext, Dispatch, SetStateAction, useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LessonTemplate, QuizTemplate, ScoresTemplate } from "./components/Lessons";
 import ChallengeLoader from "./components/Challenges/ChallengeLoader"
 import SiteTutorial from "./components/Tutorials/SiteTutorial";

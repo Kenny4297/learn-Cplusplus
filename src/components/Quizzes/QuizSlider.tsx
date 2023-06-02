@@ -10,7 +10,7 @@ interface QuizSlideProps {
 const QuizSlider = forwardRef<{}, QuizSlideProps>((props, ref) => {
     const { slide, onCorrectAnswer } = props;
 
-    const { QuestionNumber, QuizTitle, question, answer1, answer2, answer3, answer4, correct, img } = slide;
+    const { question, answer1, answer2, answer3, answer4, correct } = slide;
 
     const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
     const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
@@ -89,9 +89,4 @@ const Question = styled.h2`
     color: var(--gray);
 `;
 
-const Answers = styled.div`
-    display: flex;
-    flex-direction: column;
-
-`
 

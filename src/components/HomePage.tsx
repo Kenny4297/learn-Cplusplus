@@ -2,33 +2,33 @@ import { useContext, useEffect, useState, FormEvent, ChangeEvent } from 'react';
 import { UserContext } from '../App';
 import { useNavigate } from 'react-router-dom';
 import styled, {keyframes} from 'styled-components'
+import professor from '../components/Assets/Images/icons8-teacher-100.png'
 
 type IndividualLessonSectionProps  = {
-    delay: string; // this is optional
+    delay: string; 
 }
 
 const HomePage = () => {
     const { userData, setUserData } = useContext(UserContext);
     const { username } = userData;
     const navigate = useNavigate();
-    // const [loading, setLoading] = useState(true);
     const [formData, setFormData] = useState<{username: string}>({
         username: ''
     })
 
     useEffect(() => {
-        const storedUser = localStorage.getItem("user"); // Change "username" to "user"
+        const storedUser = localStorage.getItem("user"); 
         if (storedUser) {
-            const parsedUser = JSON.parse(storedUser); // Parse the storedUser string into an object
-            setUserData(parsedUser); // Set the entire userData state with the parsedUser object
+            const parsedUser = JSON.parse(storedUser); 
+            setUserData(parsedUser); 
         } 
     }, [setUserData]);
 
     const handleSubmit = (event: FormEvent): void => {
         event.preventDefault();
 
-        const updatedUserData = { ...userData, username: formData.username }; // Create a new object with the updated username
-        setUserData(updatedUserData); // Update userData state
+        const updatedUserData = { ...userData, username: formData.username }; 
+        setUserData(updatedUserData);
     }
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
@@ -44,20 +44,27 @@ const HomePage = () => {
     return (
         <>
             { !userData.username ? (
-                <Message>
-                    <P1>Hi there!</P1>
-                    <P2>Welcome to "Learn C++", an interactive learning platform to teach you the basics of C++!</P2>
-                    <P3>Before we get started, what's your name?</P3>
-                    <Form onSubmit={handleSubmit}>
-                        <Input
-                            type="text"
-                            id="username"
-                            name="username"
-                            value={formData.username}
-                            onChange={handleInputChange}
-                        />
-                    </Form>
-                </Message>
+                <MessageContainer>
+                    <TextSection>
+                        <H1><span><img src={professor} style={{width: '5rem'}} alt="professor" /></span>Hi there!</H1>
+                        <P1>Welcome to "Learn C++", an interactive learning platform to teach you the basics of C++!</P1>
+                        <P2>Before we get started, what's your name?</P2>
+                        <Form onSubmit={handleSubmit}>
+                            <Input
+                                type="text"
+                                id="username"
+                                name="username"
+                                value={formData.username}
+                                onChange={handleInputChange}
+                            />
+                            <button type="submit">Start</button>
+                        </Form>
+                    </TextSection>
+
+                    <ImageSection>
+                        
+                    </ImageSection>
+                </MessageContainer>
 
             ) : (
                 <>
@@ -188,6 +195,19 @@ const fadeIn = keyframes`
   }
 `;
 
+const TextSection = styled.div`
+    /* border: 2px solid blue; */
+`;
+
+const ImageSection = styled.div`
+    margin: 0 auto;
+    /* border: 2px solid red; */
+    img {
+        position: relative;
+        top: 5rem;
+    }
+`;
+
 const Test = styled.div``;
 
 const TutorialsButton = styled.button`
@@ -257,7 +277,6 @@ const ButtonSection = styled.div`
     width: 12.5rem;
     display: flex;
     justify-content: space-evenly;
-    /* border: 3px solid green; */
     p {
         color: var(--gray)
     }
@@ -272,17 +291,18 @@ const ButtonSection = styled.div`
     }
 `;
 
-const Message = styled.div`
+const MessageContainer = styled.div`
     background-color: black;
-    height: 100vh;
-    color: var(--blue);
+    height: 95vh;
+    display: flex;
+    padding-left: 7.5rem;
+    width: 90%;
 `;
 
 const Container = styled.div`
     background-color: var(--lightBackground);
     display: flex;
     flex-direction: column;
-    /* border: 2px solid green; */
     width: 80%;
     height: 100vh;
     margin: 0 auto;
@@ -292,45 +312,63 @@ const Container = styled.div`
 `;
 
 
-
-// Use the animation for your paragraphs
-const P1 = styled.p`
+const H1 = styled.h1`
   font-size: 3em;
   font-weight: bold;
-  padding-left: 10rem;
+  /* padding-left: 10rem; */
   padding-top: 2rem;
   padding-bottom: 2rem;
   opacity: 0;
   color: var(--purple);
-  animation: 2s ${fadeInFromLeft} ease-out forwards;
+  animation: 1s ${fadeInFromLeft} ease-out forwards;
 `;
 
-const P2 = styled.p`
-  font-size: 3em;
-  padding-left: 10rem;
+const P1 = styled.p`
+  font-size: 2em;
+  /* padding-left: 10rem; */
   padding-bottom: 2rem;
   opacity: 0;
   color: var(--blue);
-  animation: 2s ${fadeInFromLeft} ease-out forwards;
-  animation-delay: 1s;  // Delay the animation
+  animation: 1s ${fadeInFromLeft} ease-out forwards;
+  animation-delay: .25s;
 `;
 
-const P3 = styled.p`
-  font-size: 3em;
-  padding-left: 10rem;
+const P2 = styled.p`
+  font-size: 2em;
+  /* padding-left: 10rem; */
   opacity: 0;
   color: var(--purple);
-  animation: 2s ${fadeInFromLeft} ease-out forwards;
-  animation-delay: 2s;  // Delay the animation
+  animation: 1s ${fadeInFromLeft} ease-out forwards;
+  animation-delay: .5s; 
 `;
 
 const Form = styled.form`
     font-size: 3em;
-    padding-left: 10rem;
+    /* padding-left: 10rem; */
     padding-bottom: 2rem;
     opacity: 0;
-    animation: 2s ${fadeInFromLeft} ease-out forwards;
-    animation-delay: 3s;  // Delay the animation
+    animation: 1s ${fadeInFromLeft} ease-out forwards;
+    animation-delay: .75s; 
+    /* border: 2px solid red; */
+
+    button {
+        /* height: 3rem; */
+        background-color: var(--blue);
+        border-radius: 4px;
+        color: var(--teal);
+        font-size: 3rem;
+        /* height: 3rem; */
+        /* padding: .5rem; */
+        padding: 0rem 1rem;
+        margin-left:1rem;
+        border: none;
+        &:hover {
+            cursor: pointer;
+            background-color: var(--teal);
+            color: var(--blue);
+            border: 1px solid white;
+        }
+    }
 `;
 
 const Input = styled.input`

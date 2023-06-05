@@ -255,7 +255,7 @@ const LessonSection = styled.div`
 `;
 
 const IndividualLessonSection = styled.div<IndividualLessonSectionProps>`
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid var(--blue);
     width: 80%;
     display: flex;
     justify-content: space-between;

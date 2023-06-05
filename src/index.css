@@ -32,7 +32,7 @@ code {
 :root {
   --blue: #009CDE;
   --orange: #FF7F0D;
-  --purple: #774EA7;
+  --purple: #9574BE;
   --gray: #D3D3D3;
   --teal: #080803;
   --lightBackground: #1A1A13;
@@ -41,6 +41,11 @@ code {
 .wrapper {
   height: 100vh;
   background-color: var(--teal);
+}
+
+.style-html {
+  color: var(--blue);
+  font-weight: bold;
 }
 
 

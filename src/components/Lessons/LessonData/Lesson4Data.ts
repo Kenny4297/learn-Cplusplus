@@ -47,7 +47,7 @@ int main() {
     {
         SlideNumber: 2,
         SlideTitle: `New lines: "\\n"`,
-        disc: `The **\\n** is a special character in C++ and many other programming languages, known as an escape sequence. It stands for "newline" and is used to introduce a new line in the output of a program. When the compiler encounters **\\n** within a string of text, it understands this as an instruction to move the cursor to the next line. This is particularly useful when formatting the output of your program, allowing you to organize information in a more readable or structured way. For instance, if you were printing a list of items, you could use **\\n** after each item to ensure they each appear on a separate line in the console. You can use two of them in a row to add an empty line as well!`,
+        disc: `The **\\n** is a special character in C++ and many other programming languages, known as an escape sequence. It stands for "newline" and is used to introduce a new line in the output of a program. When the compiler encounters **\\n** within a string of text, it understands this as an instruction to move the cursor to the next line. This is particularly useful when formatting the output of your program, allowing you to organize information in a more readable or structured way. For instance, if you were printing a list of items, you could use <span style='color: red'>colored</span> **\\n** after each item to ensure they each appear on a separate line in the console. You can use two of them in a row to add an empty line as well!`,
         code: 
 `std::cout << "Hello\\n\\nWorld!";
 /*This would output the following:

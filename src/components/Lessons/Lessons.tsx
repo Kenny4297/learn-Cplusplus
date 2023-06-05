@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import LessonsSlider from "./LessonsSlider";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styled from "styled-components";
 import { LessonSlideInterface } from "./LessonData/Lesson1Data";
 import { useParams, useNavigate } from "react-router-dom";
+import '../../index.css'
 
 type LessonParams = {
     lessonNumber: string;
@@ -54,24 +54,22 @@ const Lessons = () => {
 
     return (
         <Container id="lessons">
-            <Title>
-                <h1 className="blue" aria-label="Lessons">
+            <Title className="blue" aria-label="Lessons">
                     {lessonTitle}
-                </h1>
             </Title>
             <LessonsSlider slide={lessonData[currentSlide]} />
             <Buttons>
                 <ButtonWrapper>
                     {currentSlide !== 0 && (
                         <button onClick={prevSlide} aria-label="Previous slide">
-                            <IoIosArrowBack />
+                            Back
                         </button>
                     )}
                 </ButtonWrapper>
                 <ButtonWrapper>
                     {currentSlide !== lessonData.length - 1 ? (
                         <button onClick={nextSlide} aria-label="Next slide">
-                            <IoIosArrowForward />
+                            Next
                         </button>
                     ) : (
                         lessonNumber && noQuizLessons.includes(lessonNumber) ? (
@@ -98,31 +96,50 @@ export default Lessons;
 
 
 const Container = styled.div`
-    border: 2px solid green;
+    /* border: 2px solid green; */
     display: flex;
     flex-direction: column;
     height: 100%;
     min-width: 80%; 
+    color: var(--gray);
 `;
 
-const Title = styled.div`
+const Title = styled.h1`
     text-align: center;
+    
 `;
 
 const Buttons = styled.div`
     display: flex;
     justify-content: center;
-    border: 2px solid blue;
+    justify-content: space-between;
+
+    /* border: 2px solid purple; */
+    width: 15rem;
+    height: auto;
     margin: 0 auto;
+    margin-top: 1rem;
 `;
 
 const ButtonWrapper = styled.div`
-    display: inline-block;
-    border: 2px solid green;
+    display: inline-flex;
+    /* border: 2px solid green; */
     margin-left: 1rem;
     margin-right: 1rem;
-    width: 1.25rem;
+    width: 80%;
     button {
         color: var(--gray);
+        height:2rem;
+        width:100%;
+        background-color: var(--blue);
+        padding:.2rem .5rem;
+        border-radius: 2px;
+        border: none;
+        &:hover {
+            color: var(--purple);
+            background-color: var(--teal);
+            outline: 2px solid var(--purple);
+            cursor: pointer;
+        }
     }
 `;

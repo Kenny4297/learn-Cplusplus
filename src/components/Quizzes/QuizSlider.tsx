@@ -73,7 +73,7 @@ const AnswerButton = styled.button`
 const Container = styled.div`
     /* border: 2px solid blue; */
     width:80%;
-    height: 100%;
+    height: auto;
     font-size: .5rem;
     margin: 0 auto;
     display: flex;

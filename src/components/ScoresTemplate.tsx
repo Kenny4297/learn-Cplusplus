@@ -55,13 +55,15 @@ const ScoresTemplate = () => {
 
     return (
         <Container>
-            <p>Good work!</p>
+            <h2>Well Done!</h2>
             <p>Your score was {totalScore} / {quizNumber ? getQuizScore(quizNumber) : "N/A"}!</p>
-            <button onClick={() => navigate(`/quiz/${quizNumber}`)}>Retake quiz</button>
-            <button onClick={() => navigate(`/lesson/${quizNumber}`)}>Study lesson</button>
-            { quizNumber && quizWithChallenges.includes(quizNumber) &&
-            <button onClick={() => navigate(`/challenge/${quizNumber}`)}>Lesson Challenge</button>}
-            <button onClick={() => navigate('/')}>Go to Home Page</button>
+            <ButtonSection>
+                <button onClick={() => navigate(`/quiz/${quizNumber}`)}>Retake quiz</button>
+                <button onClick={() => navigate(`/lesson/${quizNumber}`)}>Study lesson</button>
+                { quizNumber && quizWithChallenges.includes(quizNumber) &&
+                <button onClick={() => navigate(`/challenge/${quizNumber}`)}>Lesson Challenge</button>}
+                <button onClick={() => navigate('/')}>Home</button>
+            </ButtonSection>
         </Container>
     )
 }
@@ -79,11 +81,36 @@ const Container = styled.div`
     background-color: var(--lightBackground);
     height: 95vh;
     margin: 0 auto;
+    h2 {
+        font-size: 2rem;
+        text-decoration: underline;
+        color: var(--purple);
+    }
     p {
         margin-top: 2rem;
         margin-bottom: 2rem;
     }
     button {
         color: var(--gray);
+        height:2.75rem;
+        width:100%;
+        background-color: var(--blue);
+        padding:.2rem .5rem;
+        margin:1rem 1rem;
+        border-radius: 2px;
+        border: none;
+        &:hover {
+            color: var(--purple);
+            background-color: var(--teal);
+            outline: 2px solid var(--purple);
+            cursor: pointer;
+        }
     }
 `;
+
+const ButtonSection = styled.div`
+    display: flex;
+    /* border: 4px solid green; */
+    width: auto;
+`
+

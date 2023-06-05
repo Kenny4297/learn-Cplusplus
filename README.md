@@ -1,4 +1,4 @@
-# Weather Wizard
+# Learn C++
 
 (Screen shot coming soon!)
 ## Table of Contents
@@ -24,7 +24,7 @@ TypeScript:
 TypeScript is a statically-typed superset of JavaScript, developed by Microsoft to catch common errors early in the development process. It allows developers to specify types for variables and function parameters, providing better tooling and documentation. Once TypeScript code is written, it's compiled into JavaScript, enabling it to run in any JavaScript environment.
 
 ## Functionality and Features
-
+I made the decision to use dangerouslySetInnerHTML for this particular project because the data being loaded into the application is static and fully under my control, which eliminates the risk of XSS attacks. However, I'm fully aware of the security implications and in a production application where user-generated or external data is being handled, I would certainly use a different approach to mitigate security risks.
 
 ## Deployment
 

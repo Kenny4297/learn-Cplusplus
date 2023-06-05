@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import professor from '../../components/Assets/Images/icons8-teacher-100.png'
 import challenge1 from '../../components/Assets/Images/icons8-challenge1-100.png'
 import ai from '../../components/Assets/Images/icons8-ai-100.png'
 import question from '../../components/Assets/Images/icons8-question-mark-100.png'

@@ -27,6 +27,8 @@ const SiteTutorial = () => {
 
             <P>
                 <p>Now, for those who crave an extra level of engagement and want to test their newly acquired skills, we have challenges that are sure to pique your interest! These challenges offer hands-on experience in problem-solving and bring you face-to-face with real-life scenarios where you can apply your learning. While you're free to explore the platform in any order, we recommend completing the lessons, acing the quizzes with flying colors (aim for close to 100%!), and then taking on the challenges. This learning pathway will ensure a comprehensive grasp of the basics of C++.</p>
+
+                
                 <ImageContainer >
                     <img src={code} alt="professor" />
                 </ImageContainer>

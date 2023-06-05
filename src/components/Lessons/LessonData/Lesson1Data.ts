@@ -6,7 +6,7 @@ export interface LessonSlideInterface {
     img?: string; // '?' indicates that img is optional
 }
 
-export const Lesson1DataTitle = "Introduction To C++";
+export const Lesson1DataTitle = "Lesson 1: Introduction To C++";
 
 export const Lesson1Data = [
     {

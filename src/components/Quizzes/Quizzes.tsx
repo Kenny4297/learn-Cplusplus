@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import QuizSlider from "./QuizSlider";
-import { IoIosArrowForward } from "react-icons/io";
 import styled from "styled-components";
 import { QuizSlideInterface } from "./QuizData/Quiz1Data";
 
@@ -92,7 +91,7 @@ const Quizzes = () => {
                 <ButtonWrapper>
                     {currentSlide !== quizData.length - 1 ? (
                         <button onClick={nextSlide} aria-label="Next slide">
-                            <IoIosArrowForward />
+                            Next
                         </button>
                     ) : (
                         <button onClick={handleSubmit}>Submit!</button>
@@ -125,7 +124,7 @@ const Title = styled.div`
 const Buttons = styled.div`
     display: flex;
     justify-content: center;
-    /* border: 2px solid blue; */
+    border: 2px solid blue;
     margin: 0 auto;
     button {
         background-color: var(--blue);
@@ -137,14 +136,23 @@ const Buttons = styled.div`
 
 const ButtonWrapper = styled.div`
     display: inline-block;
-    /* border: 2px solid green; */
+    border: 2px solid green;
     margin-left: 1rem;
     margin-right: 1rem;
-    width: 1.25rem;
+    width: auto;
     button {
-        color: white;
+        color: var(--gray);
+        height:2rem;
+        width:100%;
+        background-color: var(--blue);
+        padding:.2rem .5rem;
+        border-radius: 2px;
+        border: none;
         &:hover {
-        cursor: pointer;
-      }
+            color: var(--purple);
+            background-color: var(--teal);
+            outline: 2px solid var(--purple);
+            cursor: pointer;
+        }
     }
 `;

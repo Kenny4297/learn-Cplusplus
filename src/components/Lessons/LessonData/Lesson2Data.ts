@@ -1,4 +1,4 @@
-export const Lesson2DataTitle = "Coding on your PC";
+export const Lesson2DataTitle = "Lesson 2: Coding on your PC";
 
 export const Lesson2Data = [
     {

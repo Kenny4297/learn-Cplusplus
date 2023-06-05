@@ -62,7 +62,7 @@ const QuizSlider = forwardRef<{}, QuizSlideProps>((props, ref) => {
 export default QuizSlider;
 
 const AnswerButton = styled.button`
-    border: 2px solid green;
+    border: 2px solid var(--purple);
     margin-bottom: .5rem;
     border-radius: .2rem;
     padding: .25rem;
@@ -86,7 +86,7 @@ const Question = styled.h2`
     margin-bottom: 1rem;
     font-size: 1.5rem;
     margin-top: 5rem;
-    color: var(--gray);
+    color: var(--blue);
 `;
 
 

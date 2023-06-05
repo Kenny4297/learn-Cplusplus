@@ -124,7 +124,7 @@ const Title = styled.div`
 const Buttons = styled.div`
     display: flex;
     justify-content: center;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     margin: 0 auto;
     button {
         background-color: var(--blue);
@@ -136,7 +136,7 @@ const Buttons = styled.div`
 
 const ButtonWrapper = styled.div`
     display: inline-block;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     margin-left: 1rem;
     margin-right: 1rem;
     width: auto;

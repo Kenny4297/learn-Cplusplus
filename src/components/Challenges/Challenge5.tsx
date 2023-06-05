@@ -11,9 +11,9 @@ const Challenge5Component = () => {
     const customStyle: CSSProperties = {
         backgroundColor: 'black',
         borderRadius: '5px',
+        margin: '2rem 2rem',
+        width: '80%',
         border: '5px solid blue',
-        width: 'auto',
-        marginBottom:'2rem'
     };
 
     return (
@@ -23,14 +23,15 @@ const Challenge5Component = () => {
             </Title>
 
             <Description>
-                    Alright, now let's take it up a notch! Your task is to create a calculator that takes two numbers and an operator (+, -, *, /) and prints out the solution to the screen. Like before I will give you a bit of starter code, but your will have to fill in more than last time! Good luck!
+                    <p>Alright, now let's take it up a notch! Your task is to create a calculator that takes two numbers and an operator (+, -, *, /) and prints out the solution to the screen. Like before I will give you a bit of starter code, but your will have to fill in more than last time! Good luck!</p>
             </Description>
 
             <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
                 {
-`// ADD CODE: We are not working with strings, but we still need to 'include' something here!
+`/* ADD CODE: We are not working with strings,
+ but we still need to 'include' something here! */
 
-// Initiate the function that contains the application
+// ADD CODE: Initiate the function that contains the application
     int num1, num2;
     char operation;
 
@@ -40,7 +41,8 @@ const Challenge5Component = () => {
     std::cout << "Enter an operator (+, -, *, /): ";
     // ADD CODE: save the operation to the variable 'operation
 
-    //ADD CODE: Get a second number from the user and capture it as well. HINT: This will be two lines of code!
+    /* ADD CODE: Get a second number from the user and capture it as well. 
+    HINT: This will be two lines of code! */
 
     if (operation == '+') {
         std::cout << "The result is: " << num1 + num2 << std::endl;
@@ -52,7 +54,8 @@ const Challenge5Component = () => {
         // ADD CODE: add a conditional check to see if num1 != 0
             std::cout << "The result is: " << num1 / num2 << std::endl;
         } else {
-            ADD CODE: Print a message to the user saying that division by 0 is not allowed
+            /* ADD CODE: Print a message to the user stating
+             that division by 0 is not allowed */
         }
     } else {
         std::cout << "Error! Invalid operator." << std::endl;
@@ -64,13 +67,10 @@ const Challenge5Component = () => {
             </SyntaxHighlighter>
 
             <Description>
-                I hope this project was challenging, but not impossible! Syntax is huge in C++, and that will come time time! 
-
+                <p>I hope this project was challenging, but not impossible! Syntax is huge in C++, and that will come with time!</p>
             </Description>
 
-            <ExtraCredit>
-                Extra Credit: Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible!
-            </ExtraCredit>
+
 
             <button onClick={() => setShowSolution(!showSolution)}>
                 {showSolution ? 'Hide Solution' : 'Show Solution'}
@@ -79,45 +79,52 @@ const Challenge5Component = () => {
             {showSolution && 
                     <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
                         {
-    `#include <iostream>
-    
-    int main() {
-        int num1, num2;
-        char operation;
+`#include <iostream>
 
-        std::cout << "Enter first number: ";
-        // ADD CODE: Finish capturing the first number
+int main() {
+    int num1, num2;
+    char operation;
 
-        std::cout << "Enter an operator (+, -, *, /): ";
-        // ADD CODE: save the operation to the variable 'operation
+    std::cout << "Enter first number: ";
+    std::cin >> num1;
 
-        //ADD CODE: Get a second number from the user and capture it as well. HINT: This will be two lines of code!
+    std::cout << "Enter an operator (+, -, *, /): ";
+    std::cin >> operation;
 
-        if (operation == '+') {
-            std::cout << "The result is: " << num1 + num2 << std::endl;
-        } else if (operation == '-') {
-            // ADD CODE: If the operation is '-', but tract the two numbers
-        } else if (operation == '*') {
-            // ADD CODE: Add an 'else if' condition that checks if the operation is a '*'
-            std::cout << "The result is: " << num1 * num2 << std::endl;
-        } else if (operation == '/') {
-            // ADD CODE: add a conditional check to see if num2 != 0
-                std::cout << "The result is: " << num1 / num2 << std::endl;
-            // ADD CODE: Print a message to the user saying that division by 0 is not allowed
+    std::cout << "Enter second number: ";
+    std::cin >> num2;
+
+    if (operation == '+') {
+        std::cout << "The result is: " << num1 + num2 << std::endl;
+    } else if (operation == '-') {
+        std::cout << "The result is: " << num1 - num2 << std::endl;
+    } else if (operation == '*') {
+        std::cout << "The result is: " << num1 * num2 << std::endl;
+    } else if (operation == '/') {
+        if(num2 != 0){
+            std::cout << "The result is: " << num1 / num2 << std::endl;
         } else {
-            std::cout << "Error! Invalid operator." << std::endl;
+            std::cout << "Error! Division by zero is not allowed." << std::endl;
         }
-
-        // ADD CODE: Can you remember what we need to add at the end of a function?
+    } else {
+        std::cout << "Error! Invalid operator." << std::endl;
     }
+
+    return 0;
+}
 `}
                     </SyntaxHighlighter>
             }
 
-            <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', border: '2px solid green', marginBottom:'4rem'}}>
+            <ExtraCredit>
+                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold'}}>Extra Credit</p>
+                <p> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
+            </ExtraCredit>
+
+            <ButtonContainer>
                 <button onClick={() => navigate(`/lesson/5`)}>Review lesson</button>
-                <button onClick={() => navigate('/')}>Go to Home Page</button>
-            </div>
+                <button onClick={() => navigate('/')}>Home</button>
+            </ButtonContainer>
         </Container>
     );
 };
@@ -130,19 +137,50 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    width: 80%
-
+    width: 80%;
+    /* height: 95vh; */
+    color: var(--gray);
+    background-color: var(--lightBackground);
+    p {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+    button {
+        color: var(--gray);
+        height:2.75rem;
+        width: auto;
+        background-color: var(--blue);
+        padding:.2rem .5rem;
+        margin:1rem 1rem;
+        border-radius: 2px;
+        border: none;
+        &:hover {
+            color: var(--purple);
+            background-color: var(--teal);
+            outline: 2px solid var(--purple);
+            cursor: pointer;
+        }
+    }
 `;
 
+const ButtonContainer = styled.div`
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+`
+
 const Title = styled.h1`
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
+    color: var(--blue);
 `;
 
 const Description = styled.div`
     margin-bottom: 2rem;
     text-align: center;
+
 `;
 
 const ExtraCredit = styled.div`

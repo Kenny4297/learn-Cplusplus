@@ -40,7 +40,7 @@ const Challenge2Component = () => {
 
             <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', border: '2px solid green', marginBottom:'4rem'}}>
                 <button onClick={() => navigate(`/lesson/7`)}>Review lesson</button>
-                <button onClick={() => navigate('/')}>Go to Home Page</button>
+                <button onClick={() => navigate('/')}>Home</button>
             </div>
         </Container>
     );

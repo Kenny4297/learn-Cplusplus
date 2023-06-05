@@ -23,7 +23,7 @@ const Challenge4Component = () => {
             </Title>
 
             <Description>
-                    Let's build our very own mad libs project! Since this is your first complex project, I will be giving you some starter code, and you will add in the missing sections as shown in the code below. Copy and paste this code into VSCode, and fill in the missing lines!
+                    <p>Let's build our very own mad libs project! Since this is your first complex project, I will be giving you some starter code, and you will add in the missing sections as shown in the code below. Copy and paste this code into VSCode, and fill in the missing lines!</p>
             </Description>
 
             <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
@@ -64,11 +64,12 @@ int main() {
             </SyntaxHighlighter>
 
             <Description>
-                Try running the program in your terminal! Good luck! Remember to troubleshoot your issues with Google or AI! Only check the solution when you have figured it out, or if AI or Google were not able to help!
+                <p>Try running the program in your terminal! Good luck! Remember to troubleshoot your issues with Google or AI! Only check the solution when you have figured it out, or if AI or Google were not able to help!</p>
             </Description>
 
             <ExtraCredit>
-                Extra Credit: Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! 
+                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold'}}>Extra Credit</p>
+                <p> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
             </ExtraCredit>
 
             <button onClick={() => setShowSolution(!showSolution)}>
@@ -113,10 +114,10 @@ int main() {
 }`}
                     </SyntaxHighlighter>
             }
-            <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', border: '2px solid green', marginBottom:'4rem'}}>
+            <ButtonContainer>
                 <button onClick={() => navigate(`/lesson/4`)}>Review lesson</button>
-                <button onClick={() => navigate('/')}>Go to Home Page</button>
-            </div>
+                <button onClick={() => navigate('/')}>Home</button>
+            </ButtonContainer>
         </Container>
     );
 };
@@ -129,19 +130,50 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    width: 80%
-
+    width: 80%;
+    /* height: 95vh; */
+    color: var(--gray);
+    background-color: var(--lightBackground);
+    p {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+    button {
+        color: var(--gray);
+        height:2.75rem;
+        width: auto;
+        background-color: var(--blue);
+        padding:.2rem .5rem;
+        margin:1rem 1rem;
+        border-radius: 2px;
+        border: none;
+        &:hover {
+            color: var(--purple);
+            background-color: var(--teal);
+            outline: 2px solid var(--purple);
+            cursor: pointer;
+        }
+    }
 `;
 
+const ButtonContainer = styled.div`
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+`
+
 const Title = styled.h1`
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
+    color: var(--blue);
 `;
 
 const Description = styled.div`
     margin-bottom: 2rem;
     text-align: center;
+
 `;
 
 const ExtraCredit = styled.div`

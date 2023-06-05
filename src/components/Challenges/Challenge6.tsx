@@ -34,35 +34,30 @@ const Challenge6 = () => {
             </Title>
 
             <Description>
-                This will be the most difficult project you have ever completed, since you will need to do something you never had to do before: Think like a programmer! I will be giving you some starter code and some hints, but it will be up to do you put this all together. You may want to go back through the lessons and review some of the syntax and ideas. Here is some code that you may want to use in the project:
+                <p>This will be the most difficult project you have ever completed, since you will need to do something you never had to do before: Think like a programmer! I will be giving you some starter code and some hints, but it will be up to do you put this all together. You may want to go back through the lessons and review some of the syntax and ideas. Here is some code that you may want to use in the project:</p>
 
                 <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle1}>
                     {
-`<ctime>\n
-<cstdlib>\n
-srand(static_cast<unsigned int>(time(0)));\n
+`<ctime>
+<cstdlib>
+srand(static_cast<unsigned int>(time(0)));
 int target = rand() % 10 + 1;
 `}
                 </SyntaxHighlighter>
 
-                Hints:
-                You WILL find yourself struggling using conditionals inside the while loop. Keep in mind that you CAN have a conditional inside of another conditional...
-                First check to see if you have won, THEN execute the correct code if you haven't won the game yet.
-                Don't forget to close your "{}"!
-                Remember: struggling is completely normal in the life of a programmer. Learn to love the struggle!
+                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold'}}>Hints:</p> <br></br>
+                <div style={{textAlign: 'left'}}>
+                    <p>1) You WILL find yourself struggling using conditionals inside the while loop. Keep in mind that you CAN have a conditional inside of another conditional... <br></br> <br></br>
+                    2) First check to see if you have won, THEN execute the correct code if you haven't won the game yet.
+                    Don't forget to close your "{}"! <br></br> <br></br>
 
-                I leave you with nothing else. Try your best, and remember to use Google and AI for assistance!
+                    3) Remember: struggling is completely normal in the life of a programmer. Learn to love the struggle! <br></br> <br></br>
+
+                    4) Knowing what to do and when is the absolute key to programming. You have so many tools at your disposal, but knowing when to use them is what programming is all about. <br></br> <br></br>
+
+                    <span style={{display: 'flex', justifyContent:'center', alignItems:'center', color: 'var(--purple', fontSize:'1.5rem', margin: '0 auto'}}>Remember to use Google and AI for assistance!</span></p>
+                </div>
             </Description>
-
-            <Description>
-                Knowing what to do and when is the absolute key to programming. You have so many tools at your disposal, but knowing when to use them is what programming is all about.
-            </Description>
-
-            <ExtraCredit>
-                Extra Credit: Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible!
-            </ExtraCredit>
-
-            
 
             <button style={{}} onClick={() => setShowSolution(!showSolution)}>
                 {showSolution ? 'Hide Solution' : 'Show Solution'}
@@ -76,9 +71,11 @@ int target = rand() % 10 + 1;
 #include <cstdlib>
 
 int main() {
-    srand(static_cast<unsigned int>(time(0)));  // Seed random number generator.
+    srand(static_cast<unsigned int>(time(0)));  
+        // Seed random number generator.
 
-    int target = rand() % 10 + 1;  // Generate target number: a random integer between 1 and 10.
+    int target = rand() % 10 + 1;  
+        // Generate target number: a random integer between 1 and 10.
     int guess;  // Variable to hold user's guess.
     int lives = 4;  // User starts with 4 lives.
 
@@ -96,10 +93,12 @@ int main() {
         } else {
             --lives;  // Decrement the user's lives.
             if (lives > 0) {
-                std::cout << "Sorry, " << guess << " was not the right number! Guess again!\\n";
+                std::cout << "Sorry, " << guess << " 
+                    was not the right number! Guess again!\\n";
                 std::cout << "You have " << lives << " lives left.\\n";
             } else {
-                std::cout << "Sorry, " << guess << " was not the right number and you have run out of lives! Game Over!\\n";
+                std::cout << "Sorry, " << guess << " was not the right number 
+                and you have run out of lives! Game Over!\\n";
                 return 0;  // End the game if the user has run out of lives.
             }
         }
@@ -109,10 +108,17 @@ int main() {
 }`}
                     </SyntaxHighlighter>
             }
-            <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', border: '2px solid green', marginBottom:'4rem'}}>
+
+            
+            <ExtraCredit>
+                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold'}}>Extra Credit</p>
+                <p> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
+            </ExtraCredit>
+
+           <ButtonContainer>
                 <button onClick={() => navigate(`/lesson/6`)}>Review lesson</button>
-                <button onClick={() => navigate('/')}>Go to Home Page</button>
-            </div>
+                <button onClick={() => navigate('/')}>Home</button>
+            </ButtonContainer>
         </Container>
     );
 }
@@ -125,19 +131,50 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    width: 80%
-
+    width: 80%;
+    /* height: 95vh; */
+    color: var(--gray);
+    background-color: var(--lightBackground);
+    p {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+    button {
+        color: var(--gray);
+        height:2.75rem;
+        width: auto;
+        background-color: var(--blue);
+        padding:.2rem .5rem;
+        margin:1rem 1rem;
+        border-radius: 2px;
+        border: none;
+        &:hover {
+            color: var(--purple);
+            background-color: var(--teal);
+            outline: 2px solid var(--purple);
+            cursor: pointer;
+        }
+    }
 `;
 
+const ButtonContainer = styled.div`
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+`
+
 const Title = styled.h1`
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
+    color: var(--blue);
 `;
 
 const Description = styled.div`
     margin-bottom: 2rem;
     text-align: center;
+
 `;
 
 const ExtraCredit = styled.div`

@@ -126,6 +126,7 @@ const ButtonWrapper = styled.div`
     /* border: 2px solid green; */
     margin-left: 1rem;
     margin-right: 1rem;
+    margin-bottom: 4rem;
     width: 80%;
     button {
         color: var(--gray);

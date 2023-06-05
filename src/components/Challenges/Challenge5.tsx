@@ -19,7 +19,7 @@ const Challenge5Component = () => {
     return (
         <Container>
             <Title>
-                Build a Calculator
+                Challenge 3: Build a Calculator
             </Title>
 
             <Description>
@@ -117,8 +117,8 @@ int main() {
             }
 
             <ExtraCredit>
-                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold'}}>Extra Credit</p>
-                <p> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
+                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold', marginBottom:'1rem'}}>Extra Credit</p>
+                <p style={{textAlign:'center'}}> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
             </ExtraCredit>
 
             <ButtonContainer>
@@ -142,8 +142,10 @@ const Container = styled.div`
     color: var(--gray);
     background-color: var(--lightBackground);
     p {
-        margin-left: 3rem;
-        margin-right: 3rem;
+        /* margin-left: 3rem;
+        margin-right: 3rem; */
+        width: 90%;
+        margin: 0 auto;
     }
     button {
         color: var(--gray);
@@ -180,10 +182,9 @@ const Title = styled.h1`
 const Description = styled.div`
     margin-bottom: 2rem;
     text-align: center;
-
 `;
 
 const ExtraCredit = styled.div`
-    margin-bottom: 2rem;
+    margin: 2rem 0rem;
 `;
 

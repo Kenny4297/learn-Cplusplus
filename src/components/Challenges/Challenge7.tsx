@@ -11,7 +11,7 @@ const Challenge2Component = () => {
             </Title>
 
             <Description>
-                You finally did it! You have a solid understanding of the fundamentals of C++! Your next steps is to find some projects to complete! Here are a few examples:
+                <p>You finally did it! You have a solid understanding of the fundamentals of C++! Your next steps is to find some projects to complete! Here are a few examples:</p>
             </Description>
 
             <Description2>
@@ -38,10 +38,10 @@ const Challenge2Component = () => {
                 Remember: The goals isn't to just create these projects, it's to understand everything that you write! Happy coding!
             </ExtraCredit>
 
-            <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', border: '2px solid green', marginBottom:'4rem'}}>
+            <ButtonContainer>
                 <button onClick={() => navigate(`/lesson/7`)}>Review lesson</button>
                 <button onClick={() => navigate('/')}>Home</button>
-            </div>
+            </ButtonContainer>
         </Container>
     );
 };
@@ -55,28 +55,61 @@ const Container = styled.div`
     align-items: center;
     margin: 0 auto;
     width: 80%;
-    padding-bottom: 5rem;
-`;
-
-const Title = styled.h1`
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+    /* height: 95vh; */
+    color: var(--gray);
+    background-color: var(--lightBackground);
+    p {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+    button {
+        color: var(--gray);
+        height:2.75rem;
+        width: auto;
+        background-color: var(--blue);
+        padding:.2rem .5rem;
+        margin:1rem 1rem;
+        border-radius: 2px;
+        border: none;
+        &:hover {
+            color: var(--purple);
+            background-color: var(--teal);
+            outline: 2px solid var(--purple);
+            cursor: pointer;
+        }
+    }
 `;
 
 const Span = styled.span`
+    color: var(--blue);
     font-weight: bold;
+`
+
+const ButtonContainer = styled.div`
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+`
+
+const Title = styled.h1`
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    color: var(--blue);
 `;
 
 const Description = styled.div`
     margin-bottom: 2rem;
     text-align: center;
+    width: 90%;
 `;
 
 const Description2 = styled.div`
+    width: 90%;
 `
 
 const ExtraCredit = styled.div`
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 `;
 

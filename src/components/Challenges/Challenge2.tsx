@@ -38,7 +38,7 @@ int main() {
             </Description>
 
             <ExtraCredit>
-                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold'}}>Extra Credit</p>
+                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold', marginBottom:'1rem'}}>Extra Credit</p>
                 <p> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
             </ExtraCredit>
 
@@ -63,8 +63,9 @@ const Container = styled.div`
     color: var(--gray);
     background-color: var(--lightBackground);
     p {
-        margin-left: 3rem;
-        margin-right: 3rem;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
     }
     button {
         color: var(--gray);
@@ -105,5 +106,5 @@ const Description = styled.div`
 `;
 
 const ExtraCredit = styled.div`
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 `;

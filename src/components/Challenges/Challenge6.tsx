@@ -15,6 +15,7 @@ const Challenge6 = () => {
         border: '5px solid blue',
         width: '27.5rem',
         margin: '0 auto',
+        marginTop:'1rem',
         marginBottom:'2rem'
     };
 
@@ -30,7 +31,7 @@ const Challenge6 = () => {
     return (
         <Container>
             <Title>
-                Guessing Game
+                Challenge 4: Guessing Game
             </Title>
 
             <Description>
@@ -46,7 +47,7 @@ int target = rand() % 10 + 1;
                 </SyntaxHighlighter>
 
                 <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold'}}>Hints:</p> <br></br>
-                <div style={{textAlign: 'left'}}>
+                <div style={{width:'75%', display: 'flex', justifyContent:'center', alignItems: 'center', margin: '0 auto'}}>
                     <p>1) You WILL find yourself struggling using conditionals inside the while loop. Keep in mind that you CAN have a conditional inside of another conditional... <br></br> <br></br>
                     2) First check to see if you have won, THEN execute the correct code if you haven't won the game yet.
                     Don't forget to close your "{}"! <br></br> <br></br>
@@ -111,8 +112,8 @@ int main() {
 
             
             <ExtraCredit>
-                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold'}}>Extra Credit</p>
-                <p> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
+                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold', marginBottom:'1rem'}}>Extra Credit</p>
+                <p style={{textAlign:'center'}}> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
             </ExtraCredit>
 
            <ButtonContainer>
@@ -136,8 +137,8 @@ const Container = styled.div`
     color: var(--gray);
     background-color: var(--lightBackground);
     p {
-        margin-left: 3rem;
-        margin-right: 3rem;
+        margin-left: 5rem;
+        margin-right: 5rem;
     }
     button {
         color: var(--gray);
@@ -178,7 +179,7 @@ const Description = styled.div`
 `;
 
 const ExtraCredit = styled.div`
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 `;
 
 

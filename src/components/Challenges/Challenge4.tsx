@@ -19,7 +19,7 @@ const Challenge4Component = () => {
     return (
         <Container>
             <Title>
-                Creating your very own Mad Libs!
+                Challenge 2: Creating your very own Mad Libs!
             </Title>
 
             <Description>
@@ -67,11 +67,6 @@ int main() {
                 <p>Try running the program in your terminal! Good luck! Remember to troubleshoot your issues with Google or AI! Only check the solution when you have figured it out, or if AI or Google were not able to help!</p>
             </Description>
 
-            <ExtraCredit>
-                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold'}}>Extra Credit</p>
-                <p> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
-            </ExtraCredit>
-
             <button onClick={() => setShowSolution(!showSolution)}>
                 {showSolution ? 'Hide Solution' : 'Show Solution'}
             </button>
@@ -114,6 +109,11 @@ int main() {
 }`}
                     </SyntaxHighlighter>
             }
+             <ExtraCredit>
+                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold', marginBottom:'1rem'}}>Extra Credit</p>
+                <p style={{textAlign:'center'}}> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
+            </ExtraCredit>
+
             <ButtonContainer>
                 <button onClick={() => navigate(`/lesson/4`)}>Review lesson</button>
                 <button onClick={() => navigate('/')}>Home</button>
@@ -135,8 +135,8 @@ const Container = styled.div`
     color: var(--gray);
     background-color: var(--lightBackground);
     p {
-        margin-left: 3rem;
-        margin-right: 3rem;
+        width: 90%;
+        margin: 0 auto;
     }
     button {
         color: var(--gray);
@@ -177,5 +177,5 @@ const Description = styled.div`
 `;
 
 const ExtraCredit = styled.div`
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 `;

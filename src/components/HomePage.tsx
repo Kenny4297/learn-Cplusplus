@@ -296,7 +296,14 @@ const MessageContainer = styled.div`
     height: 95vh;
     display: flex;
     padding-left: 7.5rem;
-    width: 90%;
+    padding-right: 7.5rem;
+    /* width: 90%; */
+    @media (max-width: 800px) {
+        font-size: .5rem;
+    }
+    @media (max-width: 560px) {
+        font-size: .4rem;
+    }
 `;
 
 const Container = styled.div`
@@ -331,6 +338,12 @@ const P1 = styled.p`
   color: var(--blue);
   animation: 1s ${fadeInFromLeft} ease-out forwards;
   animation-delay: .25s;
+  @media (max-width: 800px) {
+        font-size: 1.5rem;
+    }
+    @media (max-width: 560px) {
+        font-size: 1rem;
+    }
 `;
 
 const P2 = styled.p`
@@ -340,6 +353,12 @@ const P2 = styled.p`
   color: var(--purple);
   animation: 1s ${fadeInFromLeft} ease-out forwards;
   animation-delay: .5s; 
+  @media (max-width: 800px) {
+        font-size: 1.5rem;
+    }
+    @media (max-width: 560px) {
+        font-size: 1rem;
+    }
 `;
 
 const Form = styled.form`
@@ -350,13 +369,16 @@ const Form = styled.form`
     animation: 1s ${fadeInFromLeft} ease-out forwards;
     animation-delay: .75s; 
     /* border: 2px solid red; */
+    @media (max-width: 800px) {
+        width: 2rem;
+    }
 
     button {
         /* height: 3rem; */
         background-color: var(--blue);
         border-radius: 4px;
         color: var(--teal);
-        font-size: 2.75rem;
+        font-size: 2rem;
         /* height: 3rem; */
         /* padding: .5rem; */
         padding: 0rem 1rem;
@@ -368,13 +390,35 @@ const Form = styled.form`
             color: var(--blue);
             border: 1px solid white;
         }
+        @media (max-width: 800px) {
+            font-size: 1.5rem;
+        }
+        @media (max-width: 560px) {
+            font-size: 1rem;
+        }
     }
 `;
 
 const Input = styled.input`
-    font-size: 1em;
+    font-size: 2rem;
     padding-left: 1rem;
     margin-top: 2rem;
     border-radius: 10px;
     color: white;
+    border: 2px solid blue;
+    @media (max-width: 800px) {
+        width: 30rem;
+    }
+    @media (max-width: 700px) {
+        width: 25rem;
+    }
+    @media (max-width: 600px) {
+        width: 20rem;
+    }
+    @media (max-width: 500px) {
+        width: 15rem;
+    }
+    @media (max-width: 400px) {
+        width: 10rem;
+    }
 `;

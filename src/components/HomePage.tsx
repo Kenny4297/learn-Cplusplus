@@ -57,7 +57,7 @@ const HomePage = () => {
                                 value={formData.username}
                                 onChange={handleInputChange}
                             />
-                            <button type="submit">Start</button>
+                            <button type="submit">Learn!</button>
                         </Form>
                     </TextSection>
 
@@ -356,7 +356,7 @@ const Form = styled.form`
         background-color: var(--blue);
         border-radius: 4px;
         color: var(--teal);
-        font-size: 3rem;
+        font-size: 2.75rem;
         /* height: 3rem; */
         /* padding: .5rem; */
         padding: 0rem 1rem;

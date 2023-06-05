@@ -88,7 +88,7 @@ const ButtonContainer = styled.div`
     width: auto;
     display: flex;
     justify-content: space-between;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     margin-bottom: 4rem;
 `
 

@@ -34,8 +34,10 @@ const SiteTutorial = () => {
                 </ImageContainer>
 
             </P>
-
-            <button onClick={() => {navigate(`/lessonTutorial`)}}>Lesson Tutorial</button>
+            
+            <div style={{display: 'flex', justifyContent:'center', alignItems:'center'}}>
+                <button onClick={() => {navigate(`/lessonTutorial`)}}>Lesson Tutorial</button>
+            </div>
         </Container>
     )
 }
@@ -54,13 +56,20 @@ const Container = styled.div`
         color: var(--gray)
     }
     button {
-        background-color: var(--purple);
-        display: block;
-        border: none;
+        color: var(--gray);
+        height:2.75rem;
+        width: auto;
+        background-color: var(--blue);
+        padding:.2rem .5rem;
+        margin:1rem 1rem 3rem 1rem;
         border-radius: 2px;
-        margin: 0 auto;
-        padding: .3rem;
-        margin-bottom: 5rem;
+        border: none;
+        &:hover {
+            color: var(--purple);
+            background-color: var(--teal);
+            outline: 2px solid var(--purple);
+            cursor: pointer;
+        }
     }
 `;
 

@@ -46,8 +46,10 @@ const ChallengeTutorial = () => {
                 </ImageContainer>
                 <p> So, are you ready to embark on this captivating journey to learn C++, full of lessons, quizzes, and challenges that will sharpen your skills and deepen your understanding? It's time to grab the wheel and navigate through the mesmerizing terrain of programming. Let's dive in, learn, grow, and most importantly, let's have fun while at it! Ready, set, code!</p>
             </P>
-
-            <button onClick={() => {navigate(`/`)}}>Home</button>
+            <div style={{display: 'flex', justifyContent:'center', alignItems:'center'}}>
+                <button onClick={() => {navigate(`/`)}}>Home</button>
+            </div>
+            
         </Container>
     )
 }
@@ -66,13 +68,20 @@ const Container = styled.div`
         color: var(--gray)
     }
     button {
-        background-color: var(--purple);
-        display: block;
-        border: none;
+        color: var(--gray);
+        height:2.75rem;
+        width: auto;
+        background-color: var(--blue);
+        padding:.2rem .5rem;
+        margin:1rem 1rem 3rem 1rem;
         border-radius: 2px;
-        margin: 0 auto;
-        padding: .3rem;
-        margin-bottom: 5rem;
+        border: none;
+        &:hover {
+            color: var(--purple);
+            background-color: var(--teal);
+            outline: 2px solid var(--purple);
+            cursor: pointer;
+        }
     }
 `;
 

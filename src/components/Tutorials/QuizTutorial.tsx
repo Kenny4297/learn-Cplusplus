@@ -39,7 +39,10 @@ const QuizTutorial = () => {
                 <p> One unique feature of our quizzes is that we don't disclose the correct answers for the questions you missed. This might sound tough, but it's a conscious choice designed to encourage independent learning. If you miss a question, make a note of the relevant lesson slide to review. This way, you are not just handed the answer, but you revisit the lesson, fortifying your understanding. So get ready to put on your thinking caps and show us what you've got! We're excited to join you on this path to mastering C++.</p>
             </P>
 
-            <button onClick={() => {navigate(`/challengeTutorial`)}}>Challenge Tutorial</button>
+            <div style={{display: 'flex', justifyContent:'center', alignItems:'center'}}>
+                <button onClick={() => {navigate(`/challengeTutorial`)}}>Challenge Tutorial</button>
+            </div>
+            
         </Container>
         )
 }
@@ -58,13 +61,20 @@ const Container = styled.div`
         color: var(--gray)
     }
     button {
-        background-color: var(--purple);
-        display: block;
-        border: none;
+        color: var(--gray);
+        height:2.75rem;
+        width: auto;
+        background-color: var(--blue);
+        padding:.2rem .5rem;
+        margin:1rem 1rem 3rem 1rem;
         border-radius: 2px;
-        margin: 0 auto;
-        padding: .3rem;
-        margin-bottom: 5rem;
+        border: none;
+        &:hover {
+            color: var(--purple);
+            background-color: var(--teal);
+            outline: 2px solid var(--purple);
+            cursor: pointer;
+        }
     }
 `;
 

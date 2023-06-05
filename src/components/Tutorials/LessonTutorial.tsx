@@ -40,7 +40,10 @@ const LessonTutorial = () => {
             <p> Our platform aims to offer an enriching and immersive learning experience. By the end of your journey with us, you'll not only have a solid grasp of C++, but you'll also have practical experience applying these new skills. You'll be a problem-solver, a creator, and most importantly, a proficient C++ programmer.</p>
             </P>
 
-            <button onClick={() => {navigate(`/quizTutorial`)}}>Quiz Tutorial</button>
+            <div style={{display: 'flex', justifyContent:'center', alignItems:'center'}}>
+                <button onClick={() => {navigate(`/quizTutorial`)}}>Quiz Tutorial</button>
+            </div>
+
         </Container>
     )
 }
@@ -59,13 +62,20 @@ const Container = styled.div`
         color: var(--gray)
     }
     button {
-        background-color: var(--purple);
-        display: block;
-        border: none;
+        color: var(--gray);
+        height:2.75rem;
+        width: auto;
+        background-color: var(--blue);
+        padding:.2rem .5rem;
+        margin:1rem 1rem 3rem 1rem;
         border-radius: 2px;
-        margin: 0 auto;
-        padding: .3rem;
-        margin-bottom: 5rem;
+        border: none;
+        &:hover {
+            color: var(--purple);
+            background-color: var(--teal);
+            outline: 2px solid var(--purple);
+            cursor: pointer;
+        }
     }
 `;
 

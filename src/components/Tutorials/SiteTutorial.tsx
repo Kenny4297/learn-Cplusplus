@@ -19,7 +19,7 @@ const SiteTutorial = () => {
 
             <P> 
                 <ImageContainer >
-                    <img src={challenge} alt="professor" />
+                    <img src={challenge} alt="challenge" />
                 </ImageContainer>
                 <p>The course is thoughtfully divided into lessons, quizzes, and challenges - each component playing a crucial role in your learning journey. The lessons are designed to give you a robust theoretical foundation. They'll guide you through the basics, acquaint you with key C++ concepts, and provide you with ample examples. We recommend starting with these lessons to familiarize yourself with new concepts before diving into practical implementation. Each lesson is followed by a quiz, designed to reinforce and test your understanding. The quizzes help solidify your learning by challenging your recall and application of the lessons. Don't worry if you don't score perfectly on your first try, learning is a process and every attempt brings you closer to mastery.</p>
 
@@ -30,11 +30,10 @@ const SiteTutorial = () => {
 
                 
                 <ImageContainer >
-                    <img src={code} alt="professor" />
+                    <img src={code} alt="code" />
                 </ImageContainer>
-
             </P>
-            
+
             <div style={{display: 'flex', justifyContent:'center', alignItems:'center'}}>
                 <button onClick={() => {navigate(`/lessonTutorial`)}}>Lesson Tutorial</button>
             </div>
@@ -46,7 +45,6 @@ export default SiteTutorial;
 
 const Container = styled.div`
     padding-bottom: 1px;
-    /* height: 110vh; */
     margin-bottom: 10rem;
     h1 {
         text-align: center;
@@ -76,20 +74,25 @@ const Container = styled.div`
 const P = styled.div`
     background-color: var(--lightBackground);
     width: 80%;
-    /* border: 2px solid red; */
     display: flex;
     margin: auto;
     margin-bottom: 3rem;
     p {
         color: white;
         padding: 2rem 2rem;
-        width: 80%;
-        /* border: 2px solid green; */
+        width: 100%;
+        @media (max-width: 650px) {
+            text-align: center;
+            width: 100%
+        }
     }
     img {
-        /* border: 2px solid blue; */
         width: 7.5rem;
         height: 7.5rem;
+        @media (max-width: 650px) {
+            display: none;
+            border: 2px solid green;
+        }
     }
 `;
 
@@ -99,4 +102,8 @@ const ImageContainer = styled.div`
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
+    padding: 1rem;
+    @media (max-width: 650px) {
+        display: none;
+    }
 `

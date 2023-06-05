@@ -14,14 +14,14 @@ const LessonTutorial = () => {
                 <p> We believe in the power of context when it comes to learning new skills, especially with programming languages. Traditional teaching methods often focus on isolated skills without providing a clear picture of where and why to apply them. This can lead to confusion and dwindling interest. But we've flipped the script here. Instead of leaving you to connect the dots, we work backward from a prospective project, learning the requisite skills and techniques needed to bring it to life.</p>
 
                 <ImageContainer >
-                    <img src={onlineLearning} alt="professor" />
+                    <img src={onlineLearning} alt="PC learning" />
                 </ImageContainer>
             </P>
 
 
             <P>
                 <ImageContainer >
-                    <img src={chalkboard} alt="professor" />
+                    <img src={chalkboard} alt="chalkboard" />
                 </ImageContainer>
                 <p> Our lessons are carefully structured to ensure an organic learning experience. Each slide discusses a new line of code from an upcoming project. But rather than just giving you the code, we dig deep into the 'why' and 'how.' We elaborate on why it is being used in that specific context and discuss any essential data associated with it. This approach not only helps you understand the functionality of the code but also enables you to make informed decisions when you eventually start coding your own projects.</p>
             </P>
@@ -35,7 +35,7 @@ const LessonTutorial = () => {
             
             <P>
                 <ImageContainer >
-                    <img src={programmer} style={{height:'80%'}} alt="professor" />
+                    <img src={programmer} style={{height:'80%'}} alt="programmer" />
                 </ImageContainer>
             <p> Our platform aims to offer an enriching and immersive learning experience. By the end of your journey with us, you'll not only have a solid grasp of C++, but you'll also have practical experience applying these new skills. You'll be a problem-solver, a creator, and most importantly, a proficient C++ programmer.</p>
             </P>
@@ -52,7 +52,6 @@ export default LessonTutorial;
 
 const Container = styled.div`
     padding-bottom: 1px;
-    /* height: 110vh; */
     margin-bottom: 10rem;
     h1 {
         text-align: center;
@@ -82,20 +81,24 @@ const Container = styled.div`
 const P = styled.div`
     background-color: var(--lightBackground);
     width: 80%;
-    /* border: 2px solid red; */
     display: flex;
     margin: auto;
     margin-bottom: 3rem;
     p {
         color: white;
         padding: 2rem 2rem;
-        width: 80%;
-        /* border: 2px solid green; */
+        width: auto;
+        @media (max-width: 650px) {
+            text-align: center;
+            width: auto;
+        }
     }
     img {
-        /* border: 2px solid blue; */
         width: 7.5rem;
         height: 7.5rem;
+        @media (max-width: 650px) {
+            display: none;
+        }
     }
 `;
 
@@ -105,4 +108,8 @@ const ImageContainer = styled.div`
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
+    padding: 1rem;
+    @media (max-width: 650px) {
+        display: none;
+    }
 `

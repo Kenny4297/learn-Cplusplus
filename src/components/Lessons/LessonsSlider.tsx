@@ -52,7 +52,7 @@ const LessonsSlider = ({slide}: LessonSlideProps) => {
             
             {img && <img src={img} alt={SlideTitle} />}
             { code ? (
-                <div style={{display: 'flex', backgroundColor: 'var(--lightBackground)', height:'auto'}}>
+                <CodeAndDescription>
                     <DescCode >
                         {renderContent()}
                     </DescCode>
@@ -61,7 +61,7 @@ const LessonsSlider = ({slide}: LessonSlideProps) => {
                             {code}
                         </SyntaxHighlighter>
                     </Code>
-                </div>) : (
+                </CodeAndDescription>) : (
                     <DescNoCode>
                         {renderContent()}
                     </DescNoCode>
@@ -71,6 +71,16 @@ const LessonsSlider = ({slide}: LessonSlideProps) => {
 };
 
 export default LessonsSlider;
+
+const CodeAndDescription = styled.div`
+    display: flex;
+    background-color: var(--lightBackground);
+    height: auto;
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        background-color: var(--teal);
+    }
+`
 
 const Container = styled.div`
     /* border: 2px solid blue; */
@@ -101,6 +111,13 @@ const DescCode = styled.div`
     display: flex;
     justify-content: center;
     align-items:center;
+    background-color: var(--lightBackground);
+    @media (max-width: 1000px) {
+        text-align: center;
+        /* border: 2px solid green; */
+        width: 100%;
+        margin-bottom: 1rem;
+    }
 
 `
 

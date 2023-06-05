@@ -10,7 +10,10 @@ export const Lesson2Data = [
     {
         SlideNumber: 2,
         SlideTitle: "Get Started Coding",
-        disc: `Firstly, an embedded IDE generally runs your code on a remote server, not your own PC. While this makes it platform-independent, it can sometimes lead to differences in the behavior of your code due to variations in the server's configuration. In contrast, when you run code on your own PC, you have full control over the environment and can better understand and debug any issues that may arise. Secondly, setting up your own environment aids in learning about the inner workings of a computer and the compiler, which is a crucial part of the C++ learning journey. By installing a compiler and running your code, you get firsthand experience of how source code is transformed into an executable program. This experience is vital in understanding compilation errors and their resolutions, which is not usually the case with an embedded IDE.`
+        disc: `Firstly, an embedded IDE generally runs your code on a remote server, not your own PC. While this makes it platform-independent, it can sometimes lead to differences in the behavior of your code due to variations in the server's configuration. In contrast, when you run code on your own PC, you have full control over the environment and can better understand and debug any issues that may arise. <br></br>
+        
+        
+        Secondly, setting up your own environment aids in learning about the inner workings of a computer and the compiler, which is a crucial part of the C++ learning journey. By installing a compiler and running your code, you get firsthand experience of how source code is transformed into an executable program. This experience is vital in understanding compilation errors and their resolutions, which is not usually the case with an embedded IDE.`
     },
     {
         SlideNumber: 3,
@@ -20,7 +23,9 @@ export const Lesson2Data = [
     {
         SlideNumber: 4,
         SlideTitle: "Embracing External Resources and the Art of Troubleshooting in Programming",
-        disc: `In your journey to master C++, it's crucial to understand that seeking help from external resources is not only common but also an integral part of the programming process. At times, you may encounter hurdles that may not be immediately solvable with your current knowledge base. Don't be discouraged - even seasoned developers frequently turn to platforms like Stack Overflow, online documentation, or AI-powered assistants for help. These resources offer a vast pool of collective knowledge that can help you debug code, understand complex concepts, and learn best practices. Remember, it's not just about finding solutions to your problems, it's about understanding those solutions, the mistakes that led to the problems, and how to avoid them in the future. Troubleshooting is a fundamental skill in software development. It involves being able to identify the problem, understand it, and come up with an effective solution - often by leveraging resources available to you.`
+        disc: `In your journey to master C++, it's crucial to understand that seeking help from external resources is not only common but also an integral part of the programming process. At times, you may encounter hurdles that may not be immediately solvable with your current knowledge base. Don't be discouraged - even seasoned developers frequently turn to platforms like Stack Overflow, online documentation, or AI-powered assistants for help. <br></br>
+        
+        These resources offer a vast pool of collective knowledge that can help you debug code, understand complex concepts, and learn best practices. Remember, it's not just about finding solutions to your problems, it's about understanding those solutions, the mistakes that led to the problems, and how to avoid them in the future. Troubleshooting is a fundamental skill in software development. It involves being able to identify the problem, understand it, and come up with an effective solution - often by leveraging resources available to you.`
     },
     {
         SlideNumber: 5,

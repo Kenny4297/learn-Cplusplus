@@ -137,9 +137,6 @@ const ButtonWrapper = styled.div`
         border-radius: 2px;
         border: none;
         &:hover {
-            color: var(--purple);
-            background-color: var(--teal);
-            outline: 2px solid var(--purple);
             cursor: pointer;
         }
     }

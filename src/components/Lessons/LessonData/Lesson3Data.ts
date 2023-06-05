@@ -4,7 +4,7 @@ export const Lesson3Data = [
     {
         SlideNumber: 1,
         SlideTitle: "#include <iostream>",
-        disc: `This line is a <span class="style-html">processor directive</span> preprocessor directive, more specifically an include directive in C++. It tells the preprocessor to include the <span class="style-html">iostream</span> standard file. The iostream standard file allows input and output in a C++ program. This means that it helps the program to interact with the user by taking input from the user and outputting results or data to the user.
+        disc: `This line is a <span class="style-html">processor directive</span>, more specifically an include directive in C++. It tells the preprocessor to include the <span class="style-html">iostream</span> standard file. The <span class="style-html">iostream</span> standard file allows input and output in a C++ program. This means that it helps the program to interact with the user by taking input from the user and outputting results or data to the user.
         `,
         code:
 `#include <iostream>
@@ -17,7 +17,7 @@ int main() {
     {
         SlideNumber: 2,
         SlideTitle: "int main() {}",
-        disc: `This line declares the main function. Every C++ program has a main function which is the starting point of program execution. The 'int' before 'main' signifies that this function will return an integer.`,
+        disc: `This line declares the main function. Every C++ program has a main function which is the starting point of program execution. The <span class="style-html">int</span> before <span class="style-html">main</span> signifies that this function will return an integer.`,
         code:
 `#include <iostream>
 
@@ -29,7 +29,11 @@ int main() {
     {
         SlideNumber: 3,
         SlideTitle: "Functions",
-        disc: `A parameter, in the context of functions, is a variable that is used to pass information between functions. When defining a function, we specify its parameters in the function header. This gives the function the information it needs to perform its task. Parameters act as placeholders that get replaced with actual values, called arguments, when the function is called. Calling a function is the process of executing the set of statements defined inside the function. When we call a function, we use the function's name followed by parentheses. If the function requires parameters, we include the arguments (the actual values) within these parentheses. When a function is called, the execution of the program shifts to the body of the called function. The compiler starts executing the codes within the function. Once all the lines of code in the function have run, execution continues from the point where the function was originally called in the program.`,
+        disc: `A parameter, in the context of functions, is a variable that is used to pass information between functions. When defining a function, we specify its parameters in the function header. This gives the function the information it needs to perform its task. <br></br>
+        
+        Parameters act as placeholders that get replaced with actual values, called arguments, when the function is called. Calling a function is the process of executing the set of statements defined inside the function. When we call a function, we use the function's name followed by parentheses. <br></br>
+        
+        If the function requires parameters, we include the arguments (the actual values) within these parentheses. When a function is called, the execution of the program shifts to the body of the called function. The compiler starts executing the codes within the function. Once all the lines of code in the function have run, execution continues from the point where the function was originally called in the program.`,
         code:
 `/* The following function takes in two integers 
 and returns their sum: */
@@ -65,7 +69,7 @@ int main() {
     {
         SlideNumber: 5,
         SlideTitle: "std::cout << 'Hello, World!'",
-        disc: `This line does a few things. Firstly, it uses std::cout which is the standard character output device. It corresponds to the standard output stream in your system (typically, this will be your terminal or screen). The <span class="style-html"><<</span> operator is a stream insertion operator and it inserts what's on its right (in this case, "Hello, World!") into what's on its left (in this case, the standard output stream).`,
+        disc: `This line does a few things. Firstly, it uses <span class="style-html">std::cout</span> which is the standard character output device. It corresponds to the standard output stream in your system (typically, this will be your terminal or screen). The <span class="style-html"><<</span> operator is a stream insertion operator and it inserts what's on its right (in this case, <span class="style-html">"Hello, World!"</span>) into what's on its left (in this case, the standard output stream).`,
         code:
 `#include <iostream>
 
@@ -101,7 +105,9 @@ int main() {
     {
         SlideNumber: 8,
         SlideTitle: "return 0;",
-        disc: `This line is the termination statement of the main function. The 'return' keyword causes the main function to finish. The value that follows return (in this case, 0) is the exit status of the program. In C++, returning 0 from the main function indicates that the program executed successfully. It's a common practice to use return 0 at the end of the main function. Notice how we also add the <span class="style-html">;</span> here again. Just like before It signifies the end of the function. Get into the habit of placing these at the end of pretty much everything. `,
+        disc: `This line is the termination statement of the main function. The <span class="style-html">return</span> keyword causes the main function to finish. The value that follows return (in this case, <span class="style-html">0</span>) is the exit status of the program. In C++, returning 0 from the main function indicates that the program executed successfully. It's a common practice to use <span class="style-html">return 0</span> at the end of the main function. <br></br>
+        
+        Notice how we also add the <span class="style-html">;</span> here again. Just like before It signifies the end of the function. Get into the habit of placing these at the end of pretty much everything. `,
         code:
 `#include <iostream>
 

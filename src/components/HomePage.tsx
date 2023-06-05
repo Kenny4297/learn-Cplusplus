@@ -90,11 +90,11 @@ const HomePage = () => {
 
                             <IndividualLessonSection delay="0.25s">
                                 <Lesson2Span><a href="/lesson/2">Lesson 2: Get started Coding!</a></Lesson2Span>
-                                <ButtonSection>
-                                    {/* <button style={{backgroundColor: 'green'}} onClick={() => {navigate(`/lesson/2`)}}>Lesson 2</button> */}
-
-                                    <button style={{backgroundColor: 'var(--orange)'}} onClick={() => {navigate(`/challenge/2`)}}>Challenge #1</button>
-                                </ButtonSection>
+                                <Test>
+                                    <ButtonSection>
+                                        <button style={{backgroundColor: 'var(--orange)', position: 'relative', bottom:'.4rem', marginTop:'.5rem'}} onClick={() => {navigate(`/challenge/2`)}}>Challenge #1</button>
+                                    </ButtonSection>
+                                </Test>
                             </IndividualLessonSection>
 
                             <IndividualLessonSection delay="0.5s">
@@ -208,25 +208,41 @@ const ImageSection = styled.div`
     }
 `;
 
-const Test = styled.div``;
+const Test = styled.div`
+    @media (max-width: 665px) {
+        /* border: 2px solid green; */
+         margin: 0 auto;
+    }
+`;
 
 const TutorialsButton = styled.button`
     animation: ${fadeIn} 3s ease-in-out forwards;
+    border: 2px solid green;
     background-color: var(--blue);
     border: none;
     border-radius: 2px;
     padding: .2rem;
     margin-right: 4rem;
+    @media (max-width: 640px) {
+        margin: 0 auto;
+        margin-top: 1rem;
+    }
 `
 
 const Lesson2Span = styled.div`
     a {
         position: relative;
-    top: .25rem;
-    color: var(--purple);
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-decoration: underline;
+        top: -.5rem;
+        color: var(--purple);
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-decoration: underline;
+        @media (max-width: 840px) {
+            font-size: 1rem;
+            top: -.4rem;
+            padding-top:1rem;
+            /* height:2rem; */
+        }
     }
 `;
 
@@ -243,6 +259,9 @@ const GreetingSection = styled.div`
         font-weight: bold;
         font-size: 1.5rem;
         animation: 2s ${fadeInFromLeft} ease-out forwards;
+    }
+    @media (max-width: 665px) {
+        flex-direction: column;
     }
 `;
 
@@ -261,6 +280,13 @@ const IndividualLessonSection = styled.div<IndividualLessonSectionProps>`
     justify-content: space-between;
     animation: ${fadeInFromLeft} 1s ease-out both;
     animation-delay: ${props => props.delay || '0s'};
+    @media (max-width: 840px) {
+            font-size: 1rem;
+            height: auto;
+        }
+    @media (max-width: 665px) {
+        flex-direction: column;
+    }
 `
 
 const Span = styled.span`
@@ -270,13 +296,25 @@ const Span = styled.span`
         font-size: 1.5rem;
         text-decoration: underline;
         line-height: 3rem;
+        /* border: 2px solid green; */
+        @media (max-width: 840px) {
+            font-size: 1rem;
+        }
+        @media (max-width: 640px) {
+            line-height: 2rem;
+        } 
+        /* @media (max-width: 560px) {
+            font-size: .5rem;
+        }  */
     }
+    
 `;
 
 const ButtonSection = styled.div`
     width: 12.5rem;
     display: flex;
     justify-content: space-evenly;
+
     p {
         color: var(--gray)
     }
@@ -287,6 +325,12 @@ const ButtonSection = styled.div`
         &:hover {
             background-color: white;
             cursor: pointer;
+        }
+        @media (max-width: 840px) {
+            font-size: .75rem;
+        }
+        @media (max-width: 640px) {
+            font-size: .75rem;
         }
     }
 `;
@@ -311,11 +355,12 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 80%;
-    height: 100vh;
+    /* height: 100%; */
     margin: 0 auto;
     padding-bottom: 2rem;
     text-align: center;
     animation: ${fadeIn} 1.5s ease-in-out forwards;
+
 `;
 
 

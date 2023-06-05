@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import professor from '../../components/Assets/Images/icons8-teacher-100.png'
 import onlineLearning from '../../components/Assets/Images/icons8-online-learning-100.png'
 import chalkboard from '../../components/Assets/Images/icons8-classroom-100.png'
 import notes from '../../components/Assets/Images/icons8-notes-100.png'

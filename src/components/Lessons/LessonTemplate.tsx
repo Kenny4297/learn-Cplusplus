@@ -1,17 +1,12 @@
 import Lessons from './Lessons';
 import styled from 'styled-components'
-import { useNavigate } from 'react-router-dom';
 import '../../index.css'
 
 const LessonTemplate = () => {
 
-    const navigate = useNavigate();
       return (
         <Container>
           <Lessons />
-          {/* <BackButton>
-            <button onClick={() => navigate("/")}>Back</button>
-          </BackButton> */}
         </Container>
       );
 }
@@ -28,12 +23,5 @@ const Container = styled.div`
     flex-direction: column;
     /* background-color: var(--lightBackground); */
     height: 100%;
-`;
-
-const BackButton = styled.div`
-    margin-top: 2rem;
-    button {
-      color: white;
-    }
 `;
 

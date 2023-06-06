@@ -37,7 +37,7 @@ export const Quiz1Data = [
         answer2: "It allows data and behaviors to be bundled into objects, which can then interact with each other",
         answer3: "Object-oriented programming is actually not important, and other methods are always better",
         answer4: "Object-oriented programming's performance depends on various factors and can't be generalized as faster or slower than non-OOP",
-        correct: "It allows data to be bundled into blocks knows as objects, which can then interact with each other"
+        correct: "It allows data and behaviors to be bundled into objects, which can then interact with each other"
     },
     {
         QuizLessonNumber: 1,
@@ -114,10 +114,10 @@ export const Quiz1Data = [
 
         question : `Why is learning C++ so important to beginning developers?`,
 
-        answer1: "C++ is not important since no other language (other than C and C#) are similar",
-        answer2: "C++ is the foundation and influence for other programming languages",
-        answer3: "C++ is important since it is the best language for programming anything",
-        answer4: "C++ is important to learn because it's incredibly easy to learn",
+        answer1: "It is not important since no other language (other than C and C#) are similar",
+        answer2: "It is the foundation and influence for other programming languages",
+        answer3: "It is important since it is the best language for programming anything",
+        answer4: "It is important to learn because it's incredibly easy to learn",
 
         correct: "It is the foundation and influence for other programming languages"
     },

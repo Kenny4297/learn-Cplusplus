@@ -21,6 +21,8 @@ const Container = styled.div`
     align-items: center;
     flex-direction: column;
     background-color: var(--lightBackground);
-    /* height: 100%; */
+    @media (max-width: 500px) {
+        width: 100%;
+    }
 
 `;

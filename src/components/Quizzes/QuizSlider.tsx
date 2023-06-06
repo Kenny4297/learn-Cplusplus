@@ -68,6 +68,9 @@ const AnswerButton = styled.button`
     padding: .25rem;
     color: var(--gray);
     width: 25rem;
+    @media (max-width: 500px) {
+        width: 15rem;
+    }
 `;
 
 const Container = styled.div`

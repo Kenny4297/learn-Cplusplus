@@ -28,13 +28,18 @@
   "scripts": {
     "start": "set NODE_OPTIONS=--max_old_space_size=1024 && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage src",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-syntax-highlighter)/)"
     ]
   },
   "browserslist": {

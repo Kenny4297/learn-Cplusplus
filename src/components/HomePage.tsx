@@ -89,7 +89,7 @@ const HomePage = () => {
                             </IndividualLessonSection>
 
                             <IndividualLessonSection delay="0.25s">
-                                <Lesson2Span><a href="/lesson/2">Lesson 2: Get started Coding!</a></Lesson2Span>
+                                <Lesson2Span><Link to="/lesson/2">Lesson 2: Get started Coding!</Link></Lesson2Span>
                                 <Test>
                                     <ButtonSection>
                                         <button style={{backgroundColor: 'var(--orange)', position: 'relative', bottom:'.4rem', marginTop:'.5rem'}} onClick={() => {navigate(`/challenge/2`)}}>Challenge #1</button>
@@ -98,7 +98,7 @@ const HomePage = () => {
                             </IndividualLessonSection>
 
                             <IndividualLessonSection delay="0.5s">
-                                <Span><a href="/lesson/3">Lesson 3: Hello, World!</a></Span>
+                                <Span><Link to="/lesson/3">Lesson 3: Hello, World!</Link></Span>
                                 <Test>
                                     <ButtonSection>
                                         <button style={{backgroundColor: 'var(--blue)'}} onClick={() => {navigate(`/quiz/3`)}}>Quiz 3</button>
@@ -110,7 +110,7 @@ const HomePage = () => {
                             </IndividualLessonSection>
 
                             <IndividualLessonSection delay=".75s">
-                                <Span><a href="/lesson/4">Lesson 4: Mad Libs</a></Span>
+                                <Span><Link to="/lesson/4">Lesson 4: Mad Libs</Link></Span>
                                 <Test>
                                     <ButtonSection>
                                         <button style={{backgroundColor: 'var(--blue)'}} onClick={() => {navigate(`/quiz/4`)}}>Quiz 4</button>
@@ -125,7 +125,7 @@ const HomePage = () => {
                             </IndividualLessonSection>
 
                             <IndividualLessonSection delay="1s">
-                                <Span><a href="/lesson/5">Lesson 5: Build A calculator</a></Span>
+                                <Span><Link to="/lesson/5">Lesson 5: Build A calculator</Link></Span>
                                 <Test>
                                     <ButtonSection>
                                         <button style={{backgroundColor: 'var(--blue)'}} onClick={() => {navigate(`/quiz/5`)}}>Quiz 5</button>
@@ -139,7 +139,7 @@ const HomePage = () => {
                             </IndividualLessonSection>
 
                             <IndividualLessonSection delay="1.25s">
-                                <Span><a href="/lesson/6">Lesson 6: Guessing Game</a></Span>
+                                <Span><Link to="/lesson/6">Lesson 6: Guessing Game</Link></Span>
                                 <Test>
                                     <ButtonSection>
                                         <button style={{backgroundColor: 'var(--blue)'}} onClick={() => {navigate(`/quiz/6`)}}>Quiz 6</button>
@@ -153,7 +153,7 @@ const HomePage = () => {
                             </IndividualLessonSection>
 
                             <IndividualLessonSection delay="1.5s">
-                                <Span><a href="/lesson/7">Lesson 7: Next Steps</a></Span>
+                                <Span><Link to="/lesson/7">Lesson 7: Next Steps</Link></Span>
                                 <Test>
                                 <ButtonSection>
                                     <button style={{backgroundColor: 'var(--blue)'}} onClick={() => {navigate(`/quiz/7`)}}>Quiz 7</button>

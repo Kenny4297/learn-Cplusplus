@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState, FormEvent, ChangeEvent } from 'react';
 import { UserContext } from '../App';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import styled, {keyframes} from 'styled-components'
 import professor from '../components/Assets/Images/icons8-teacher-100.png'
 
@@ -76,7 +76,7 @@ const HomePage = () => {
 
                         <LessonSection>
                             <IndividualLessonSection delay="0s">
-                                <Span><a href="/lesson/1">Lesson 1: Introduction to C++</a></Span>
+                                <Span><Link to="/lesson/1">Lesson 1: Introduction to C++</Link></Span>
                                 <Test>
                                     <ButtonSection>
                                         <button style={{backgroundColor: 'var(--blue)'}} onClick={() => {navigate(`/quiz/1`)}}>Quiz 1</button>

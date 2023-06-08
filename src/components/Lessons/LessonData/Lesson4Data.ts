@@ -6,7 +6,7 @@ export const Lesson4Data = [
         SlideTitle: "Mad Libs",
         disc: `Congratulations on Creating your first C++ program! As stated before, we will continue creating projects by adding new concepts as we go. This lesson will set us up with the information needed to create a Mad Libs project. The most important aspect of a developer is to know the steps needed to create a project, not necessarily how to do the steps themselves. <br></br>
         
-        Knowing what needs to be done is a skill developed as you create more projects. This lesson will show you how to create the Mad Libs project, but it sill be up to you to try to put it together! Don't worry if this sounds difficult at first, I promise that it will get easier as we create more projects! Let's begin!
+        Knowing what needs to be done is a skill developed as you create more projects. This lesson will show you how to create the Mad Libs project, but it is sill up to you to try to put it together! Don't worry if this sounds difficult at first, I promise that it will get easier as we create more projects! Let's begin!
         `,
         code:
 
@@ -62,7 +62,7 @@ World
     },
     {
         SlideNumber: 3,
-        SlideTitle: "Including Libraries with **#include**",
+        SlideTitle: "Including Libraries with #include",
         disc: `At the top of our C++ file when we are using strings, you'll see the line <span class="style-html">#include</span>. This is a preprocessor directive that tells the compiler to include the  <span class="style-html">&lt;string&gt;</span> library before compiling the code. The <span class="style-html">&lt;string&gt;</span> library provides us with the  <span class="style-html">std::string</span> type, which we use to store and manipulate text. <br></br>
         
         Inclusion of libraries is a common practice in C++, and you'll often see multiple <span class="style-html">#include</span> statements at the top of a C++ program. Each of these brings in different functionalities that the program requires, such as input/output operations, mathematical functions, or, in this case, string handling abilities. Understanding which libraries to include is a fundamental part of learning and working with C++. Keep in mind that this library is needed only if you are taking user input in the form of a string.`,
@@ -82,7 +82,7 @@ std::cout << "Welcome to C++ Mad Libs!";`
 
     {
         SlideNumber: 5,
-        SlideTitle: "Using **std::getline** for Input",
+        SlideTitle: "Using std::getline for Input",
         disc: `To accept a line of input, especially when dealing with strings that contain spaces, we use <span class="style-html">std::getline()</span>. This function reads an entire line from the input (until the user presses Enter), including any spaces. It's perfect for our Mad Libs project because it allows us to capture multi-word inputs from the user.`,
         code:
 `std::getline(std::cin, name);`
@@ -90,7 +90,7 @@ std::cout << "Welcome to C++ Mad Libs!";`
 
     {
         SlideNumber: 6,
-        SlideTitle: "The Role of std::string",
+        SlideTitle: "The Role of 'string'",
         disc: `In our Mad Libs program, we're going to use <span class="style-html">std::string</span> for storing the user's inputs. The <span class="style-html">std::string</span> type in C++ is used to store and manipulate sequences of characters, making it ideal for handling text input. It's part of the C++ Standard Library and includes a range of built-in methods for string manipulation.`,
         code:
 `std::string name;
@@ -112,7 +112,7 @@ std::getline(std::cin, noun);`
     {
         SlideNumber: 8,
         SlideTitle: "String Concatenation",
-        disc: `After capturing all user inputs, we want to stitch together a sentence or a paragraph. In C++, we can concatenate, or join, strings using the <span class="style-html">+</span> operator or simply by using the <span class="style-html"><<std::string>></span> operator with <span class="style-html">std::cout</span>. <br></br>
+        disc: `After capturing all user inputs, we want to stitch together a sentence or a paragraph. In C++, we can concatenate, or join, strings using the <span class="style-html">+</span> operator or simply by using the <span class="style-html"><<</span> operator with <span class="style-html">std::cout</span>. <br></br>
         
         For instance: <br></br><span class="style-html">The " << adjective << " " << noun << " " << verb << " " << preposition << " the " << noun2 << ".";</span> <br></br> This joins together the user's inputs into a complete sentence. It looks funky now, but it will look completely normal when the program is run!`,
         code:

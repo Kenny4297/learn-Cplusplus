@@ -61,11 +61,11 @@ export const Lesson1Data = [
         SlideNumber: 9,
         SlideTitle: "The Evolution and Standards of C++: Managed by the C++ Standards Committee",
         // img : Olu,
-        disc : `Today, the development and evolution of C++ is managed by the C++ Standards Committee. The language has undergone several revisions over the years, with the latest standard as of my knowledge cutoff in September 2021 being C++20. Each revision introduces new features and enhancements to make the language more efficient and user-friendly.`
+        disc : `Today, the development and evolution of C++ is managed by the C++ Standards Committee. The language has undergone several revisions over the years, as each revision introduces new features and enhancements to make the language more efficient and user-friendly.`
     },
     {
         SlideNumber: 10,
-        SlideTitle: "Conclusion: The Enduring Importance of C++ in the Programming World",
+        SlideTitle: "The Enduring Importance of C++ in the Programming World",
         // img : Olu,
         disc : `In conclusion, C++ is a powerful, versatile, and efficient programming language that is widely used in a variety of application domains. It provides the convenience of high-level features while still granting the programmer a high degree of control. Despite the steep learning curve and manual memory management, its wide application and performance make it an enduring and important language in the world of programming.`
     },

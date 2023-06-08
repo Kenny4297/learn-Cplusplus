@@ -63,7 +63,7 @@ export const Quiz1Data = [
         answer1: "Automatic",
         answer2: "Procedural",
         answer3: "Assembly",
-        answer4: "C++ contains no other type of programming; OOP can do every thing",
+        answer4: "C++ contains no other type of programming; OOP can do everything",
 
         correct: "Procedural"
     },

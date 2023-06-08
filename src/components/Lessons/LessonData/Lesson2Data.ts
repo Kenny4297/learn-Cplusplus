@@ -18,7 +18,9 @@ export const Lesson2Data = [
     {
         SlideNumber: 3,
         SlideTitle: "Get Started Coding",
-        disc: `Lastly, setting up your own coding environment on your PC gives you a real-world feel of a programmer's job. In the professional world, developers seldom use embedded IDEs for full-fledged software development. They instead rely on locally installed IDEs and compilers for more flexibility, control, and efficiency. In conclusion, while online, browser-based IDEs are convenient, there's a lot more to gain from setting up and running code on your own PC. It gives you more control, a deeper understanding of how your code interacts with the system, and a more realistic experience of what programming is like in a professional setting.`
+        disc: `Lastly, setting up your own coding environment on your PC gives you a real-world feel of a programmer's job. In the professional world, developers seldom use embedded IDEs for full-fledged software development. They instead rely on locally installed IDEs and compilers for more flexibility, control, and efficiency. <br></br>
+        
+        In conclusion, while online, browser-based IDEs are convenient, there's a lot more to gain from setting up and running code on your own PC. It gives you more control, a deeper understanding of how your code interacts with the system, and a more realistic experience of what programming is like in a professional setting.`
     },
     {
         SlideNumber: 4,

@@ -70,7 +70,7 @@ const HomePage = () => {
                 <>
                     <Container>
                         <GreetingSection>
-                            <p>Hi <span style={{color: 'var(--orange)', fontSize:'1.5rem'}}>{username}.</span> What are we going to learn today?</p>
+                            <p>Hi <span>{username}.</span> What are we going to learn today?</p>
                             <TutorialsButton onClick={() => {navigate(`/siteTutorial`)}}>Tutorials</TutorialsButton>
                         </GreetingSection>
 
@@ -196,7 +196,7 @@ const fadeIn = keyframes`
 `;
 
 const TextSection = styled.div`
-    /* border: 2px solid blue; */
+
 `;
 
 const ImageSection = styled.div`
@@ -227,6 +227,11 @@ const TutorialsButton = styled.button`
         margin: 0 auto;
         margin-top: 1rem;
     }
+    @media (min-height: 800px) {
+        font-size: 1.25rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 `
 
 const Lesson2Span = styled.div`
@@ -241,7 +246,9 @@ const Lesson2Span = styled.div`
             font-size: 1rem;
             top: -.4rem;
             padding-top:1rem;
-            /* height:2rem; */
+        }
+        @media (min-height: 800px) {
+            font-size: 2.25rem;
         }
     }
 `;
@@ -254,15 +261,33 @@ const GreetingSection = styled.div`
     margin: 2rem auto 2rem auto;
     margin-bottom: 2rem;
     margin-top: 2rem;
+    @media (min-height: 800px) {
+        width: 100%;
+        padding-bottom: 3rem;
+    }
     p {
         color: var(--blue);
         font-weight: bold;
         font-size: 1.5rem;
         animation: 2s ${fadeInFromLeft} ease-out forwards;
+        span {
+            color: var(--orange);
+            font-size: 1.5rem;
+            @media (min-height: 800px) {
+                font-size: 2.5rem;
+            }
+        }
+        @media (min-height: 800px) {
+            font-size: 2.5rem;
+            width: 100%;
+        }
     }
     @media (max-width: 665px) {
         flex-direction: column;
     }
+    @media (min-height: 800px) {
+            font-size: 2.25rem;
+        }
 `;
 
 const LessonSection = styled.div`
@@ -271,6 +296,9 @@ const LessonSection = styled.div`
     align-items: center;
     flex-direction: column;
     gap: 1rem;
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
+    }
 `;
 
 const IndividualLessonSection = styled.div<IndividualLessonSectionProps>`
@@ -287,6 +315,9 @@ const IndividualLessonSection = styled.div<IndividualLessonSectionProps>`
     @media (max-width: 665px) {
         flex-direction: column;
     }
+    @media (min-height: 800px) {
+            font-size: 2.25rem;
+        }
 `
 
 const Span = styled.span`
@@ -303,9 +334,9 @@ const Span = styled.span`
         @media (max-width: 640px) {
             line-height: 2rem;
         } 
-        /* @media (max-width: 560px) {
-            font-size: .5rem;
-        }  */
+        @media (min-height: 800px) {
+            font-size: 2.25rem;
+        }
     }
     
 `;
@@ -314,9 +345,15 @@ const ButtonSection = styled.div`
     width: 12.5rem;
     display: flex;
     justify-content: space-evenly;
-
     p {
-        color: var(--gray)
+        color: var(--gray);
+        @media (min-height: 800px) {
+            font-size: 1.5rem;
+        }
+    }
+    @media (min-height: 800px) {
+        border: 2px solid blue;
+        width: 20rem;
     }
     button {
         border: none;
@@ -331,6 +368,11 @@ const ButtonSection = styled.div`
         }
         @media (max-width: 640px) {
             font-size: .75rem;
+        }
+        @media (min-height: 800px) {
+            font-size: 1.25rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
     }
 `;
@@ -348,6 +390,9 @@ const MessageContainer = styled.div`
     @media (max-width: 560px) {
         font-size: .4rem;
     }
+    @media (min-height: 800px) {
+        text-align: center;
+    }
 `;
 
 const Container = styled.div`
@@ -360,7 +405,9 @@ const Container = styled.div`
     padding-bottom: 2rem;
     text-align: center;
     animation: ${fadeIn} 1.5s ease-in-out forwards;
-
+    @media (min-height: 800px) {
+        font-size: 1.5rem;
+    }
 `;
 
 
@@ -373,6 +420,10 @@ const H1 = styled.h1`
   opacity: 0;
   color: var(--purple);
   animation: 1s ${fadeInFromLeft} ease-out forwards;
+  @media (min-height: 800px) {
+        font-size: 4.25rem;
+    }
+
 `;
 
 const P1 = styled.p`
@@ -383,12 +434,16 @@ const P1 = styled.p`
   color: var(--blue);
   animation: 1s ${fadeInFromLeft} ease-out forwards;
   animation-delay: .25s;
-  @media (max-width: 800px) {
+    @media (max-width: 800px) {
         font-size: 1.5rem;
     }
     @media (max-width: 560px) {
         font-size: 1rem;
     }
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
+    }
+    
 `;
 
 const P2 = styled.p`
@@ -404,6 +459,9 @@ const P2 = styled.p`
     @media (max-width: 560px) {
         font-size: 1rem;
     }
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
+    }
 `;
 
 const Form = styled.form`
@@ -416,6 +474,9 @@ const Form = styled.form`
     /* border: 2px solid red; */
     @media (max-width: 800px) {
         width: 2rem;
+    }
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
     }
 
     button {

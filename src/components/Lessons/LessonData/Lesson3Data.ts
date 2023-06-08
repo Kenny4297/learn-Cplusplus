@@ -8,7 +8,6 @@ export const Lesson3Data = [
         `,
         code:
 `#include <iostream>
-
 int main() {
     std::cout << "Hello, World!";
     return 0;
@@ -20,7 +19,6 @@ int main() {
         disc: `This line declares the main function. Every C++ program has a main function which is the starting point of program execution. The <span class="style-html">int</span> before <span class="style-html">main</span> signifies that this function will return an integer.`,
         code:
 `#include <iostream>
-
 int main() {
     std::cout << "Hello, World!";
     return 0;
@@ -60,7 +58,6 @@ int main() {
         disc: `This is the opening brace for the main function. Everything between this brace and its corresponding closing brace is the body of the main function. All the code that the program executes will be inside these braces.`,
         code:
 `#include <iostream>
-
 int main() {
     std::cout << "Hello, World!";
     return 0;
@@ -72,7 +69,6 @@ int main() {
         disc: `This line does a few things. Firstly, it uses <span class="style-html">std::cout</span> which is the standard character output device. It corresponds to the standard output stream in your system (typically, this will be your terminal or screen). The <span class="style-html"><<</span> operator is a stream insertion operator and it inserts what's on its right (in this case, <span class="style-html">"Hello, World!"</span>) into what's on its left (in this case, the standard output stream).`,
         code:
 `#include <iostream>
-
 int main() {
     std::cout << "Hello, World!";
     return 0;
@@ -80,11 +76,10 @@ int main() {
     },
     {
         SlideNumber: 6,
-        SlideTitle: "Hello, World!",
+        SlideTitle: "'Hello, World!'",
         disc: `This is a string literal. In C++, a string literal is a sequence of characters enclosed in double quotation marks. The characters in a string can be letters, digits, escape sequences, etc. Here, the string <span class="style-html">"Hello, World!"</span> is outputted to the screen when this line of code is executed.`,
         code:
 `#include <iostream>
-
 int main() {
     std::cout << "Hello, World!";
     return 0;
@@ -96,7 +91,6 @@ int main() {
         disc: `The semicolon is a statement terminator. That means it marks the end of one logical statement. Here, it signifies the end of the output statement which prints <span class="style-html">"Hello, World!"</span> to the standard output.`,
         code:
 `#include <iostream>
-
 int main() {
     std::cout << "Hello, World!";
     return 0;
@@ -110,7 +104,6 @@ int main() {
         Notice how we also add the <span class="style-html">;</span> here again. Just like before It signifies the end of the function. Get into the habit of placing these at the end of pretty much everything. `,
         code:
 `#include <iostream>
-
 int main() {
     std::cout << "Hello, World!";
     return 0;
@@ -119,10 +112,9 @@ int main() {
     {
         SlideNumber: 9,
         SlideTitle: "}",
-        disc: `This is the closing brace for the main function. Just like before It signifies the end of the function. Get into the habit of placing these at the end of pretty much everything. `,
+        disc: `This is the closing brace for the main function. Just like before It signifies the end of the function. `,
         code:
 `#include <iostream>
-
 int main() {
     std::cout << "Hello, World!";
     return 0;
@@ -134,7 +126,6 @@ int main() {
         disc: `In summary, this small piece of C++ code includes the iostream file, sets up a main function, and prints <span class="style-html">"Hello, World!"</span> to the screen. The program then ends by returning an exit status of 0, indicating that it has run successfully. The program is a simple example of a console program in C++, and it's often the very first program that beginners in C++ (or any programming language) will learn to write and understand. <br> <br> Try doing this again in your terminal! Understanding the flow and the syntax is the most important take away at this stage. Don't forget those pesky <span class="style-html">;'s</span> !`,
         code:
 `#include <iostream>
-
 int main() {
     std::cout << "Hello, World!";
     return 0;

@@ -1,5 +1,5 @@
 
-export const Quiz5DataTitle = "Calculator";
+export const Quiz5DataTitle = "Quiz 5: Calculator";
 
 export const Quiz5Data = [
     {
@@ -20,9 +20,9 @@ export const Quiz5Data = [
         QuizLessonNumber: 1,
         QuestionNumber: 2,
 
-        QuizTitle: "std::cin",
+        QuizTitle: "cin",
 
-        question: "What is the purpose of the std::cin object in C++?",
+        question: "What is the purpose of the 'cin' object in C++?",
 
         answer1: "To output data to the console.",
         answer2: "To accept user input.",
@@ -36,7 +36,7 @@ export const Quiz5Data = [
         QuestionNumber: 3,
         QuizTitle: "If Statements",
 
-        question: "What is the function of an if statement in C++?",
+        question: "What is the function of an 'if' statement in C++?",
 
         answer1: "To repeat a block of code.",
         answer2: "To define a variable.",
@@ -48,20 +48,6 @@ export const Quiz5Data = [
     {
         QuizLessonNumber: 1,
         QuestionNumber: 4,
-        QuizTitle: "std::string",
-
-        question: "What is the purpose of std::string in C++?",
-
-        answer1: "To store and manipulate sequences of characters.",
-        answer2: "To capture user input.",
-        answer3: "To display messages to the console.",
-        answer4: "To perform mathematical operations.",
-
-        correct: "To store and manipulate sequences of characters."
-    },
-    {
-        QuizLessonNumber: 1,
-        QuestionNumber: 5,
 
         QuizTitle: "Operators",
 
@@ -76,10 +62,10 @@ export const Quiz5Data = [
     },
     {
         QuizLessonNumber: 1,
-        QuestionNumber: 6,
+        QuestionNumber: 5,
         QuizTitle: "if else Statements",
 
-        question: "What is the function of an else if statement in C++?",
+        question: "What is the function of an 'else if' statement in C++?",
 
         answer1: "To perform a block of code regardless of the conditions.",
         answer2: "To perform a block of code if the previous if or else if condition is false and the current condition is true.",
@@ -90,10 +76,10 @@ export const Quiz5Data = [
     },
     {
         QuizLessonNumber: 1,
-        QuestionNumber: 7,
-        QuizTitle: "std::endl",
+        QuestionNumber: 6,
+        QuizTitle: "endl",
        
-        question: "What is the purpose of std::endl in C++?",
+        question: "What is the purpose of 'endl' in C++?",
 
         answer1: "To end the program.",
         answer2: "To create a new array.",

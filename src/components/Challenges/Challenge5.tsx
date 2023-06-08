@@ -11,8 +11,8 @@ const Challenge5Component = () => {
     const customStyle: CSSProperties = {
         backgroundColor: 'black',
         borderRadius: '5px',
-        margin: '2rem 2rem',
-        width: '80%',
+        // margin: '2rem 2rem',
+        width: '100%',
         border: '5px solid blue',
     };
 
@@ -25,47 +25,48 @@ const Challenge5Component = () => {
             <Description>
                     <p>Alright, now let's take it up a notch! Your task is to create a calculator that takes two numbers and an operator (+, -, *, /) and prints out the solution to the screen. Like before I will give you a bit of starter code, but your will have to fill in more than last time! Good luck!</p>
             </Description>
-
-            <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
+            <SyntaxHighlighterContainer>
+                <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
                 {
 `/* ADD CODE: We are not working with strings,
  but we still need to 'include' something here! */
+using namespace std;
 
 // ADD CODE: Initiate the function that contains the application
     int num1, num2;
     char operation;
 
-    std::cout << "Enter first number: ";
+    cout << "Enter first number: ";
     // ADD CODE: Finish capturing the first number
 
-    std::cout << "Enter an operator (+, -, *, /): ";
+    cout << "Enter an operator (+, -, *, /): ";
     // ADD CODE: save the operation to the variable 'operation
 
     /* ADD CODE: Get a second number from the user and capture it as well. 
     HINT: This will be two lines of code! */
 
     if (operation == '+') {
-        std::cout << "The result is: " << num1 + num2 << std::endl;
+        cout << "The result is: " << num1 + num2 << endl;
     } else if (operation == '-') {
         // ADD CODE: If the operation is '-', but tract the two numbers
     // ADD CODE: Add an 'else if' condition that checks if the operation is a '*'
-        std::cout << "The result is: " << num1 * num2 << std::endl;
+        cout << "The result is: " << num1 * num2 << endl;
     } else if (operation == '/') {
         // ADD CODE: add a conditional check to see if num1 != 0
-            std::cout << "The result is: " << num1 / num2 << std::endl;
+            cout << "The result is: " << num1 / num2 << endl;
         } else {
             /* ADD CODE: Print a message to the user stating
              that division by 0 is not allowed */
         }
     } else {
-        std::cout << "Error! Invalid operator." << std::endl;
+        cout << "Error! Invalid operator." << endl;
     }
 
     // ADD CODE: Can you remember what we need to add at the end of a function?
 }
                 `}
-            </SyntaxHighlighter>
-
+                </SyntaxHighlighter>
+            </SyntaxHighlighterContainer>
             <Description>
                 <p>I hope this project was challenging, but not impossible! Syntax is huge in C++, and that will come with time!</p>
             </Description>
@@ -77,48 +78,51 @@ const Challenge5Component = () => {
             </button>
 
             {showSolution && 
+            <SyntaxHighlighterContainer>
                     <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
                         {
 `#include <iostream>
+using namespace std;
 
 int main() {
     int num1, num2;
     char operation;
 
-    std::cout << "Enter first number: ";
-    std::cin >> num1;
+    cout << "Enter first number: ";
+    cin >> num1;
 
-    std::cout << "Enter an operator (+, -, *, /): ";
-    std::cin >> operation;
+    cout << "Enter an operator (+, -, *, /): ";
+    cin >> operation;
 
-    std::cout << "Enter second number: ";
-    std::cin >> num2;
+    cout << "Enter second number: ";
+    cin >> num2;
 
     if (operation == '+') {
-        std::cout << "The result is: " << num1 + num2 << std::endl;
+        cout << "The result is: " << num1 + num2 << endl;
     } else if (operation == '-') {
-        std::cout << "The result is: " << num1 - num2 << std::endl;
+        cout << "The result is: " << num1 - num2 << endl;
     } else if (operation == '*') {
-        std::cout << "The result is: " << num1 * num2 << std::endl;
+        cout << "The result is: " << num1 * num2 << endl;
     } else if (operation == '/') {
         if(num2 != 0){
-            std::cout << "The result is: " << num1 / num2 << std::endl;
+            cout << "The result is: " << num1 / num2 << endl;
         } else {
-            std::cout << "Error! Division by zero is not allowed." << std::endl;
+            cout << "Error! Division by zero is not allowed." << endl;
         }
     } else {
-        std::cout << "Error! Invalid operator." << std::endl;
+        cout << "Error! Invalid operator." << endl;
     }
 
     return 0;
 }
 `}
                     </SyntaxHighlighter>
+                    </SyntaxHighlighterContainer>
             }
 
             <ExtraCredit>
-                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold', marginBottom:'1rem'}}>Extra Credit</p>
-                <p style={{textAlign:'center'}}> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
+                <ExtraCreditTitle>Extra Credit</ExtraCreditTitle>
+                <p> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
             </ExtraCredit>
 
             <ButtonContainer>
@@ -131,6 +135,29 @@ int main() {
 
 export default Challenge5Component;
 
+const ExtraCreditTitle = styled.h2`
+    text-align: center;
+    color: var(--blue);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    @media (min-height: 800px) {
+        font-size: 4rem;
+    }
+`
+const SyntaxHighlighterContainer = styled.div`
+    font-size: 1rem;
+    width: auto;
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
+        width: 100%;
+    }
+    span { 
+        font-size: inherit;
+    }
+`;
+
+
 const Container = styled.div`
     display: flex;
     justify-content: center;
@@ -142,10 +169,12 @@ const Container = styled.div`
     color: var(--gray);
     background-color: var(--lightBackground);
     p {
-        /* margin-left: 3rem;
-        margin-right: 3rem; */
         width: 90%;
         margin: 0 auto;
+        text-align: center;
+        @media (min-height: 800px) {
+            font-size: 2.25rem;
+        }
     }
     button {
         color: var(--gray);
@@ -162,6 +191,12 @@ const Container = styled.div`
             outline: 2px solid var(--purple);
             cursor: pointer;
         }
+        @media (min-height: 800px) {
+            font-size: 2.25rem;
+            height: 3rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
     }
 `;
 
@@ -177,14 +212,18 @@ const Title = styled.h1`
     margin-bottom: 2rem;
     margin-top: 2rem;
     color: var(--blue);
+    @media (min-height: 800px) {
+        font-size: 3.25rem;
+    }
 `;
 
 const Description = styled.div`
     margin-bottom: 2rem;
     text-align: center;
+
 `;
 
 const ExtraCredit = styled.div`
-    margin: 2rem 0rem;
+    margin: 2rem 0;
 `;
 

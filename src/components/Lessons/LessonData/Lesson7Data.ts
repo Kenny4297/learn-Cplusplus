@@ -1,4 +1,4 @@
-export const Lesson7DataTitle = "Next Steps";
+export const Lesson7DataTitle = "Lesson 7: Next Steps";
 
 export const Lesson7Data = [
     {

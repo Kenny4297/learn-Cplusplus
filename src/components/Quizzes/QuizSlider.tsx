@@ -71,6 +71,12 @@ const AnswerButton = styled.button`
     @media (max-width: 500px) {
         width: 15rem;
     }
+    @media (min-height: 800px) {
+        font-size: 2rem;
+        width: 35rem;
+        margin-bottom: 1rem;
+    }
+
 `;
 
 const Container = styled.div`
@@ -90,6 +96,9 @@ const Question = styled.h2`
     font-size: 1.5rem;
     margin-top: 5rem;
     color: var(--blue);
+    @media (min-height: 800px) {
+        font-size: 3rem;
+    }
 `;
 
 

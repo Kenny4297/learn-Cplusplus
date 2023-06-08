@@ -1,5 +1,5 @@
 
-export const Quiz6DataTitle = "Guessing Game";
+export const Quiz6DataTitle = "Quiz 6: Guessing Game";
 
 export const Quiz6Data = [
     {
@@ -7,7 +7,7 @@ export const Quiz6Data = [
         QuestionNumber: 1,
         QuizTitle: "<ctime> and <cstdlib> Libraries",
 
-        question: "What is the use of the #include <ctime> and #include <cstdlib> libraries in our program?",
+        question: "What is the use of the '#include <ctime>' and '#include <cstdlib>' libraries in our program?",
     
         answer1: "To handle string manipulation and regular expressions.",
         answer2: "To generate a seed for our random number generator and provide general purpose functionalities.",
@@ -22,7 +22,7 @@ export const Quiz6Data = [
 
         QuizTitle: "srand Function",
 
-        question: "What does the srand(static_cast<unsigned int>(time(0))) function do in our program?",
+        question: "What does the 'srand(static_cast<unsigned int>(time(0)))' function do in our program?",
 
         answer1: "It generates a random number between 0 and RAND_MAX.",
         answer2: "It creates a seed for the random number generator using the current time.",
@@ -50,7 +50,7 @@ export const Quiz6Data = [
         QuestionNumber: 4,
         QuizTitle: "While Loops",
 
-        question: "What is the role of while loops in C++?",
+        question: "What is the role of 'while' loops in C++?",
 
         answer1: "To handle errors.",
         answer2: "To define a variable.",

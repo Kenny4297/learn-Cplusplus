@@ -51,13 +51,17 @@ export default QuizTutorial;
 
 const Container = styled.div`
     padding-bottom: 1px;
-    margin-bottom: 10rem;
+    margin-bottom: 15rem;
     h1 {
         text-align: center;
         font-size: 1.5rem;
         padding-bottom: 1rem;
         padding-top: 1rem;
-        color: var(--gray)
+        color: var(--gray);
+        @media (min-height: 800px) {
+            font-size: 3rem;
+            /* padding-bottom: 0; */
+        }
     }
     button {
         color: var(--gray);
@@ -74,6 +78,12 @@ const Container = styled.div`
             outline: 2px solid var(--purple);
             cursor: pointer;
         }
+        @media (min-height: 800px) {
+            font-size: 2rem;
+            padding: 1rem;
+            margin-bottom: 10rem;
+            height:4rem;
+        }
     }
 `;
 
@@ -83,7 +93,6 @@ const P = styled.div`
     display: flex;
     margin: auto;
     margin-bottom: 3rem;
-
     p {
         color: white;
         padding: 2rem 2rem;
@@ -92,13 +101,21 @@ const P = styled.div`
             text-align: center;
             width: 100%
         }
+        @media (min-height: 800px) {
+            font-size: 2rem;
+            width: 80%;
+            margin: 0 auto;
+        }
     }
     img {
         width: 7.5rem;
         height: 7.5rem;
         @media (max-width: 650px) {
             display: none;
-            border: 2px solid green;
+            /* border: 2px solid green; */
+        }
+        @media (min-height: 800px) {
+            display: none;
         }
     }
 `;
@@ -111,6 +128,9 @@ const ImageContainer = styled.div`
     margin: 0 auto;
     padding: 1rem;
     @media (max-width: 650px) {
+        display: none;
+    }
+    @media (min-height: 800px) {
         display: none;
     }
 `

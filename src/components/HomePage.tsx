@@ -37,10 +37,6 @@ const HomePage = () => {
         setFormData((prevState) => ({...prevState, [name]: value}))
     }
 
-    useEffect(() => {
-        console.log(`Username is ${username}`)
-    }, [username]);
-
     return (
         <>
             { !userData.username ? (

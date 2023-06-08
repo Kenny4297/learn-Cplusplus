@@ -59,8 +59,12 @@ const Container = styled.div`
     color: var(--gray);
     background-color: var(--lightBackground);
     p {
-        margin-left: 3rem;
-        margin-right: 3rem;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        @media (min-height: 800px) {
+            font-size: 2.25rem;
+        }
     }
     button {
         color: var(--gray);
@@ -77,13 +81,14 @@ const Container = styled.div`
             outline: 2px solid var(--purple);
             cursor: pointer;
         }
+        @media (min-height: 800px) {
+            font-size: 2.25rem;
+            height: 3rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
     }
 `;
-
-const Span = styled.span`
-    color: var(--blue);
-    font-weight: bold;
-`
 
 const ButtonContainer = styled.div`
     width: auto;
@@ -97,19 +102,33 @@ const Title = styled.h1`
     margin-bottom: 2rem;
     margin-top: 2rem;
     color: var(--blue);
+    @media (min-height: 800px) {
+        font-size: 3.25rem;
+    }
 `;
 
 const Description = styled.div`
     margin-bottom: 2rem;
     text-align: center;
-    width: 90%;
-`;
 
-const Description2 = styled.div`
-    width: 90%;
-`
+`;
 
 const ExtraCredit = styled.div`
     margin: 2rem 0;
+    text-align: center;
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
+    }
 `;
 
+
+const Span = styled.span`
+    color: var(--blue);
+    font-weight: bold;
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
+    }
+`
+const Description2 = styled.div`
+    width: 90%;
+`

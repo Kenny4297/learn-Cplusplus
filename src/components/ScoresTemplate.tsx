@@ -46,7 +46,6 @@ const ScoresTemplate = () => {
                     },
                 };
                 localStorage.setItem('user', JSON.stringify(updatedUserData));
-                console.log(updatedUserData)
                 return updatedUserData;
             });
         }
@@ -85,10 +84,16 @@ const Container = styled.div`
         font-size: 2rem;
         text-decoration: underline;
         color: var(--purple);
+        @media (min-height: 800px) {
+            font-size: 3.5rem;
+        }
     }
     p {
         margin-top: 2rem;
         margin-bottom: 2rem;
+        @media (min-height: 800px) {
+            font-size: 2.25rem;
+        }
     }
     button {
         color: var(--gray);
@@ -104,6 +109,12 @@ const Container = styled.div`
             background-color: var(--teal);
             outline: 2px solid var(--purple);
             cursor: pointer;
+        }
+        @media (min-height: 800px) {
+            font-size: 2.25rem;
+            height: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
     }
 `;

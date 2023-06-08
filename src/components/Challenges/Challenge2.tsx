@@ -23,24 +23,22 @@ const Challenge2Component = () => {
             <Description>
                 <p>Now that we have everything set up, let's make sure we can run our programs! Copy and paste the code below into VSCode:</p>
             </Description>
-
-            <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
+            <SyntaxHighlighterContainer>
+                <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
+            
                 {
 `#include <iostream>
+using namespace std;
 int main() {
-    std::cout << "Hello, World!";
+    cout << "Hello, World!";
     return 0;
 }`}
             </SyntaxHighlighter>
+            </SyntaxHighlighterContainer>
 
             <Description>
                     <p>Then in your terminal, run the code. You should see 'Hello, World!' outputted to the terminal! (if you did not you may need to become a developer for a moment and troubleshoot!). Don't worry about what all of this means, we will go through this in the next lesson. </p>
             </Description>
-
-            <ExtraCredit>
-                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold', marginBottom:'1rem'}}>Extra Credit</p>
-                <p> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
-            </ExtraCredit>
 
             <ButtonContainer>
                 <button onClick={() => navigate(`/lesson/2`)}>Review lesson</button>
@@ -51,6 +49,17 @@ int main() {
 };
 
 export default Challenge2Component;
+
+const SyntaxHighlighterContainer = styled.div`
+    font-size: 1rem;
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
+    }
+    span { 
+        font-size: inherit;
+    }
+`;
+
 
 const Container = styled.div`
     display: flex;
@@ -66,6 +75,9 @@ const Container = styled.div`
         width: 90%;
         margin: 0 auto;
         text-align: center;
+        @media (min-height: 800px) {
+            font-size: 2.25rem;
+        }
     }
     button {
         color: var(--gray);
@@ -82,6 +94,12 @@ const Container = styled.div`
             outline: 2px solid var(--purple);
             cursor: pointer;
         }
+        @media (min-height: 800px) {
+            font-size: 2.25rem;
+            height: 3rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
     }
 `;
 
@@ -97,6 +115,9 @@ const Title = styled.h1`
     margin-bottom: 2rem;
     margin-top: 2rem;
     color: var(--blue);
+    @media (min-height: 800px) {
+        font-size: 3.25rem;
+    }
 `;
 
 const Description = styled.div`

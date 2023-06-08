@@ -14,7 +14,7 @@ export default QuizTemplate;
 const Container = styled.div`
     /* border: 2px solid purple; */
     margin: 0 auto;
-    height: 95vh;
+    height: 100%;
     width: 90%;
     display: flex;
     justify-content: center;

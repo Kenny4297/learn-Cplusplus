@@ -1,4 +1,4 @@
-export const Lesson4DataTitle = "Mad Libs";
+export const Lesson4DataTitle = "Lesson 4: Mad Libs";
 
 export const Lesson4Data = [
     {
@@ -9,36 +9,35 @@ export const Lesson4Data = [
         Knowing what needs to be done is a skill developed as you create more projects. This lesson will show you how to create the Mad Libs project, but it is sill up to you to try to put it together! Don't worry if this sounds difficult at first, I promise that it will get easier as we create more projects! Let's begin!
         `,
         code:
-
 `#include <iostream>
-#include <string>
+using namespace std;
 
 int main() {
-    std::string noun;
-    std::string noun2;
-    std::string verb;
-    std::string adjective;
-    std::string preposition;
+    string noun;
+    string noun2;
+    string verb;
+    string adjective;
+    string preposition;
 
-    std::cout << "Welcome to C++ Mad Libs!\\n\\n";
+    cout << "Welcome to C++ Mad Libs!\\n\\n";
     
-    std::cout << "Enter a noun: ";
-    std::getline(std::cin, noun);
+    cout << "Enter a noun: ";
+    getline(cin, noun);
 
-    std::cout << "Enter a second noun: ";
-    std::getline(std::cin, noun2);
+    cout << "Enter a second noun: ";
+    getline(cin, noun2);
 
-    std::cout << "Enter a verb: ";
-    std::getline(std::cin, verb);
+    cout << "Enter a verb in the past tense: ";
+    getline(cin, verb);
 
-    std::cout << "Enter an adjective: ";
-    std::getline(std::cin, adjective);
+    cout << "Enter an adjective: ";
+    getline(cin, adjective);
 
-    std::cout << "Enter a preposition: ";
-    std::getline(std::cin, preposition);
+    cout << "Enter a preposition: ";
+    getline(cin, preposition);
 
-    std::cout << "\\nHere's your story:\\n\\n";
-    std::cout << "The " << adjective << " " << noun << " "
+    cout << "\\nHere's your story:\\n\\n";
+    cout << "The " << adjective << " " << noun << " "
     << verb << " " << preposition << " the " << noun2 
     << ".\\n";
     
@@ -53,7 +52,7 @@ int main() {
         
         For instance, if you were printing a list of items, you could use <span class="style-html">\\n</span> after each item to ensure they each appear on a separate line in the console. You can use two of them in a row to add an empty line as well!`,
         code: 
-`std::cout << "Hello\\n\\nWorld!";
+`cout << "Hello\\n\\nWorld!";
 /*This would output the following:
 Hello
 
@@ -63,7 +62,7 @@ World
     {
         SlideNumber: 3,
         SlideTitle: "Including Libraries with #include",
-        disc: `At the top of our C++ file when we are using strings, you'll see the line <span class="style-html">#include</span>. This is a preprocessor directive that tells the compiler to include the  <span class="style-html">&lt;string&gt;</span> library before compiling the code. The <span class="style-html">&lt;string&gt;</span> library provides us with the  <span class="style-html">std::string</span> type, which we use to store and manipulate text. <br></br>
+        disc: `At the top of our C++ file when we are using strings, you'll see the line <span class="style-html">#include</span>. This is a preprocessor directive that tells the compiler to include the  <span class="style-html">&lt;string&gt;</span> library before compiling the code. The <span class="style-html">&lt;string&gt;</span> library provides us with the  <span class="style-html">string</span> type, which we use to store and manipulate text. <br></br>
         
         Inclusion of libraries is a common practice in C++, and you'll often see multiple <span class="style-html">#include</span> statements at the top of a C++ program. Each of these brings in different functionalities that the program requires, such as input/output operations, mathematical functions, or, in this case, string handling abilities. Understanding which libraries to include is a fundamental part of learning and working with C++. Keep in mind that this library is needed only if you are taking user input in the form of a string.`,
         code: 
@@ -72,52 +71,64 @@ World
     {
         SlideNumber: 4,
         SlideTitle: "Basic Input and Output",
-        disc: `C++ provides a simple way to display output and accept user input using the <span class="style-html">std::cout</span> and <span class="style-html">std::cin</span> objects, respectively. <span class="style-html">std::cout</span> allows your program to display messages or variable values to the console, while <span class="style-html">std::cin</span> captures user input. <br></br>
+        disc: `C++ provides a simple way to display output and accept user input using the <span class="style-html">cout</span> and <span class="style-html">cin</span> objects, respectively. <span class="style-html">cout</span> allows your program to display messages or variable values to the console, while <span class="style-html">cin</span> captures user input. <br></br>
         
-        For instance, <span class="style-html">std::cout << "Enter a noun: ";</span> prints a prompt for the user, and <span class="style-html">std::getline(std::cin, noun);</span> captures the user's response into the noun variable.`,
+        For instance, <span class="style-html">cout << "Enter a noun: ";</span> prints a prompt for the user, and <span class="style-html">getline(cin, noun);</span> captures the user's response into the noun variable.`,
         code:
-`std::cout << "Enter a name: "; 
-std::cout << "Welcome to C++ Mad Libs!";`
+`string name, title;
+
+cout << "Enter a name: "; 
+cin >> name;
+
+cout << "Welcome to C++ Mad Libs!";
+cin >> title;
+`
     },
 
     {
         SlideNumber: 5,
-        SlideTitle: "Using std::getline for Input",
-        disc: `To accept a line of input, especially when dealing with strings that contain spaces, we use <span class="style-html">std::getline()</span>. This function reads an entire line from the input (until the user presses Enter), including any spaces. It's perfect for our Mad Libs project because it allows us to capture multi-word inputs from the user.`,
+        SlideTitle: "Using getline for Input",
+        disc: `To accept a line of input, especially when dealing with strings that contain spaces, we use <span class="style-html">getline()</span>. This function reads an entire line from the input (until the user presses Enter), including any spaces. It's perfect for our Mad Libs project because it allows us to capture multi-word inputs from the user.`,
         code:
-`std::getline(std::cin, name);`
+`getline(cin, name);`
     },
 
     {
         SlideNumber: 6,
         SlideTitle: "The Role of 'string'",
-        disc: `In our Mad Libs program, we're going to use <span class="style-html">std::string</span> for storing the user's inputs. The <span class="style-html">std::string</span> type in C++ is used to store and manipulate sequences of characters, making it ideal for handling text input. It's part of the C++ Standard Library and includes a range of built-in methods for string manipulation.`,
+        disc: `In our Mad Libs program, we're going to use <span class="style-html">string</span> for storing the user's inputs. The <span class="style-html">string</span> type in C++ is used to store and manipulate sequences of characters, making it ideal for handling text input. It's part of the C++ Standard Library and includes a range of built-in methods for string manipulation.`,
         code:
-`std::string name;
-std::string hobby;
-std::string last_name; 
+`string name;
+string hobby;
+string last_name; 
 // Notice that '_' is used for spaces in a variable name
+
+// You can also write the variable declarations like this:
+string name, hobby, last_name;
 }`
     },
 
     {
         SlideNumber: 7,
         SlideTitle: " Building a Simple User Interface",
-        disc: `Creating an intuitive user interface is crucial, even in a console-based application like our Mad Libs project. We use <span class="style-html">std::cout</span> to display prompts to the user, guiding them on what type of word they should enter next. Each prompt is designed to request a specific type of word (a noun, verb, adjective, or preposition), and the user's input is then stored in the corresponding variable.`,
+        disc: `Creating an intuitive user interface is crucial, even in a console-based application like our Mad Libs project. We use <span class="style-html">cout</span> to display prompts to the user, guiding them on what type of word they should enter next. Each prompt is designed to request a specific type of word (a noun, verb, adjective, or preposition), and the user's input is then stored in the corresponding variable.`,
         code:
-`std::cout << "Enter a noun: ";
-std::getline(std::cin, noun);`
+`cout << "Enter a noun: ";
+getline(cin, noun);`
     },
 
     {
         SlideNumber: 8,
         SlideTitle: "String Concatenation",
-        disc: `After capturing all user inputs, we want to stitch together a sentence or a paragraph. In C++, we can concatenate, or join, strings using the <span class="style-html">+</span> operator or simply by using the <span class="style-html"><<</span> operator with <span class="style-html">std::cout</span>. <br></br>
+        disc: `After capturing all user inputs, we want to stitch together a sentence or a paragraph. In C++, we can concatenate, or join, strings using the <span class="style-html">+</span> operator or simply by using the <span class="style-html"><<</span> operator with <span class="style-html">cout</span>. <br></br>
         
-        For instance: <br></br><span class="style-html">The " << adjective << " " << noun << " " << verb << " " << preposition << " the " << noun2 << ".";</span> <br></br> This joins together the user's inputs into a complete sentence. It looks funky now, but it will look completely normal when the program is run!`,
+        For instance: <br></br><span class="style-html">The " << adjective << " " << noun << " " << verb << " " << preposition << " the " << noun2 << ".";</span> <br></br> This joins together the user's inputs into a complete sentence. It looks funky now, but it will look completely normal when the program is run! <br></br>
+        
+        Tip! Whitespace, or empty space, is usually ignored by the compiler, meaning you can break up multiple lines of code my pressing enter, and that won't effect the output of the code... most of the time!.
+        `,
         code:
-`std::cout << "Here's your story:";
-std::cout << "The " << adjective << " " << noun << " " 
+`cout << "Here's your story:";
+cout << "The " << adjective << " " << noun << " " 
 << verb << " " << preposition << " the " << noun2 
 << ".";`
     },

@@ -25,43 +25,45 @@ const Challenge4Component = () => {
             <Description>
                     <p>Let's build our very own mad libs project! Since this is your first complex project, I will be giving you some starter code, and you will add in the missing sections as shown in the code below. Copy and paste this code into VSCode, and fill in the missing lines!</p>
             </Description>
-
-            <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
+            <SyntaxHighlighterContainer>
+                <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
                 {
 `#include <iostream>
-// ADD CODE: What do we need to add to allow strings from user input?
+// ADD CODE: What do we need to add to allow strings for user input?
+using namespace std;
 
 int main() {
-    std::string noun;
-    std::string noun2;
+    string noun;
+    string noun2;
     // ADD CODE: Let's create a verb variable to store the verb from the user.
-    std::string adjective;
-    std::string preposition;
+    string adjective;
+    string preposition;
 
-    std::cout << "Welcome to C++ Mad Libs!\\n\\n";
+    cout << "Welcome to C++ Mad Libs!\\n\\n";
     
-    std::cout << "Enter a noun: ";
-    std::getline(std::cin, noun);
+    cout << "Enter a noun: ";
+    getline(cin, noun);
 
     // ADD CODE: Output a message asking the user to enter another noun
-    std::getline(std::cin, noun2);
+    getline(cin, noun2);
 
-    std::cout << "Enter a verb: ";
-    std::getline(std::cin, verb);
+    cout << "Enter a verb in the past tense: ";
+    getline(cin, verb);
 
-    std::cout << "Enter an adjective: ";
+    cout << "Enter an adjective: ";
     // ADD CODE: Let's finish capturing the users adjective
 
     // ADD CODE: Display a message to have the user enter a preposition
     // ADD CODE: Finish capturing the users preposition
 
-    std::cout << "\\nHere's your story:\\n\\n";
-    std::cout << "The " << adjective << " " << noun << " " << verb << " " 
+    cout << "\\nHere's your story:\\n\\n";
+    cout << "The " << adjective << " " << noun << " " << verb << " " 
     << preposition << " the " << noun2 << ".\\n";
     /* ADD CODE: What can we 'return' to make sure the program
     has successfully completed execution without any errors? */
 }`}
-            </SyntaxHighlighter>
+                </SyntaxHighlighter>
+            </SyntaxHighlighterContainer>
 
             <Description>
                 <p>Try running the program in your terminal! Good luck! Remember to troubleshoot your issues with Google or AI! Only check the solution when you have figured it out, or if AI or Google were not able to help!</p>
@@ -72,46 +74,49 @@ int main() {
             </button>
 
             {showSolution && 
+                <SyntaxHighlighterContainer>
                     <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
                         
 {`#include <iostream>
 #include <string>
+using namespace std;
 
 int main() {
-    std::string noun;
-    std::string noun2;
-    std::string verb;
-    std::string adjective;
-    std::string preposition;
+    string noun;
+    string noun2;
+    string verb;
+    string adjective;
+    string preposition;
 
-    std::cout << "Welcome to C++ Mad Libs!\\n\\n";
+    cout << "Welcome to C++ Mad Libs!\\n\\n";
     
-    std::cout << "Enter a noun: ";
-    std::getline(std::cin, noun);
+    cout << "Enter a noun: ";
+    getline(cin, noun);
 
-    std::cout << "Enter a second noun: ";
-    std::getline(std::cin, noun2);
+    cout << "Enter a second noun: ";
+    getline(cin, noun2);
 
-    std::cout << "Enter a verb: ";
-    std::getline(std::cin, verb);
+    cout << "Enter a verb in the past tense: ";
+    getline(cin, verb);
 
-    std::cout << "Enter an adjective: ";
-    std::getline(std::cin, adjective);
+    cout << "Enter an adjective: ";
+    getline(cin, adjective);
 
-    std::cout << "Enter a preposition: ";
-    std::getline(std::cin, preposition);
+    cout << "Enter a preposition: ";
+    getline(cin, preposition);
 
-    std::cout << "\\nHere's your story:\\n\\n";
-    std::cout << "The " << adjective << " " << noun << " " << verb << " " 
+    cout << "\\nHere's your story:\\n\\n";
+    cout << "The " << adjective << " " << noun << " " << verb << " " 
     << preposition << " the " << noun2 << ".\\n";
     
     return 0;
 }`}
                     </SyntaxHighlighter>
+                    </SyntaxHighlighterContainer>
             }
              <ExtraCredit>
-                <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold', marginBottom:'1rem'}}>Extra Credit</p>
-                <p style={{textAlign:'center'}}> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
+                <ExtraCreditTitle>Extra Credit</ExtraCreditTitle>
+                <p> Once you have the app running successfully, deleted it and try it from scratch! Try to recreate it with as little assistance as possible! </p>
             </ExtraCredit>
 
             <ButtonContainer>
@@ -123,6 +128,28 @@ int main() {
 };
 
 export default Challenge4Component;
+
+const ExtraCreditTitle = styled.h2`
+    text-align: center;
+    color: var(--blue);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    @media (min-height: 800px) {
+        font-size: 4rem;
+    }
+`
+const SyntaxHighlighterContainer = styled.div`
+    font-size: 1rem;
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
+        width: 100%;
+    }
+    span { 
+        font-size: inherit;
+    }
+`;
+
 
 const Container = styled.div`
     display: flex;
@@ -137,6 +164,10 @@ const Container = styled.div`
     p {
         width: 90%;
         margin: 0 auto;
+        text-align: center;
+        @media (min-height: 800px) {
+            font-size: 2.25rem;
+        }
     }
     button {
         color: var(--gray);
@@ -153,6 +184,12 @@ const Container = styled.div`
             outline: 2px solid var(--purple);
             cursor: pointer;
         }
+        @media (min-height: 800px) {
+            font-size: 2.25rem;
+            height: 3rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
     }
 `;
 
@@ -168,6 +205,9 @@ const Title = styled.h1`
     margin-bottom: 2rem;
     margin-top: 2rem;
     color: var(--blue);
+    @media (min-height: 800px) {
+        font-size: 3.25rem;
+    }
 `;
 
 const Description = styled.div`

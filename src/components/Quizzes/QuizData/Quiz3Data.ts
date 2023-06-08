@@ -1,5 +1,5 @@
 
-export const Quiz3DataTitle = "Hello, World!";
+export const Quiz3DataTitle = "Quiz 3: Hello, World!";
 
 export const Quiz3Data = [
     {
@@ -18,6 +18,21 @@ export const Quiz3Data = [
     {
         QuizLessonNumber: 1,
         QuestionNumber: 2,
+        QuizTitle: "'using namespace std;'",
+
+        question : `What is the purpose of 'using namespace std;' in C++?`,
+
+        answer1: "It helps to avoid name conflicts with functions in other namespaces.",
+        answer2: "It makes all symbols in the 'std' namespace available without using the 'std::' prefix.",
+        answer3: "It includes all the standard libraries in C++.",
+        answer4: "It's the only way to use cin and cout in your program.",
+
+        correct: "It makes all symbols in the 'std' namespace available without using the 'std::' prefix."
+        
+    },
+    {
+        QuizLessonNumber: 1,
+        QuestionNumber: 3,
 
         QuizTitle: "int main()",
 
@@ -31,7 +46,7 @@ export const Quiz3Data = [
     },
     {
         QuizLessonNumber: 1,
-        QuestionNumber: 3,
+        QuestionNumber: 4,
         QuizTitle: "{",
         question: "What is the purpose of the opening brace '{' after the main function declaration?",
 
@@ -43,10 +58,10 @@ export const Quiz3Data = [
     },
     {
         QuizLessonNumber: 1,
-        QuestionNumber: 4,
-        QuizTitle: "std::cout << 'Hello, World!'",
+        QuestionNumber: 5,
+        QuizTitle: "cout << 'Hello, World!'",
 
-        question: "What does 'std::cout << 'Hello, World!';' do?",
+        question: "What does 'cout << 'Hello, World!';' do?",
 
         answer1: "It inputs the string 'Hello, World!' from the user.",
         answer2: "It includes the 'Hello, World!' library.",
@@ -57,11 +72,11 @@ export const Quiz3Data = [
     },
     {
         QuizLessonNumber: 1,
-        QuestionNumber: 5,
+        QuestionNumber: 6,
 
         QuizTitle: "String Literal",
 
-        question: "What is a string literal in C++?",
+        question: "What is a 'string literal' in C++?",
 
         answer1: "A variable that stores a string of characters.",
         answer2: "A sequence of characters enclosed in double quotation marks.",
@@ -71,7 +86,7 @@ export const Quiz3Data = [
     },
     {
         QuizLessonNumber: 1,
-        QuestionNumber: 6,
+        QuestionNumber: 7,
         QuizTitle: ";",
 
         question: "What is the purpose of the semicolon ';' in C++?",
@@ -85,7 +100,7 @@ export const Quiz3Data = [
     },
     {
         QuizLessonNumber: 1,
-        QuestionNumber: 7,
+        QuestionNumber: 8,
         QuizTitle: "return 0;",
        
         question: "What does 'return 0;' signify in the main function?",
@@ -99,7 +114,7 @@ export const Quiz3Data = [
     },
     {
         QuizLessonNumber: 1,
-        QuestionNumber: 8,
+        QuestionNumber: 9,
         QuizTitle: "}",
        
         question: "What does the closing brace '}' signify in the main function?",

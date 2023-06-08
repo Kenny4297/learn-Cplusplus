@@ -3,7 +3,7 @@ import LessonsSlider from "./LessonsSlider";
 import styled from "styled-components";
 import { LessonSlideInterface } from "./LessonData/Lesson1Data";
 import { useParams, useNavigate } from "react-router-dom";
-import '../../index.css'
+import '../../index.css';
 
 type LessonParams = {
     lessonNumber: string;
@@ -39,6 +39,10 @@ const Lessons = () => {
     };
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [currentSlide]);
+
+    useEffect(() => {
         const fetchLessonData = async () => {
             const lesson = await getLessonData(Number(lessonNumber));
             setLessonData(lesson.data);
@@ -54,40 +58,40 @@ const Lessons = () => {
 
     return (
         <Container id="lessons">
-            <Title className="blue" aria-label="Lessons">
-                    {lessonTitle}
-            </Title>
-            <LessonsSlider slide={lessonData[currentSlide]} />
-            <Buttons>
-                <ButtonWrapper>
-                    {currentSlide !== 0 && (
-                        <button onClick={prevSlide} aria-label="Previous slide">
-                            Back
-                        </button>
-                    )}
-                </ButtonWrapper>
-                <ButtonWrapper>
-                    {currentSlide !== lessonData.length - 1 ? (
-                        <button onClick={nextSlide} aria-label="Next slide">
-                            Next
-                        </button>
-                    ) : (
-                        lessonNumber && noQuizLessons.includes(lessonNumber) ? (
-                            <button
-                                onClick={() => navigate(`/challenge/${lessonNumber}`)}
-                            >
-                                Go to Challenge!
+                <Title className="blue" aria-label="Lessons">
+                        {lessonTitle}
+                </Title>
+                <LessonsSlider slide={lessonData[currentSlide]} />
+                <Buttons>
+                    <ButtonWrapper>
+                        {currentSlide !== 0 && (
+                            <button onClick={prevSlide} aria-label="Previous slide">
+                                Back
+                            </button>
+                        )}
+                    </ButtonWrapper>
+                    <ButtonWrapper>
+                        {currentSlide !== lessonData.length - 1 ? (
+                            <button onClick={nextSlide} aria-label="Next slide">
+                                Next
                             </button>
                         ) : (
-                            <button
-                                onClick={() => navigate(`/quiz/${lessonNumber}`)}
-                            >
-                                Quiz
-                            </button>
-                        )
-                    )}
-                </ButtonWrapper>
-            </Buttons>
+                            lessonNumber && noQuizLessons.includes(lessonNumber) ? (
+                                <button
+                                    onClick={() => navigate(`/challenge/${lessonNumber}`)}
+                                >
+                                    Go to Challenge!
+                                </button>
+                            ) : (
+                                <button
+                                    onClick={() => navigate(`/quiz/${lessonNumber}`)}
+                                >
+                                    Quiz
+                                </button>
+                            )
+                        )}
+                    </ButtonWrapper>
+                </Buttons>
         </Container>
     );
 };
@@ -106,7 +110,9 @@ const Container = styled.div`
 
 const Title = styled.h1`
     text-align: center;
-    
+    @media (min-height: 800px) {
+        font-size: 2rem;
+    }
 `;
 
 const Buttons = styled.div`
@@ -141,6 +147,11 @@ const ButtonWrapper = styled.div`
             background-color: var(--purple);
             color: var(--teal);
             outline: 1px solid var(--blue)
+        }
+        @media (min-height: 800px) {
+            font-size: 2.25rem;
+            height: 3.5rem;
+            padding:1rem 2rem 3.25rem 2rem;
         }
     }
 `;

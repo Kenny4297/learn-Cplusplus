@@ -17,6 +17,12 @@ const Title = styled.div`
     height: 2rem;
     background-color: var(--teal);
     border-bottom: 2px solid var(--purple);
+    @media (min-height: 800px) {
+          /* font-size: 2rem; */
+          /* padding: 1rem; */
+          /* margin-bottom: 10rem; */
+          height:3.5rem;
+        }
 `;
 
 
@@ -52,4 +58,10 @@ const H1 = styled.h1`
     position: relative;
     animation: ${fadeIn} 3s ease-in-out forwards, ${slideDown} 2s ease-in-out forwards;
     background-color: var(--teal);
+    @media (min-height: 800px) {
+          font-size: 2rem;
+          /* padding: 1rem; */
+          /* margin-bottom: 10rem; */
+          /* height:4rem; */
+        }
 `;

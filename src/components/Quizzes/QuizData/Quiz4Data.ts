@@ -1,5 +1,5 @@
 
-export const Quiz4DataTitle = "Mad Libs";
+export const Quiz4DataTitle = "Quiz 4: Mad Libs";
 
 export const Quiz4Data = [
     {
@@ -20,9 +20,9 @@ export const Quiz4Data = [
         QuizLessonNumber: 1,
         QuestionNumber: 2,
 
-        QuizTitle: "std::cout",
+        QuizTitle: "cout",
 
-        question: "What do std::cout and std::cin in C++ do?",
+        question: "What does 'cout' and 'cin' in C++ do?",
 
         answer1: "Display output and capture user input respectively.",
         answer2: "Specify the type of a variable.",
@@ -34,9 +34,9 @@ export const Quiz4Data = [
     {
         QuizLessonNumber: 1,
         QuestionNumber: 3,
-        QuizTitle: "std::getline()",
+        QuizTitle: "getline()",
 
-        question: "When would we use std::getline()?",
+        question: "When would we use 'getline()'?",
 
         answer1: "To declare variables.",
         answer2: "To display output.",
@@ -48,9 +48,9 @@ export const Quiz4Data = [
     {
         QuizLessonNumber: 1,
         QuestionNumber: 4,
-        QuizTitle: "std::string",
+        QuizTitle: "string",
 
-        question: "What is the purpose of std::string?",
+        question: "What is the purpose of a 'string'?",
 
         answer1: "To store and manipulate sequences of characters.",
         answer2: "To capture user input.",
@@ -63,9 +63,9 @@ export const Quiz4Data = [
         QuizLessonNumber: 1,
         QuestionNumber: 5,
 
-        QuizTitle: "std::cout",
+        QuizTitle: "cout",
 
-        question: "In our Mad Libs program, what purpose does std::cout serve?",
+        question: "In our Mad Libs program, what purpose does 'cout' serve?",
 
         answer1: "It captures user input.",
         answer2: "It declares variables.",
@@ -82,11 +82,11 @@ export const Quiz4Data = [
         question: "How do we join strings in C++?",
 
         answer1: "Using the / operator.",
-        answer2: "Using the + operator or the << operator with std::cout.",
+        answer2: "Using the + operator or the << operator with cout.",
         answer3: "Using the & operator.",
         answer4: "Using the - operator.",
 
-        correct: "Using the + operator or the << operator with std::cout."
+        correct: "Using the + operator or the << operator with cout."
     },
     {
         QuizLessonNumber: 1,

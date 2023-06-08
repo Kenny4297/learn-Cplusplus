@@ -9,10 +9,7 @@ type QuizParams = {
 };
 
 const getQuizData = async (quizNumber: number) => {
-    console.log("fetching quiz data");
-    console.log(quizNumber)
     const module = await import(`./QuizData/Quiz${quizNumber}Data`);
-    console.log(module.data);
     return {
       data: module[`Quiz${quizNumber}Data`], 
       title: module[`Quiz${quizNumber}DataTitle`]
@@ -126,12 +123,6 @@ const Buttons = styled.div`
     justify-content: center;
     /* border: 2px solid blue; */
     margin: 0 auto;
-    button {
-        background-color: var(--blue);
-        border: none;
-        border-radius: 2px;
-        padding: .2rem;
-    }
 `;
 
 const ButtonWrapper = styled.div`
@@ -141,7 +132,7 @@ const ButtonWrapper = styled.div`
     margin-right: 1rem;
     width: auto;
     button {
-        color: var(--gray);
+        color: var(--teal);
         height:2rem;
         width:100%;
         background-color: var(--blue);
@@ -153,6 +144,11 @@ const ButtonWrapper = styled.div`
             background-color: var(--teal);
             outline: 2px solid var(--purple);
             cursor: pointer;
+        }
+        @media (min-height: 800px) {
+            font-size: 2.25rem;
+            height: 3.5rem;
+            padding:.75rem 2rem 3.25rem 2rem;
         }
     }
 `;

@@ -35,7 +35,7 @@ const Challenge2Component = () => {
             </Description2>
 
             <ExtraCredit>
-                Remember: The goals isn't to just create these projects, it's to understand everything that you write! Happy coding!
+                Remember: The goal isn't to just create these projects, it's to understand everything that you write! Happy coding!
             </ExtraCredit>
 
             <ButtonContainer>
@@ -90,18 +90,12 @@ const Container = styled.div`
     }
 `;
 
-const ButtonContainer = styled.div`
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 4rem;
-`
-
 const Title = styled.h1`
     font-size: 2rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
     color: var(--blue);
+    text-align: center;
     @media (min-height: 800px) {
         font-size: 3.25rem;
     }
@@ -113,6 +107,18 @@ const Description = styled.div`
 
 `;
 
+const Description2 = styled.div`
+    width: 90%;
+`;
+
+const Span = styled.span`
+    color: var(--blue);
+    font-weight: bold;
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
+    }
+`;
+
 const ExtraCredit = styled.div`
     margin: 2rem 0;
     text-align: center;
@@ -121,14 +127,18 @@ const ExtraCredit = styled.div`
     }
 `;
 
+const ButtonContainer = styled.div`
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+`;
 
-const Span = styled.span`
-    color: var(--blue);
-    font-weight: bold;
-    @media (min-height: 800px) {
-        font-size: 2.25rem;
-    }
-`
-const Description2 = styled.div`
-    width: 90%;
-`
+
+
+
+
+
+
+
+

@@ -4,14 +4,12 @@ export const Lesson2Data = [
     {
         SlideNumber: 1,
         SlideTitle: "Get Started Coding",
-        disc: `In any journey of learning a programming language like C++, it's essential to understand that the environment where you write and execute your code plays a crucial role. In this context, setting up your personal computer (PC) for coding is a vital first step before diving deeper into the world of C++. This set-up isn't merely about having a text editor or an Integrated Development Environment (IDE); it's about crafting a workspace that fits your needs and helps you become more productive and efficient. One might question why this is necessary when there are countless online platforms offering embedded IDEs that let you write and run code directly in your web browser. While these are excellent tools for quick tasks or learning on the go, they are fundamentally different from running code on your own machine.
-        `
+        disc: `In any journey of learning a programming language like C++, it's essential to understand that the environment where you write and execute your code plays a crucial role. In this context, setting up your personal computer (PC) for coding is a vital first step before diving deeper into the world of C++. This set-up isn't merely about having a text editor or an Integrated Development Environment (IDE); it's about crafting a workspace that fits your needs and helps you become more productive and efficient. One might question why this is necessary when there are countless online platforms offering embedded IDEs that let you write and run code directly in your web browser. While these are excellent tools for quick tasks or learning on the go, they are fundamentally different from running code on your own machine.`
     },
     {
         SlideNumber: 2,
         SlideTitle: "Get Started Coding",
         disc: `Firstly, an embedded IDE generally runs your code on a remote server, not your own PC. While this makes it platform-independent, it can sometimes lead to differences in the behavior of your code due to variations in the server's configuration. In contrast, when you run code on your own PC, you have full control over the environment and can better understand and debug any issues that may arise. <br></br>
-        
         
         Secondly, setting up your own environment aids in learning about the inner workings of a computer and the compiler, which is a crucial part of the C++ learning journey. By installing a compiler and running your code, you get firsthand experience of how source code is transformed into an executable program. This experience is vital in understanding compilation errors and their resolutions, which is not usually the case with an embedded IDE.`
     },
@@ -43,5 +41,5 @@ export const Lesson2Data = [
         SlideNumber: 7,
         SlideTitle: "Road to your future",
         disc: `If the installation went smoothly, your're lucky. Setting up an IDE can be frustrating, but once you have it set up, the opportunities on what you can create are endless. Remember to use outside sources to assist with any issues you encounter. Let's continue.`
-    },
+    }
 ]

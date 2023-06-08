@@ -29,7 +29,6 @@ html, body {
   vertical-align: baseline;
   box-sizing: border-box;
   background: transparent;
-  /* background-color: black; */
 }
 
 code {
@@ -79,8 +78,3 @@ button {
   background: #999;
   border-radius: 50px;
 }
-
-/* Handle on hover */
-/* ::-webkit-scrollbar-thumb:hover {
-  background: #555;
-} */

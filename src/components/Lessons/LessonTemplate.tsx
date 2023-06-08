@@ -1,15 +1,14 @@
-import Lessons from './Lessons';
-import styled from 'styled-components'
-import '../../index.css'
+import Lessons from "./Lessons";
+import styled from "styled-components";
+import "../../index.css";
 
 const LessonTemplate = () => {
-
-      return (
+    return (
         <Container>
-          <Lessons />
+            <Lessons />
         </Container>
-      );
-}
+    );
+};
 
 export default LessonTemplate;
 
@@ -21,7 +20,5 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* background-color: var(--lightBackground); */
     height: 100%;
 `;
-

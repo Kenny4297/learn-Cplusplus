@@ -16,7 +16,6 @@ const LessonsSlider = ({slide}: LessonSlideProps) => {
         border: '2px solid var(--purple)',
         width: 'auto',
         height: 'auto',
-        // maxHeight:'19rem',
         margin: 'auto'
     };
 
@@ -35,7 +34,7 @@ const LessonsSlider = ({slide}: LessonSlideProps) => {
         if (isURL(disc)) {
             return <ReactPlayer url={disc} playing controls width="100%" height="100%" />;
         } else {
-            // I understand the issue with the following code, but since the user isn't able to alter the HTML, This shouldn't be an issue
+            // I understand the issue with the following code, but since the user isn't able to alter the HTML, this shouldn't be an issue
             return <CodeText dangerouslySetInnerHTML={{ __html: disc }} />;
         }
     };
@@ -70,37 +69,8 @@ const LessonsSlider = ({slide}: LessonSlideProps) => {
 
 export default LessonsSlider;
 
-const StyledSyntaxHighlighter = styled.div`
-    font-size: 1rem;
-    @media (min-height: 800px) {
-        font-size: 2.25rem;
-    }
-    span { // Targets all <span> elements within SyntaxHighlighter
-        font-size: inherit; // Inherits the font size from the parent
-    }
-`;
-
-const CodeText = styled.div`
-    @media (min-height: 800px) {
-        font-size: 2.25rem;
-        height: auto;
-        line-height: 2.75rem;
-    }
-`
-
-const CodeAndDescription = styled.div`
-    display: flex;
-    flex-direction: column;
-
-    background-color: var(--lightBackground);
-    @media (max-width: 1000px) {
-        flex-direction: column;
-        background-color: var(--teal);
-    }    
-`
-
 const Container = styled.div`
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     font-size: .5rem;
     margin: 0 auto;
     display: flex;
@@ -112,7 +82,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-    border: 2px solid green;
+    /* border: 2px solid green; */
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -123,10 +93,20 @@ const Title = styled.h1`
     }
 `;
 
+const CodeAndDescription = styled.div`
+    display: flex;
+    flex-direction: column;
+    background-color: var(--lightBackground);
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        background-color: var(--teal);
+    }    
+`;
+
 const DescCode = styled.div`
     width: 100%;
     height: auto;
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     padding: 2rem;
     text-align: center;
     line-height: 1.5rem;
@@ -140,13 +120,30 @@ const DescCode = styled.div`
         width: 100%;
         margin-bottom: 1rem;
     }
+`;
 
-`
+const Code = styled.div`
+    /* border: 2px solid green; */
+    margin: 0 auto;
+    display: flex;
+`;
+
+const StyledSyntaxHighlighter = styled.div`
+    font-size: 1rem;
+    width: 100%;
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
+    }
+    @media (max-width: 650px ) {
+        font-size: 3vw;
+    }
+    span { 
+        font-size: inherit; 
+    }
+`;
 
 const DescNoCode = styled.div`
-    border: 2px solid var(--purple);
-    text-align: center;
-    /* width: 80%; */
+    /* border: 2px solid var(--purple); */
     height: auto;
     padding: 2rem;
     box-sizing: border-box;
@@ -155,8 +152,21 @@ const DescNoCode = styled.div`
     background-color: var(--lightBackground);
 `;
 
-const Code = styled.div`
-    border: 2px solid green;
-    margin: 0 auto;
-    display: flex;
-`;
+const CodeText = styled.div`
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
+        height: auto;
+        line-height: 2.75rem;
+    }
+`
+
+
+
+
+
+
+
+
+
+
+

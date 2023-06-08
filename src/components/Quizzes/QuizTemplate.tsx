@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const QuizTemplate = () => {
     return (
         <Container>
-        <Quizzes />
+            <Quizzes />
         </Container>
     );
 }
@@ -24,5 +24,4 @@ const Container = styled.div`
     @media (max-width: 500px) {
         width: 100%;
     }
-
 `;

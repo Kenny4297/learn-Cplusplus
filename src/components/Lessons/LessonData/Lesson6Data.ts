@@ -6,8 +6,7 @@ export const Lesson6Data = [
         SlideTitle: "Guessing Game",
         disc: `We have reached our last project before I let you free in the wild! You have learned so much and I'm so excited to see what else you can create! This lesson will be about creating a guess game. Here are the parameters: <br> </br>
 
-        The user competes against the the computer. The user starts with 4 lives and they guess a number from 1 to 10. The computer has a secret number that you are trying to guess. If you guess the number before your lives run out, you win! If not, the computer wins! Let's take a look at what you need to know to beat the computer!
-        `,
+        The user competes against the the computer. The user starts with 4 lives and they guess a number from 1 to 10. The computer has a secret number that you are trying to guess. If you guess the number before your lives run out, you win! If not, the computer wins! Let's take a look at what you need to know to beat the computer!`,
         code:
 `#include <iostream>
 using namespace std;
@@ -70,10 +69,8 @@ int main() {
         
         To avoid this, we typically use the current time as the seed because it changes every second, making it a good source of pseudo-randomness. The <span class="style-html">time()</span> function returns the current time, and <span class="style-html">static_cast<unsigned int></span> is used to convert this time value to an unsigned integer, which is the type of data required by the <span class="style-html">srand</span> function.`,
         code:        
-`srand(static_cast<unsigned int>(time(0)));  
-`
+`srand(static_cast<unsigned int>(time(0)));`
     },
-
     {
         SlideNumber: 4,
         SlideTitle: " Generating Random Whole Numbers",
@@ -81,10 +78,8 @@ int main() {
         
         <span class="style-html">rand() % 10</span> generates a random number between 0 and 9. But we want a number between 1 and 10 for our game, so we add 1 to the result: <br> <span class="style-html">rand() % 10 + 1</span>`,
         code:
-`int target = rand() % 10 + 1; 
-`
+`int target = rand() % 10 + 1; `
     },
-
     {
         SlideNumber: 5,
         SlideTitle: "While Loops",
@@ -99,7 +94,6 @@ int main() {
         so lives will most likely not remain the same number */
 }`
     },
-
     {
         SlideNumber: 6,
         SlideTitle: "Decrementing Variables",

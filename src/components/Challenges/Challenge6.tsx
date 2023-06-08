@@ -13,7 +13,7 @@ const Challenge6 = () => {
         backgroundColor: 'black',
         borderRadius: '5px',
         border: '5px solid blue',
-        width: '27.5rem',
+        width: 'auto',
         margin: '0 auto',
         marginTop:'1rem',
         marginBottom:'2rem'
@@ -23,7 +23,6 @@ const Challenge6 = () => {
         backgroundColor: 'black',
         borderRadius: '5px',
         border: '5px solid blue',
-        width: '80%',
         margin: '0 auto',
         marginBottom:'2rem'
     };
@@ -36,7 +35,7 @@ const Challenge6 = () => {
 
             <Description>
                 <p>This will be the most difficult project you have ever completed, since you will need to do something you never had to do before: Think like a programmer! I will be giving you some starter code and some hints, but it will be up to do you put this all together. You may want to go back through the lessons and review some of the syntax and ideas. Here is some code that you may want to use in the project:</p>
-                <SyntaxHighlighterContainer>
+                <SyntaxHighlighterContainer1>
                     <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle1}>
                     {
 `<ctime>
@@ -45,7 +44,7 @@ srand(static_cast<unsigned int>(time(0)));
 int target = rand() % 10 + 1;
 `}
                     </SyntaxHighlighter>
-                </SyntaxHighlighterContainer>
+                </SyntaxHighlighterContainer1>
 
                 <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold'}}>Hints:</p> <br></br>
                 <div style={{width:'75%', display: 'flex', justifyContent:'center', alignItems: 'center', margin: '0 auto'}}>
@@ -64,7 +63,7 @@ int target = rand() % 10 + 1;
             </button>
 
             {showSolution && 
-            <SyntaxHighlighterContainer>
+            <SyntaxHighlighterContainer2>
                     <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle2}>
                         {
 `#include <iostream>
@@ -109,7 +108,7 @@ int main() {
     return 0;
 }`}
                         </SyntaxHighlighter>
-                    </SyntaxHighlighterContainer>
+                    </SyntaxHighlighterContainer2>
             }
 
             
@@ -128,28 +127,6 @@ int main() {
 
 export default Challenge6;
 
-const ExtraCreditTitle = styled.h2`
-    text-align: center;
-    color: var(--blue);
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    @media (min-height: 800px) {
-        font-size: 4rem;
-    }
-`
-const SyntaxHighlighterContainer = styled.div`
-    font-size: 1rem;
-    width: 100%;
-    @media (min-height: 800px) {
-        font-size: 2.25rem;
-    }
-    span { 
-        font-size: inherit;
-    }
-`;
-
-
 const Container = styled.div`
     display: flex;
     justify-content: center;
@@ -157,7 +134,6 @@ const Container = styled.div`
     align-items: center;
     margin: 0 auto;
     width: 80%;
-    /* height: 95vh; */
     color: var(--gray);
     background-color: var(--lightBackground);
     p {
@@ -192,32 +168,78 @@ const Container = styled.div`
     }
 `;
 
-const ButtonContainer = styled.div`
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 4rem;
-`
-
 const Title = styled.h1`
     font-size: 2rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
     color: var(--blue);
+    text-align: center;
     @media (min-height: 800px) {
         font-size: 3.25rem;
     }
 `;
-
 const Description = styled.div`
     margin-bottom: 2rem;
     text-align: center;
 
 `;
 
+const SyntaxHighlighterContainer1 = styled.div`
+    font-size: 1rem;
+    width: 27.5rem;
+    margin: 0 auto;
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
+    }
+    @media (max-width: 570px ) {
+        font-size: 3vw;
+        width: 80vw;
+    }
+    span { 
+        font-size: inherit; 
+    }
+`;
+
+const SyntaxHighlighterContainer2 = styled.div`
+    font-size: 1rem;
+    width: 100%;
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
+    }
+    @media (max-width: 930px ) {
+        font-size: 1.6vw;
+    }
+    span { 
+        font-size: inherit; 
+    }
+`;
+
+const ExtraCreditTitle = styled.h2`
+    text-align: center;
+    color: var(--blue);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    @media (min-height: 800px) {
+        font-size: 4rem;
+    }
+`;
+
 const ExtraCredit = styled.div`
     margin: 2rem 0;
 `;
+
+const ButtonContainer = styled.div`
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+`;
+
+
+
+
+
 
 
 

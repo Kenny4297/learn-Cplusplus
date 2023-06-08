@@ -40,8 +40,7 @@ int main() {
     }
 
     return 0;
-}
-`
+}`
     },
     {
         SlideNumber: 2,
@@ -59,22 +58,23 @@ char operation;`,
 `cout << "Enter first number: ";
 cin >> num1;`
     },
-
     {
         SlideNumber: 4,
         SlideTitle: "Conditional Statements",
-        disc: `Conditional statements (<span class="style-html">if</span> statements) in C++ allow the program to perform different actions based on whether a certain condition is true or false. In our calculator, we will use an if statement to check if the user is trying to divide by zero, which is not allowed in mathematics. <br></br> In the following code, we start the <span class="style-html">if</span> statement with an '<span class="style-html">if</span>'. We are saying that "if what ever is in the '()' is true, the code in the '{}' will execute". More specifically, we are saying "If the number that was stored in <span class="style-html">num2</span> does not equal zero, we will print the result to the terminal". More on the '<span class="style-html">!=</span>' next! `,
+        disc: `Conditional statements (<span class="style-html">if</span> statements) in C++ allow the program to perform different actions based on whether a certain condition is true or false. In our calculator, we will use an if statement to check if the user is trying to divide by zero, which is not allowed in mathematics. <br></br>
+        
+        In the following code, we start the <span class="style-html">if</span> statement with an '<span class="style-html">if</span>'. We are saying that "if what ever is in the '()' is true, the code in the '{}' will execute". More specifically, we are saying "If the number that was stored in <span class="style-html">num2</span> does not equal zero, we will print the result to the terminal". More on the '<span class="style-html">!=</span>' next! `,
         code:
 `if(num2 != 0) {
     cout << "The result is: " << num1 / num2 << endl;
 }`
     },
-
     {
         SlideNumber: 5,
         SlideTitle: "Operators",
         disc: `Operators in C++ are symbols used to perform operations on values and variables. Here's a simplified list of basic operators: <br></br>
         <span class="style-html">Arithmetic:</span> Addition (<span class="style-html">+</span>), Subtraction (<span class="style-html">-</span>), Multiplication (<span class="style-html">*</span>) and Division (<span class="style-html">/</span>). <br></br>
+        
         <span class="style-html">Comparisons:</span> Equals to (<span class="style-html">==</span>), Not equal to (<span class="style-html">!=</span>), Greater than (<span class="style-html">></span>), Less than (<span class="style-html"><</span>), Greater than or equal to (<span class="style-html">>=</span>), Less than or equal to (<span class="style-html"><=</span>). <br></br>
         <span class="style-html">Logical:</span> These are a bit complex and will not be used in this application. Just knowing there is more than what is listed here is fine at this point! <br>`,
         code:
@@ -90,7 +90,6 @@ if(num2 > 1) {
     cout << "No, num1 is not in fact greater than 1";
 }`
     },
-
     {
         SlideNumber: 6,
         SlideTitle: "else if / else statement",
@@ -119,7 +118,6 @@ if(num2 > 1) {
 }
 `
     },
-
     {
         SlideNumber: 7,
         SlideTitle: "endl",
@@ -130,5 +128,5 @@ if(num2 > 1) {
 `if (operation == '+') {
     cout << "The result is: " << num1 + num2 << endl;
 }`
-    },
+    }
 ]

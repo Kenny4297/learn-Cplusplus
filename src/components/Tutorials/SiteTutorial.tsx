@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import professor from '../../components/Assets/Images/icons8-teacher-100.png'
 import challenge from '../../components/Assets/Images/icons8-challenge-100.png'
 import code from '../../components/Assets/Images/icons8-code-100.png'
+import computer from '../../components/Assets/Images/icons8-computer2-100.png'
 
 
 const SiteTutorial = () => {
@@ -34,6 +35,15 @@ const SiteTutorial = () => {
                 </ImageContainer>
             </P>
 
+            <P>
+                <p>We highly recommend utilizing this learning platform on a desktop device for the optimal learning experience. As you embark on this exciting journey of programming, you'll be installing an Integrated Development Environment (IDE) that provides comprehensive tools for software development. The desktop format allows you to engage with the lessons and the IDE on a single screen, simplifying the process of coding and enhancing your learning. With the desktop version, you can easily navigate, compile, and debug your code, making your learning experience more effective. While our platform is accessible on various devices, the ease of coding on one screen versus switching across multiple devices offers clear advantages. </p>
+
+                <ImageContainer >
+                    <img src={computer} alt="code" />
+                </ImageContainer>
+
+            </P>
+
             <div style={{display: 'flex', justifyContent:'center', alignItems:'center'}}>
                 <button onClick={() => {navigate(`/lessonTutorial`)}}>Lesson Tutorial</button>
             </div>
@@ -54,7 +64,6 @@ const Container = styled.div`
         color: var(--gray);
         @media (min-height: 800px) {
             font-size: 3rem;
-            /* padding-bottom: 0; */
         }
     }
     button {

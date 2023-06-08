@@ -9,7 +9,6 @@ import QuizTutorial from "./components/Tutorials/QuizTutorial";
 import LessonTutorial from "./components/Tutorials/LessonTutorial";
 import ChallengeTutorial from "./components/Tutorials/ChallengeTutorial";
 import Header from "./components/Header";
-import styled from 'styled-components';
 import ScrollToTop from './components/ScrollToTop';
 
 export const UserContext = createContext<{
@@ -59,33 +58,30 @@ function App() {
     
     return (
         <>
-        <div className="wrapper">
-            <HeaderContainer>
-                <Header />
-            </HeaderContainer>
-            <UserContext.Provider value={{ userData, setUserData }}>
-                <Router>
-                    <ScrollToTop />
-                        <Routes>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/lesson/:lessonNumber" element={<LessonTemplate />} />
-                        <Route path="/quiz/:quizNumber" element={<QuizTemplate />} />
-                        <Route path="/scores/:quizNumber" element={<ScoresTemplate />} />
-                        <Route path="/challenge/:challengeNumber" element={<ChallengeLoader />} />
-                        <Route path="/siteTutorial" element={<SiteTutorial />} />
-                        <Route path="/lessonTutorial" element={<LessonTutorial />} />
-                        <Route path="/quizTutorial" element={<QuizTutorial />} />
-                        <Route path="/challengeTutorial" element={<ChallengeTutorial />} />
-                    </Routes>
-                </Router>
-            </UserContext.Provider>
-        </div>
+            <div className="wrapper">
+                <div>
+                    <Header />
+                </div>
+                
+                <UserContext.Provider value={{ userData, setUserData }}>
+                    <Router>
+                        <ScrollToTop />
+                            <Routes>
+                            <Route path="/" element={<HomePage />} />
+                            <Route path="/lesson/:lessonNumber" element={<LessonTemplate />} />
+                            <Route path="/quiz/:quizNumber" element={<QuizTemplate />} />
+                            <Route path="/scores/:quizNumber" element={<ScoresTemplate />} />
+                            <Route path="/challenge/:challengeNumber" element={<ChallengeLoader />} />
+                            <Route path="/siteTutorial" element={<SiteTutorial />} />
+                            <Route path="/lessonTutorial" element={<LessonTutorial />} />
+                            <Route path="/quizTutorial" element={<QuizTutorial />} />
+                            <Route path="/challengeTutorial" element={<ChallengeTutorial />} />
+                        </Routes>
+                    </Router>
+                </UserContext.Provider>
+            </div>
         </>
     );
 }
 
 export default App;
-
-const HeaderContainer = styled.div`
-    /* height: 5rem; */
-`

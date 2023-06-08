@@ -135,29 +135,6 @@ int main() {
 
 export default Challenge5Component;
 
-const ExtraCreditTitle = styled.h2`
-    text-align: center;
-    color: var(--blue);
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    @media (min-height: 800px) {
-        font-size: 4rem;
-    }
-`
-const SyntaxHighlighterContainer = styled.div`
-    font-size: 1rem;
-    width: auto;
-    @media (min-height: 800px) {
-        font-size: 2.25rem;
-        width: 100%;
-    }
-    span { 
-        font-size: inherit;
-    }
-`;
-
-
 const Container = styled.div`
     display: flex;
     justify-content: center;
@@ -200,18 +177,12 @@ const Container = styled.div`
     }
 `;
 
-const ButtonContainer = styled.div`
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 4rem;
-`
-
 const Title = styled.h1`
     font-size: 2rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
     color: var(--blue);
+    text-align: center;
     @media (min-height: 800px) {
         font-size: 3.25rem;
     }
@@ -220,10 +191,46 @@ const Title = styled.h1`
 const Description = styled.div`
     margin-bottom: 2rem;
     text-align: center;
+`;
 
+const SyntaxHighlighterContainer = styled.div`
+    font-size: 1rem;
+    width: auto;
+    @media (min-height: 800px) {
+        font-size: 2.25rem;
+    }
+    @media (max-width: 930px ) {
+        font-size: 1.6vw;
+    }
+    span { 
+        font-size: inherit; 
+    }
+`;
+
+const ExtraCreditTitle = styled.h2`
+    text-align: center;
+    color: var(--blue);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    @media (min-height: 800px) {
+        font-size: 4rem;
+    }
 `;
 
 const ExtraCredit = styled.div`
     margin: 2rem 0;
 `;
+
+const ButtonContainer = styled.div`
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+`
+
+
+
+
+
 

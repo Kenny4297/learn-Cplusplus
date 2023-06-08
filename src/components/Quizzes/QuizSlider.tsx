@@ -61,24 +61,6 @@ const QuizSlider = forwardRef<{}, QuizSlideProps>((props, ref) => {
 
 export default QuizSlider;
 
-const AnswerButton = styled.button`
-    border: 2px solid var(--purple);
-    margin-bottom: .5rem;
-    border-radius: .2rem;
-    padding: .25rem;
-    color: var(--gray);
-    width: 25rem;
-    @media (max-width: 500px) {
-        width: 15rem;
-    }
-    @media (min-height: 800px) {
-        font-size: 2rem;
-        width: 35rem;
-        margin-bottom: 1rem;
-    }
-
-`;
-
 const Container = styled.div`
     /* border: 2px solid blue; */
     width:80%;
@@ -100,5 +82,26 @@ const Question = styled.h2`
         font-size: 3rem;
     }
 `;
+
+const AnswerButton = styled.button`
+    border: 2px solid var(--purple);
+    margin-bottom: .5rem;
+    border-radius: .2rem;
+    padding: .25rem;
+    color: var(--gray);
+    width: 25rem;
+    @media (max-width: 500px) {
+        width: 15rem;
+    }
+    @media (min-height: 800px) {
+        font-size: 2rem;
+        width: 35rem;
+        margin-bottom: 1rem;
+    }
+`;
+
+
+
+
 
 

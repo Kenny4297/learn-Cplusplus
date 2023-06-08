@@ -27,8 +27,7 @@ const Lessons = () => {
     );
     const [lessonTitle, setLessonTitle] = useState('');
 
-    // Array of lessons without quizzes
-    const noQuizLessons = ["2"]; // Add other lesson numbers as needed
+    const noQuizLessons = ["2"]; 
 
     const nextSlide = () => {
         setCurrentSlide((oldSlide) => oldSlide + 1);
@@ -38,6 +37,7 @@ const Lessons = () => {
         setCurrentSlide((oldSlide) => oldSlide - 1);
     };
 
+    // Making sure that the window is scrolled to the top when the user goes to the next slide
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [currentSlide]);
@@ -98,7 +98,6 @@ const Lessons = () => {
 
 export default Lessons;
 
-
 const Container = styled.div`
     /* border: 2px solid green; */
     display: flex;
@@ -119,7 +118,6 @@ const Buttons = styled.div`
     display: flex;
     justify-content: center;
     justify-content: space-between;
-
     /* border: 2px solid purple; */
     width: 15rem;
     height: auto;

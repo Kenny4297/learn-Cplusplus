@@ -6,8 +6,7 @@ export const Lesson4Data = [
         SlideTitle: "Mad Libs",
         disc: `Congratulations on Creating your first C++ program! As stated before, we will continue creating projects by adding new concepts as we go. This lesson will set us up with the information needed to create a Mad Libs project. The most important aspect of a developer is to know the steps needed to create a project, not necessarily how to do the steps themselves. <br></br>
         
-        Knowing what needs to be done is a skill developed as you create more projects. This lesson will show you how to create the Mad Libs project, but it is sill up to you to try to put it together! Don't worry if this sounds difficult at first, I promise that it will get easier as we create more projects! Let's begin!
-        `,
+        Knowing what needs to be done is a skill developed as you create more projects. This lesson will show you how to create the Mad Libs project, but it is sill up to you to try to put it together! Don't worry if this sounds difficult at first, I promise that it will get easier as we create more projects! Let's begin!`,
         code:
 `#include <iostream>
 using namespace std;
@@ -42,8 +41,7 @@ int main() {
     << ".\\n";
     
     return 0;
-}
-`
+}`
     },
     {
         SlideNumber: 2,
@@ -84,7 +82,6 @@ cout << "Welcome to C++ Mad Libs!";
 cin >> title;
 `
     },
-
     {
         SlideNumber: 5,
         SlideTitle: "Using getline for Input",
@@ -92,7 +89,6 @@ cin >> title;
         code:
 `getline(cin, name);`
     },
-
     {
         SlideNumber: 6,
         SlideTitle: "The Role of 'string'",
@@ -107,7 +103,6 @@ string last_name;
 string name, hobby, last_name;
 }`
     },
-
     {
         SlideNumber: 7,
         SlideTitle: " Building a Simple User Interface",
@@ -116,7 +111,6 @@ string name, hobby, last_name;
 `cout << "Enter a noun: ";
 getline(cin, noun);`
     },
-
     {
         SlideNumber: 8,
         SlideTitle: "String Concatenation",
@@ -140,5 +134,5 @@ cout << "The " << adjective << " " << noun << " "
 `int main() {
     // Code goes here!
 }`
-    },
+    }
 ]

@@ -14,7 +14,6 @@ export const Quiz1DataTitle = "Quiz1: Introduction To C++";
 
 export const Quiz1Data = [
     {
-        QuizLessonNumber: 1,
         QuestionNumber: 1,
         QuizTitle: "Introduction to C++: Origin and Usage",
 
@@ -28,19 +27,19 @@ export const Quiz1Data = [
         correct: "High-level, general-purpose language"
     },
     {
-        QuizLessonNumber: 1,
         QuestionNumber: 2,
         QuizTitle: "Object-Oriented Programming in C++: Emphasizing Structure and Reusability",
 
         question : `Why is object-oriented programming (OOP) important in programming?`,
+
         answer1: "Physical objects don't exist in the world of digital programming",
         answer2: "It allows data and behaviors to be bundled into objects, which can then interact with each other",
         answer3: "Object-oriented programming is actually not important, and other methods are always better",
         answer4: "Object-oriented programming's performance depends on various factors and can't be generalized as faster or slower than non-OOP",
+
         correct: "It allows data and behaviors to be bundled into objects, which can then interact with each other"
     },
     {
-        QuizLessonNumber: 1,
         QuestionNumber: 3,
         QuizTitle: "Low-Level Features in C++",
 
@@ -54,7 +53,6 @@ export const Quiz1Data = [
         correct: "Low-level features allow balance and flexibility for the developer"
     },
     {
-        QuizLessonNumber: 1,
         QuestionNumber: 4,
         QuizTitle: "The Multi-Paradigm Nature of C++",
 
@@ -68,7 +66,6 @@ export const Quiz1Data = [
         correct: "Procedural"
     },
     {
-        QuizLessonNumber: 1,
         QuestionNumber: 5,
         QuizTitle: "Efficiency in Various Applications",
 
@@ -82,7 +79,6 @@ export const Quiz1Data = [
         correct: "C++ is incredibly fast"
     },
     {
-        QuizLessonNumber: 1,
         QuestionNumber: 6,
         QuizTitle: "The Rich Standard Library and Standard Template Library in C++",
 
@@ -94,21 +90,19 @@ export const Quiz1Data = [
         correct: "True"
     },
     {
-        QuizLessonNumber: 1,
         QuestionNumber: 7,
         QuizTitle: "Challenges in C++",
 
         question : `What is the biggest challenge for the developer in C++?`,
 
         answer1: "Memory Management and the complexity of the language",
-        answer2: "OOP and procedural programming ",
+        answer2: "OOP and procedural programming",
         answer3: "You must know C to work with C++",
         answer4: "C++ is actually easier to learn than Python",
 
         correct: "Memory Management and the complexity of the language",
     },
     {
-        QuizLessonNumber: 1,
         QuestionNumber: 8,
         QuizTitle: "The Value of Learning C++",
 
@@ -122,7 +116,6 @@ export const Quiz1Data = [
         correct: "It is the foundation and influence for other programming languages"
     },
     {
-        QuizLessonNumber: 1,
         QuestionNumber: 9,
         QuizTitle: "The Evolution and Standards of C++",
 
@@ -134,7 +127,6 @@ export const Quiz1Data = [
         correct: "False",
     },
     {
-        QuizLessonNumber: 1,
         QuestionNumber: 10,
         QuizTitle: "Conclusion: The Enduring Importance of C++ in the Programming World",
         

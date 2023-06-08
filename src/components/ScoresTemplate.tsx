@@ -3,10 +3,9 @@ import { UserContext } from '../App';
 import { useContext, useEffect } from 'react';
 import styled from 'styled-components';
 
-    interface QuizParams {
-        [quizNumber: string]: string;
-    }
-
+interface QuizParams {
+    [quizNumber: string]: string;
+}
 
 const ScoresTemplate = () => {
     const navigate = useNavigate();

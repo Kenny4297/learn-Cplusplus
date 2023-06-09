@@ -56,10 +56,10 @@ export const Quiz6Data = [
         question: "How do we decrement a variable in C++?",
 
         answer1: "We use the ++ operator: lives++",
-        answer2: "We use the -- operator: lives--",
+        answer2: "We use the -- operator: --lives",
         answer3: "We use the += operator: lives += 1",
         answer4: "We use the *= operator: lives *= 1",
     
-        correct: "We use the -- operator: lives--"
+        correct: "We use the -- operator: --lives"
     },
 ];

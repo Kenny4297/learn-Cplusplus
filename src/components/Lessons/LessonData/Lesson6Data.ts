@@ -97,8 +97,12 @@ int main() {
     {
         SlideNumber: 6,
         SlideTitle: "Decrementing Variables",
-        disc: `In C++, we can easily decrement, or decrease, the value of a variable using the <span class="style-html">--</span> operator. Placing <span class="style-html">--</span> after a variable name  decreases its value by 1. This is handy in our game for tracking the number of lives the user has left. Every time they make a wrong guess, we decrement the lives variable.`,
+        disc: `In C++, we can easily decrement, or decrease, the value of a variable using the <span class="style-html">--</span> operator. Placing <span class="style-html">--</span> after a variable name  decreases its value by 1. This is handy in our game for tracking the number of lives the user has left. Every time they make a wrong guess, we decrement the lives variable. <br></br>
+
+        Something to note: <span class="style-html">--lives</span> and <span class="style-html">lives--</span> are essentially this same thing in this application, but mean two different things. <span class="style-html">lives--</span>, the post-decrement operator, decreases <span class="style-html">lives</span> by 1 <em>after</em> the current expression is evaluated, meaning it uses the original value of <span class="style-html">lives</span> for the current expression <em>before</em> the decrement happens. <br></br>
+        
+        On the other hand, <span class="style-html">--lives</span>, the pre-decrement operator, decreases <span class="style-html">lives</span> by 1 <em>before</em> the current expression is evaluated, meaning it uses the value of <span class="style-html">lives</span> <em>after</em> it's been decremented for the current expression. Again, in this application it doesn't matter, but it's something to be aware of!`,
         code:
-`lives--`
+`--lives`
     }
 ]

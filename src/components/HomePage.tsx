@@ -88,9 +88,9 @@ const HomePage = () => {
                         </GreetingSection>
 
                         <LessonSection>
-                            <IndividualLessonSection delay="0s">
+                            <IndividualLessonSection  delay="0s">
                                 <Span>
-                                    <Link to="/lesson/1">
+                                    <Link data-testid="individual-lesson-section-1" to="/lesson/1">
                                         Lesson 1: Introduction to C++
                                     </Link>
                                 </Span>
@@ -117,9 +117,9 @@ const HomePage = () => {
                                 </LargeButtonSection>
                             </IndividualLessonSection>
 
-                            <IndividualLessonSection delay="0.25s">
+                            <IndividualLessonSection  delay="0.25s">
                                 <Lesson2Span>
-                                    <Link to="/lesson/2">
+                                    <Link data-testid="individual-lesson-section-2" to="/lesson/2">
                                         Lesson 2: Get started Coding!
                                     </Link>
                                 </Lesson2Span>
@@ -143,7 +143,7 @@ const HomePage = () => {
                                 </LargeButtonSection>
                             </IndividualLessonSection>
 
-                            <IndividualLessonSection delay="0.5s">
+                            <IndividualLessonSection data-testid="individual-lesson-section-3" delay="0.5s">
                                 <Span>
                                     <Link to="/lesson/3">
                                         Lesson 3: Hello, World!
@@ -171,7 +171,7 @@ const HomePage = () => {
                                 </LargeButtonSection>
                             </IndividualLessonSection>
 
-                            <IndividualLessonSection delay=".75s">
+                            <IndividualLessonSection data-testid="individual-lesson-section-4" delay=".75s">
                                 <Span>
                                     <Link to="/lesson/4">
                                         Lesson 4: Mad Libs
@@ -212,7 +212,7 @@ const HomePage = () => {
                                 </LargeButtonSection>
                             </IndividualLessonSection>
 
-                            <IndividualLessonSection delay="1s">
+                            <IndividualLessonSection data-testid="individual-lesson-section-5" delay="1s">
                                 <Span>
                                     <Link to="/lesson/5">
                                         Lesson 5: Build A calculator
@@ -252,7 +252,7 @@ const HomePage = () => {
                                 </LargeButtonSection>
                             </IndividualLessonSection>
 
-                            <IndividualLessonSection delay="1.25s">
+                            <IndividualLessonSection data-testid="individual-lesson-section-6" delay="1.25s">
                                 <Span>
                                     <Link to="/lesson/6">
                                         Lesson 6: Guessing Game
@@ -292,7 +292,7 @@ const HomePage = () => {
                                 </LargeButtonSection>
                             </IndividualLessonSection>
 
-                            <IndividualLessonSection delay="1.5s">
+                            <IndividualLessonSection data-testid="individual-lesson-section-7" delay="1.5s">
                                 <Span>
                                     <Link to="/lesson/7">
                                         Lesson 7: Next Steps

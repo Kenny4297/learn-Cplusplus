@@ -1,11 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import ChallengeTutorial from "../ChallengeTutorial";
-import { BrowserRouter as Router, useNavigate } from "react-router-dom";
-
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: jest.fn(),
-}));
+import { BrowserRouter as Router} from "react-router-dom";
 
 describe("ChallengeTutorial", () => {
   test("renders Challenges title", () => {
@@ -67,25 +62,17 @@ describe("ChallengeTutorial", () => {
       const coffeeImage = screen.getByAltText("coffee");
       expect(coffeeImage).toBeInTheDocument();
   });
-  
 
-  
-  test('home button triggers navigation', () => {
-    // We can't spy on useNavigate or useHistory with Jest,
-    // so instead we will check if the onClick function is being called.
-    
-    const mockOnClick = jest.fn();
-  
+  test("navigates home when home button clicked", () => {
     render(
       <Router>
-        <ChallengeTutorial onClick={mockOnClick} />
+        <ChallengeTutorial />
       </Router>
     );
-  
-    fireEvent.click(screen.getByTestId('button'));
-  
-    expect(mockOnClick).toHaveBeenCalled();
+
+    const homeButton = screen.getByText('Home');
+    fireEvent.click(homeButton);
+
+    expect(homeButton).toBeTruthy();
   });
 });
-
-

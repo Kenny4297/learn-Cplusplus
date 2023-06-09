@@ -49,7 +49,6 @@ const ChallengeTutorial = () => {
             <div style={{display: 'flex', justifyContent:'center', alignItems:'center'}}>
                 <button data-testid="button" onClick={() => {navigate(`/`)}}>Home</button>
             </div>
-            
         </Container>
     )
 }

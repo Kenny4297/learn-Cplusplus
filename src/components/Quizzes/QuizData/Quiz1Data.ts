@@ -10,7 +10,7 @@ export interface QuizSlideInterface {
     img?: string; // '?' indicates that img is optional
 }
 
-export const Quiz1DataTitle = "Quiz1: Introduction To C++";
+export const Quiz1DataTitle = "Quiz 1: Introduction To C++";
 
 export const Quiz1Data = [
     {

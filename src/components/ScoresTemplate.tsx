@@ -23,9 +23,9 @@ const ScoresTemplate = () => {
 
     const quizData: QuizParams = {
         "1": "10",
-        "3": "8",
+        "3": "9",
         "4": "8",
-        "5": "7",
+        "5": "6",
         "6": "5",
         "7": "6",
     }

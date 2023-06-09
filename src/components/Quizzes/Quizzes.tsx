@@ -74,7 +74,7 @@ const Quizzes = () => {
     return (
         <Container id="quizzes">
             <Title>
-                <h1 className="blue" aria-label="Quizzes">
+                <h1 aria-label="Quizzes">
                     {quizTitle}
                 </h1>
             </Title>

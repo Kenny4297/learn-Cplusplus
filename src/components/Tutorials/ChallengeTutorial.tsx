@@ -11,10 +11,10 @@ const ChallengeTutorial = () => {
 
     return (
         <Container>
-            <h1>Challenges</h1>
+            <h1 data-testid="challenges-title">Challenges</h1>
             <P>
                 <ImageContainer >
-                    <img src={challenge1} alt="challenge" />
+                    <img src={challenge1} alt="challenge1" />
                 </ImageContainer>
                 <p> Now that we've breezed through the lessons and quizzes, it's time for the crux of the journey - the challenges. Here, you get to put everything you've learned into practice. In the realm of programming, without the practical application of the principles learned, the knowledge remains abstract. It's akin to learning the rules of soccer without ever stepping onto the pitch. That's why challenges are the heart of our "Learn C++" platform. Not every section will have a challenge, but when they do, they're an opportunity to dive headfirst into project creation, using the lessons you've mastered as your toolkit. You'll notice that the challenges increase in complexity as you advance, mirroring the incremental progression of a real-world programming project.</p>
             </P>

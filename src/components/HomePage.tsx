@@ -97,9 +97,7 @@ const HomePage = () => {
                                 <LargeButtonSection>
                                     <ButtonSection>
                                         <button
-                                            style={{
-                                                backgroundColor: "var(--blue)",
-                                            }}
+                                            className="blue"
                                             onClick={() => {
                                                 navigate(`/quiz/1`);
                                             }}
@@ -125,20 +123,14 @@ const HomePage = () => {
                                 </Lesson2Span>
                                 <LargeButtonSection>
                                     <ButtonSection>
-                                        <button
-                                            style={{
-                                                backgroundColor:
-                                                    "var(--orange)",
-                                                position: "relative",
-                                                bottom: ".4rem",
-                                                marginTop: ".5rem",
-                                            }}
+                                        <ButtonSpan2
+                                            className="orange"
                                             onClick={() => {
                                                 navigate(`/challenge/2`);
                                             }}
                                         >
                                             Challenge #1
-                                        </button>
+                                            </ButtonSpan2>
                                     </ButtonSection>
                                 </LargeButtonSection>
                             </IndividualLessonSection>
@@ -152,9 +144,7 @@ const HomePage = () => {
                                 <LargeButtonSection>
                                     <ButtonSection>
                                         <button
-                                            style={{
-                                                backgroundColor: "var(--blue)",
-                                            }}
+                                            className="blue"
                                             onClick={() => {
                                                 navigate(`/quiz/3`);
                                             }}
@@ -180,9 +170,7 @@ const HomePage = () => {
                                 <LargeButtonSection>
                                     <ButtonSection>
                                         <button
-                                            style={{
-                                                backgroundColor: "var(--blue)",
-                                            }}
+                                            className="blue"
                                             onClick={() => {
                                                 navigate(`/quiz/4`);
                                             }}
@@ -191,10 +179,7 @@ const HomePage = () => {
                                         </button>
 
                                         <button
-                                            style={{
-                                                backgroundColor:
-                                                    "var(--orange)",
-                                            }}
+                                            className="orange"
                                             onClick={() => {
                                                 navigate(`/challenge/4`);
                                             }}
@@ -221,9 +206,7 @@ const HomePage = () => {
                                 <LargeButtonSection>
                                     <ButtonSection>
                                         <button
-                                            style={{
-                                                backgroundColor: "var(--blue)",
-                                            }}
+                                            className="blue"
                                             onClick={() => {
                                                 navigate(`/quiz/5`);
                                             }}
@@ -232,10 +215,7 @@ const HomePage = () => {
                                         </button>
 
                                         <button
-                                            style={{
-                                                backgroundColor:
-                                                    "var(--orange)",
-                                            }}
+                                            className="orange"
                                             onClick={() => {
                                                 navigate(`/challenge/5`);
                                             }}
@@ -261,9 +241,7 @@ const HomePage = () => {
                                 <LargeButtonSection>
                                     <ButtonSection>
                                         <button
-                                            style={{
-                                                backgroundColor: "var(--blue)",
-                                            }}
+                                            className="blue"
                                             onClick={() => {
                                                 navigate(`/quiz/6`);
                                             }}
@@ -272,10 +250,7 @@ const HomePage = () => {
                                         </button>
 
                                         <button
-                                            style={{
-                                                backgroundColor:
-                                                    "var(--orange)",
-                                            }}
+                                            className="orange"
                                             onClick={() => {
                                                 navigate(`/challenge/6`);
                                             }}
@@ -301,9 +276,7 @@ const HomePage = () => {
                                 <LargeButtonSection>
                                     <ButtonSection>
                                         <button
-                                            style={{
-                                                backgroundColor: "var(--blue)",
-                                            }}
+                                            className="blue"
                                             onClick={() => {
                                                 navigate(`/quiz/7`);
                                             }}
@@ -311,11 +284,7 @@ const HomePage = () => {
                                             Quiz 7
                                         </button>
 
-                                        <button
-                                            style={{
-                                                backgroundColor:
-                                                    "var(--orange)",
-                                            }}
+                                        <button className="orange"
                                             onClick={() => {
                                                 navigate(`/challenge/7`);
                                             }}
@@ -546,10 +515,16 @@ const TutorialsButton = styled.button`
     animation: ${fadeIn} 3s ease-in-out forwards;
     /* border: 2px solid green; */
     background-color: var(--blue);
+    box-shadow: 1px 2px 5px 1px var(--purple);
     border: none;
     border-radius: 2px;
     padding: 0.2rem;
     margin-right: 4rem;
+    &:hover {
+        background-color: var(--teal);
+        color: var(--gray);
+        cursor: pointer;
+    }
     @media (max-width: 640px) {
         margin: 0 auto;
         margin-top: 1rem;
@@ -597,7 +572,7 @@ const IndividualLessonSection = styled.div<IndividualLessonSectionProps>`
 const Lesson2Span = styled.div`
     a {
         position: relative;
-        top: -0.5rem;
+        top: -0.48rem;
         color: var(--purple);
         font-weight: bold;
         font-size: 1.5rem;
@@ -612,6 +587,13 @@ const Lesson2Span = styled.div`
         }
     }
 `;
+
+const ButtonSpan2 = styled.button`
+    background-color: var(--orange);
+    position: relative;
+    bottom: .4rem;
+    margin-top: .5rem;
+`
 
 const Span = styled.span`
     a {
@@ -647,6 +629,7 @@ const ButtonSection = styled.div`
     /* border: 2px solid green; */
     p {
         color: var(--gray);
+        padding-top: .5rem;
         @media (min-height: 800px) {
             font-size: 1.5rem;
         }
@@ -659,10 +642,6 @@ const ButtonSection = styled.div`
         border: none;
         border-radius: 2px;
         padding: 0.2rem;
-        &:hover {
-            background-color: white;
-            cursor: pointer;
-        }
         @media (max-width: 840px) {
             font-size: 0.75rem;
         }

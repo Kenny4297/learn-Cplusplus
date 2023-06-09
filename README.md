@@ -14,7 +14,7 @@
 This project is licensed under the MIT license.
 
 ## **Project Overview**
-"Learn C++" is an interactive learning platform that starts with projects and works backwards, giving the user actual examples of the code they are learning. 
+"Learn C++" is an innovative, hands-on learning platform that focuses on practicality, starting with real-world projects and dissecting them to teach users the fundamentals of C++. The platform engages users through a combination of interactive lessons, quizzes, and challenges, effectively fostering a deep understanding of C++ basics. 
 
 ## **Purpose and Inspiration**
 Jay Padrnos approached me with a unique request - he was keen on learning C++, but not in the conventional way. Instead of diving into a purchased course, Jay wanted to try a more hands-on approach that allowed him to engage with the language directly. He proposed an interesting challenge for me: to create a learning platform that starts with projects and then deconstructs them, contrary to the traditional method of learning code first and then applying it. Embracing this fresh perspective, I embarked on designing a platform tailored to Jay's learning style, all the while fostering his curiosity and passion for C++.
@@ -22,7 +22,6 @@ Jay Padrnos approached me with a unique request - he was keen on learning C++, b
 ## **Unique Technologies**
 **TypeScript:**
 TypeScript is a statically-typed superset of JavaScript, developed by Microsoft to catch common errors early in the development process. It allows developers to specify types for variables and function parameters, providing better tooling and documentation. Once TypeScript code is written, it's compiled into JavaScript, enabling it to run in any JavaScript environment.
-
 
 ## **Functionality and Features**
 The project is split into three sections: Lessons, Quizzes, and Challenges. Each section has a final project the user will end up building, and each lesson is designed to break down each new line of code and explain its purpose in the project. 

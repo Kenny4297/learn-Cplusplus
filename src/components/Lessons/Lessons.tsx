@@ -58,7 +58,7 @@ const Lessons = () => {
 
     return (
         <Container id="lessons">
-                <Title className="blue" aria-label="Lessons">
+                <Title aria-label="Lessons">
                         {lessonTitle}
                 </Title>
                 <LessonsSlider slide={lessonData[currentSlide]} />

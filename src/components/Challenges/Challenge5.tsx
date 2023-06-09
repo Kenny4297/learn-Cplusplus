@@ -154,7 +154,7 @@ const Container = styled.div`
         }
     }
     button {
-        color: var(--gray);
+        color: var(--teal);
         height:2.75rem;
         width: auto;
         background-color: var(--blue);

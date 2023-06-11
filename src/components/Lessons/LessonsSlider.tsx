@@ -19,7 +19,7 @@ const LessonsSlider = ({slide}: LessonSlideProps) => {
         margin: 'auto'
     };
 
-    const { SlideTitle, disc, img, code } = slide;
+    const { SlideTitle, disc, code } = slide;
 
     const renderContent = () => {
         const isURL = (string: string) => {
@@ -45,7 +45,6 @@ const LessonsSlider = ({slide}: LessonSlideProps) => {
                 {SlideTitle}
             </Title>
             
-            {img && <img src={img} alt={SlideTitle} />}
             { code ? (
                 <CodeAndDescription>
                     <DescCode >

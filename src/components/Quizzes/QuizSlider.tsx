@@ -20,7 +20,7 @@ const QuizSlider = forwardRef<{}, QuizSlideProps>((props, ref) => {
       }));
 
     const handleAnswerClick = (answer: string) => {
-        if (selectedAnswer !== null) return;  // Add this line. It will return from the function if an answer is already selected
+        if (selectedAnswer !== null) return; 
         setSelectedAnswer(answer);
         const correctAnswer = answer === correct;
         setIsCorrect(correctAnswer);

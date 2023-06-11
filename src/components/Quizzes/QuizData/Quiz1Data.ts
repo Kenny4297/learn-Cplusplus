@@ -1,13 +1,11 @@
 export interface QuizSlideInterface {
     QuestionNumber: number;
-    QuizTitle: string;
     question: string;
     answer1: string;
     answer2: string;
     answer3: string;
     answer4: string;
     correct: string;
-    img?: string; // '?' indicates that img is optional
 }
 
 export const Quiz1DataTitle = "Quiz 1: Introduction To C++";

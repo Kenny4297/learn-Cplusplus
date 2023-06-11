@@ -15,7 +15,6 @@ export const Quiz1DataTitle = "Quiz 1: Introduction To C++";
 export const Quiz1Data = [
     {
         QuestionNumber: 1,
-        QuizTitle: "Introduction to C++: Origin and Usage",
 
         question : `What kind of language is C++?`,
 
@@ -28,7 +27,6 @@ export const Quiz1Data = [
     },
     {
         QuestionNumber: 2,
-        QuizTitle: "Object-Oriented Programming in C++: Emphasizing Structure and Reusability",
 
         question : `Why is object-oriented programming (OOP) important in programming?`,
 
@@ -41,7 +39,6 @@ export const Quiz1Data = [
     },
     {
         QuestionNumber: 3,
-        QuizTitle: "Low-Level Features in C++",
 
         question : `Why are low level features important to have in a programming language?`,
 
@@ -54,7 +51,6 @@ export const Quiz1Data = [
     },
     {
         QuestionNumber: 4,
-        QuizTitle: "The Multi-Paradigm Nature of C++",
 
         question : `In addition to object-oriented programming (OOP), C++ has what other type of programming?`,
 
@@ -67,7 +63,6 @@ export const Quiz1Data = [
     },
     {
         QuestionNumber: 5,
-        QuizTitle: "Efficiency in Various Applications",
 
         question : `Name another incredibly important feature of C++:`,
 
@@ -80,7 +75,6 @@ export const Quiz1Data = [
     },
     {
         QuestionNumber: 6,
-        QuizTitle: "The Rich Standard Library and Standard Template Library in C++",
 
         question : `True or False: C++ contains a rich standard library:`,
 
@@ -91,7 +85,6 @@ export const Quiz1Data = [
     },
     {
         QuestionNumber: 7,
-        QuizTitle: "Challenges in C++",
 
         question : `What is the biggest challenge for the developer in C++?`,
 
@@ -104,7 +97,6 @@ export const Quiz1Data = [
     },
     {
         QuestionNumber: 8,
-        QuizTitle: "The Value of Learning C++",
 
         question : `Why is learning C++ so important to beginning developers?`,
 
@@ -117,7 +109,6 @@ export const Quiz1Data = [
     },
     {
         QuestionNumber: 9,
-        QuizTitle: "The Evolution and Standards of C++",
 
         question : `True or False: Due to the age and efficiency of C++, C++ is no longer updated, but supported by a community:`,
 
@@ -128,7 +119,6 @@ export const Quiz1Data = [
     },
     {
         QuestionNumber: 10,
-        QuizTitle: "Conclusion: The Enduring Importance of C++ in the Programming World",
         
         question : `Why is C++ important as a language?`,
 

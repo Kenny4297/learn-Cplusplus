@@ -1,16 +1,16 @@
-import { Lesson1Data, Lesson1DataTitle } from "../Lesson1Data";
+import { Lesson3Data, Lesson3DataTitle } from "../Lesson3Data";
 
 describe("Lesson1Data", () => {
     test("is an array", () => {
-        expect(Array.isArray(Lesson1Data)).toBe(true);
+        expect(Array.isArray(Lesson3Data)).toBe(true);
     });
 
     test("has correct title", () => {
-        expect(Lesson1DataTitle).toBe("Lesson 1: Introduction To C++");
+        expect(Lesson3DataTitle).toBe("Lesson 3: Hello, World!");
     });
 
     test("has correct structure", () => {
-        Lesson1Data.forEach((slide) => {
+        Lesson3Data.forEach((slide) => {
             expect(slide).toHaveProperty("SlideNumber");
             expect(slide).toHaveProperty("SlideTitle");
             expect(slide).toHaveProperty("disc");
@@ -21,15 +21,15 @@ describe("Lesson1Data", () => {
     });
 
     test("slide numbers are in correct order", () => {
-        for (let i = 0; i < Lesson1Data.length - 1; i++) {
-            expect(Lesson1Data[i].SlideNumber + 1).toBe(
-                Lesson1Data[i + 1].SlideNumber
+        for (let i = 0; i < Lesson3Data.length - 1; i++) {
+            expect(Lesson3Data[i].SlideNumber + 1).toBe(
+                Lesson3Data[i + 1].SlideNumber
             );
         }
     });
 
     test("required fields are not null or undefined", () => {
-        Lesson1Data.forEach((slide) => {
+        Lesson3Data.forEach((slide) => {
             expect(slide.SlideNumber).not.toBeNull();
             expect(slide.SlideTitle).not.toBeNull();
             expect(slide.disc).not.toBeNull();

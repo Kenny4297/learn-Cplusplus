@@ -1,7 +1,6 @@
-import { render, screen, waitFor } from "@testing-library/react";
-import { MemoryRouter, Route } from 'react-router-dom';
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import Lessons from "../Lessons";
-import userEvent from '@testing-library/user-event';
 
 jest.mock("../LessonData/Lesson1Data", () => ({
   Lesson1Data: [
@@ -20,11 +19,12 @@ describe('Lessons component', () => {
     
         render(
             <MemoryRouter initialEntries={['/lessons/1']}>
-                <Route path="/lessons/:lessonNumber">
-                    <Lessons />
-                </Route>
+                <Routes>
+                    <Route path="/lessons/:lessonNumber" element={<Lessons />} />
+                </Routes>
             </MemoryRouter>
         );
+        
   
       // Loading message should be in the document initially
       expect(screen.getByText('Loading...')).toBeInTheDocument();
@@ -44,31 +44,31 @@ describe('Lessons component', () => {
 
     test('handles next and back navigation correctly', async () => {
         render(
-            <MemoryRouter>
-                <Lessons />
+            <MemoryRouter initialEntries={['/lessons/1']}>
+                <Routes>
+                    <Route path="/lessons/:lessonNumber" element={<Lessons />} />
+                </Routes>
             </MemoryRouter>
         );
-
+      
         // Wait for the "Next" button to appear
         const nextButton = await screen.findByRole('button', { name: /Next slide/i });
-
+      
         // Click the "Next" button
-        userEvent.click(nextButton);
-
+        fireEvent.click(nextButton);
+      
         // Wait for the "Back" button to appear
         const backButton = await screen.findByRole('button', { name: /Previous slide/i });
-
+      
         // Check that "Back" button is in the document
         expect(backButton).toBeInTheDocument();
-
+      
         // Click the "Back" button
-        userEvent.click(backButton);
-
+        fireEvent.click(backButton);
+      
         // We should be back at the first slide
         await waitFor(() => {
             expect(screen.getByText('Mocked LessonsSlider')).toBeInTheDocument();
         });
-    });
-
-  // You could add more tests for the navigation to the quiz or the challenge based on the lesson number...
+      });
 });

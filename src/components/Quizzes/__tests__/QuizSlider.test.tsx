@@ -3,13 +3,13 @@ import QuizSlider from "../QuizSlider";
 
 test('renders QuizSlider with correct content', () => {
   const slide = {
-    QuestionNumber: 1,
-    question: 'What is 1+1?',
-    answer1: '1',
-    answer2: '2',
-    answer3: '3',
-    answer4: '4',
-    correct: '2'
+      QuestionNumber: 1,
+      question: 'What is 1+1?',
+      answer1: '1',
+      answer2: '2',
+      answer3: '3',
+      answer4: '4',
+      correct: '2'
   };
   
   const mockOnCorrectAnswer = jest.fn();
@@ -27,15 +27,15 @@ test('renders QuizSlider with correct content', () => {
 });
 
 test('calls onCorrectAnswer when correct answer is clicked', () => {
-  const slide = {
-    QuestionNumber: 1,
-    question: 'What is 1+1?',
-    answer1: '1',
-    answer2: '2',
-    answer3: '3',
-    answer4: '4',
-    correct: '2'
-  };
+    const slide = {
+        QuestionNumber: 1,
+        question: 'What is 1+1?',
+        answer1: '1',
+        answer2: '2',
+        answer3: '3',
+        answer4: '4',
+        correct: '2'
+    };
   
   const mockOnCorrectAnswer = jest.fn();
 

@@ -3,15 +3,15 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import Lessons from "../Lessons";
 
 jest.mock("../LessonData/Lesson1Data", () => ({
-  Lesson1Data: [
-    { SlideNumber: 1, SlideTitle: 'Test Slide', disc: 'Test Description', code: 'Test Code' },
-    { SlideNumber: 2, SlideTitle: 'Test Slide 2', disc: 'Test Description 2', code: 'Test Code 2' }
-  ],
-  Lesson1DataTitle: 'Lesson 1 Title'
+    Lesson1Data: [
+        { SlideNumber: 1, SlideTitle: 'Test Slide', disc: 'Test Description', code: 'Test Code' },
+      	{ SlideNumber: 2, SlideTitle: 'Test Slide 2', disc: 'Test Description 2', code: 'Test Code 2' }
+    ],
+    Lesson1DataTitle: 'Lesson 1 Title'
 }));
 
 jest.mock("../LessonsSlider", () => {
-  return () => <div>Mocked LessonsSlider</div>;
+    return () => <div>Mocked LessonsSlider</div>;
 });
 
 describe('Lessons component', () => {
@@ -31,14 +31,14 @@ describe('Lessons component', () => {
   
       // Wait for async actions to complete and check title
       await waitFor(() => {
-        // The title of the lesson should be displayed
-        expect(screen.getByText('Lesson 1 Title')).toBeInTheDocument();
+        	// The title of the lesson should be displayed
+        	expect(screen.getByText('Lesson 1 Title')).toBeInTheDocument();
       });
   
       // Wait for async actions to complete and check LessonsSlider
       await waitFor(() => {
-        // The mocked LessonsSlider should be in the document
-        expect(screen.getByText('Mocked LessonsSlider')).toBeInTheDocument();
+			// The mocked LessonsSlider should be in the document
+			expect(screen.getByText('Mocked LessonsSlider')).toBeInTheDocument();
       });
     });
 

@@ -4,23 +4,23 @@ import Quizzes from "../Quizzes";
 import React from "react";
 
 afterEach(() => {
-    jest.resetAllMocks();
+      jest.resetAllMocks();
   });
 
   jest.mock("../QuizSlider", () => {
-    const React = jest.requireActual('react');
-    return React.forwardRef(({ onCorrectAnswer }: any, ref: React.Ref<any>) => {
-      React.useImperativeHandle(ref, () => ({
-        hasAnsweredCurrentQuestion: () => true,
-      }), []);
-  
-      return (
-        <div>
-          Mocked QuizSlider
-          <button onClick={onCorrectAnswer}>Answer Correctly</button>
-        </div>
-      );
-    });
+      const React = jest.requireActual('react');
+      return React.forwardRef(({ onCorrectAnswer }: any, ref: React.Ref<any>) => {
+          React.useImperativeHandle(ref, () => ({
+              hasAnsweredCurrentQuestion: () => true,
+          }), []);
+    
+        return (
+            <div>
+                Mocked QuizSlider
+                <button onClick={onCorrectAnswer}>Answer Correctly</button>
+            </div>
+          );
+      });
   });
   
 

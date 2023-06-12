@@ -577,6 +577,9 @@ const Lesson2Span = styled.div`
         font-weight: bold;
         font-size: 1.5rem;
         text-decoration: underline;
+        &:hover {
+            color: var(--blue);
+        }
         @media (max-width: 840px) {
             font-size: 1rem;
             top: -0.4rem;
@@ -603,6 +606,9 @@ const Span = styled.span`
         text-decoration: underline;
         line-height: 3rem;
         /* border: 2px solid green; */
+        &:hover {
+            color: var(--blue);
+        }
         @media (max-width: 840px) {
             font-size: 1rem;
         }

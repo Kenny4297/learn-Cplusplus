@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Challenge2Component = () => {
+const Challenge7 = () => {
     const navigate = useNavigate();
 
     return (
         <Container>
-            <Title>
+            <Title data-testid="next-steps-title">
                 Next Steps
             </Title>
 
@@ -19,7 +19,7 @@ const Challenge2Component = () => {
 
                 <p> <Span>Student Grade Record System:</Span> A program that tracks student grades. You can create a structure or class to hold student information, then use an array or vector of that class to hold the data for multiple students. This project will give beginners a good grasp of classes, objects, and data structures.</p> <br></br>
 
-                <p> <Span>Banking System:</Span> A banking system where you can create accounts, deposit money, withdraw money, and transfer money between accounts. This project can help beginners understand more complex class structures, data manipulation, and perhaps file handling to persist data.</p> <br></br>
+                <p> <Span data-testid="banking-system-span">Banking System:</Span> A banking system where you can create accounts, deposit money, withdraw money, and transfer money between accounts. This project can help beginners understand more complex class structures, data manipulation, and perhaps file handling to persist data.</p> <br></br>
 
                 <p> <Span>Library Management System:</Span> A program to manage a catalog of books, track book loans, due dates, late fees, etc. This would give you practice with classes, data structures, file I/O, and possibly dates and times.</p> <br></br>
 
@@ -27,7 +27,7 @@ const Challenge2Component = () => {
 
                 <p> <Span>Simple Chatbot:</Span> A console-based chatbot that gives predefined responses to certain inputs. This would give you practice with strings, file I/O, and control flow.</p> <br></br>
 
-                <p> <Span>Hangman Game:</Span> Implementing the classic Hangman game will help you practice string manipulation, control flow, and user input.</p> <br></br>
+                <p> <Span data-testid="hangman-title">Hangman Game:</Span> Implementing the classic Hangman game will help you practice string manipulation, control flow, and user input.</p> <br></br>
 
                 <p> <Span>Unit Converter:</Span> A program that can convert between different units (like kilometers to miles, Celsius to Fahrenheit, etc.). This can help you understand functions and user input.</p> <br></br>
 
@@ -46,7 +46,7 @@ const Challenge2Component = () => {
     );
 };
 
-export default Challenge2Component;
+export default Challenge7;
 
 const Container = styled.div`
     display: flex;

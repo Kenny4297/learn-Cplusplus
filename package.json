@@ -40,6 +40,11 @@
   "jest": {
     "transformIgnorePatterns": [
       "node_modules/(?!(react-syntax-highlighter)/)"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "src/index.tsx",
+      "src/reportWebVitals.ts"
     ]
   },
   "browserslist": {

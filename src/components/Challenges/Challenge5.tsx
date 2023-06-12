@@ -25,7 +25,7 @@ const Challenge5Component = () => {
             <Description>
                     <p>Alright, now let's take it up a notch! Your task is to create a calculator that takes two numbers and an operator (+, -, *, /) and prints out the solution to the screen. Like before I will give you a bit of starter code, but your will have to fill in more than last time! Good luck!</p>
             </Description>
-            <SyntaxHighlighterContainer>
+            <SyntaxHighlighterContainer data-testid="syntax-highlighter-1">
                 <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
                 {
 `/* ADD CODE: We are not working with strings,
@@ -78,7 +78,7 @@ using namespace std;
             </button>
 
             {showSolution && 
-            <SyntaxHighlighterContainer>
+            <SyntaxHighlighterContainer data-testid="syntax-highlighter-2">
                     <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
                         {
 `#include <iostream>

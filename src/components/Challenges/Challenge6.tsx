@@ -35,7 +35,7 @@ const Challenge6 = () => {
 
             <Description>
                 <p>This will be the most difficult project you have ever completed, since you will need to do something you never had to do before: Think like a programmer! I will be giving you some starter code and some hints, but it will be up to do you put this all together. You may want to go back through the lessons and review some of the syntax and ideas. Here is some code that you may want to use in the project:</p>
-                <SyntaxHighlighterContainer1>
+                <SyntaxHighlighterContainer1 data-testid="syntax-highlighter-1">
                     <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle1}>
                     {
 `<ctime>
@@ -44,7 +44,7 @@ srand(static_cast<unsigned int>(time(0)));
 int target = rand() % 10 + 1;
 `}
                     </SyntaxHighlighter>
-                </SyntaxHighlighterContainer1>
+                </SyntaxHighlighterContainer1 >
 
                 <p style={{textAlign: 'center', color: 'var(--blue', fontSize:'2rem', fontWeight:'bold'}}>Hints:</p> <br></br>
                 <div style={{width:'75%', display: 'flex', justifyContent:'center', alignItems: 'center', margin: '0 auto'}}>
@@ -63,7 +63,7 @@ int target = rand() % 10 + 1;
             </button>
 
             {showSolution && 
-            <SyntaxHighlighterContainer2>
+            <SyntaxHighlighterContainer2 data-testid="syntax-highlighter-2">
                     <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle2}>
                         {
 `#include <iostream>

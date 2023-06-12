@@ -25,7 +25,7 @@ const Challenge4Component = () => {
             <Description>
                     <p>Let's build our very own mad libs project! Since this is your first complex project, I will be giving you some starter code, and you will add in the missing sections as shown in the code below. Copy and paste this code into VSCode, and fill in the missing lines!</p>
             </Description>
-            <SyntaxHighlighterContainer>
+            <SyntaxHighlighterContainer data-testid="syntax-highlighter-1">
                 <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
                 {
 `#include <iostream>
@@ -74,7 +74,7 @@ int main() {
             </button>
 
             {showSolution && 
-                <SyntaxHighlighterContainer>
+                <SyntaxHighlighterContainer  data-testid="syntax-highlighter-2">
                     <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
                         
 {`#include <iostream>

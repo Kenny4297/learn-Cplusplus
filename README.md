@@ -36,4 +36,51 @@ I made the decision to use dangerouslySetInnerHTML for this particular project b
 [Deployment Link](https://learn-c-plus-plus.netlify.app/)
 
 ## **Testing**
-Coming Soon!
+Here is the coverage table for the projects tests:
+
+File                               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s    
+-----------------------------------|---------|----------|---------|---------|----------------------
+All files                          |   90.62 |    68.75 |   78.72 |   91.59 |                      
+ src                               |     100 |      100 |   66.66 |     100 |                      
+  App.tsx                          |     100 |      100 |   66.66 |     100 |                      
+ src/components                    |   78.16 |    53.33 |   62.06 |   79.06 |                      
+  Header.tsx                       |   85.71 |      100 |       0 |   85.71 | 4                    
+  HomePage.tsx                     |      82 |    66.66 |   77.77 |   83.67 | 22-23,28-31,35-37,83 
+  ScoresTemplate.tsx               |      64 |    44.44 |      25 |      64 | 34,39-48,59-63       
+  ScrollToTop.tsx                  |     100 |      100 |     100 |     100 |                      
+ src/components/Challenges         |   98.79 |      100 |     100 |   98.78 |                      
+  Challenge2.tsx                   |     100 |      100 |     100 |     100 |                      
+  Challenge4.tsx                   |     100 |      100 |     100 |     100 |                      
+  Challenge5.tsx                   |     100 |      100 |     100 |     100 | 
+  Challenge6.tsx                   |     100 |      100 |     100 |     100 | 
+  Challenge7.tsx                   |     100 |      100 |     100 |     100 | 
+  ChallengeLoader.tsx              |    92.3 |      100 |     100 |   91.66 | 17
+ src/components/Lessons            |   96.49 |    85.71 |   86.66 |   96.36 | 
+  LessonTemplate.tsx               |     100 |      100 |     100 |     100 | 
+  Lessons.tsx                      |   93.93 |       90 |   81.81 |   93.54 | 81-87
+  LessonsSlider.tsx                |     100 |       75 |     100 |     100 | 48
+  index.ts                         |       0 |        0 |       0 |       0 | 
+ src/components/Lessons/LessonData |     100 |      100 |     100 |     100 | 
+  Lesson1Data.ts                   |     100 |      100 |     100 |     100 | 
+  Lesson2Data.ts                   |     100 |      100 |     100 |     100 | 
+  Lesson3Data.ts                   |     100 |      100 |     100 |     100 | 
+  Lesson4Data.ts                   |     100 |      100 |     100 |     100 | 
+  Lesson5Data.ts                   |     100 |      100 |     100 |     100 | 
+  Lesson6Data.ts                   |     100 |      100 |     100 |     100 | 
+  Lesson7Data.ts                   |     100 |      100 |     100 |     100 | 
+ src/components/Quizzes            |   82.53 |     42.1 |    64.7 |   86.66 | 
+  QuizSlider.tsx                   |   88.46 |     62.5 |      75 |   95.83 | 19
+  QuizTemplate.tsx                 |     100 |      100 |     100 |     100 | 
+  Quizzes.tsx                      |   76.47 |    27.27 |      50 |   78.78 | 34-39,45-54,84      
+ src/components/Quizzes/QuizData   |     100 |      100 |     100 |     100 | 
+  Quiz1Data.ts                     |     100 |      100 |     100 |     100 | 
+  Quiz3Data.ts                     |     100 |      100 |     100 |     100 | 
+  Quiz4Data.ts                     |     100 |      100 |     100 |     100 | 
+  Quiz5Data.ts                     |     100 |      100 |     100 |     100 | 
+  Quiz6Data.ts                     |     100 |      100 |     100 |     100 |                      
+  Quiz7Data.ts                     |     100 |      100 |     100 |     100 | 
+ src/components/Tutorials          |     100 |      100 |     100 |     100 | 
+  ChallengeTutorial.tsx            |     100 |      100 |     100 |     100 | 
+  LessonTutorial.tsx               |     100 |      100 |     100 |     100 | 
+  QuizTutorial.tsx                 |     100 |      100 |     100 |     100 | 
+  SiteTutorial.tsx                 |     100 |      100 |     100 |     100 | 

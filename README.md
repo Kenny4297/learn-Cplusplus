@@ -1,6 +1,6 @@
 # **Learn C++**
 
-![Learn C++](./src/components/Assets/Images/C%2B%2BScreenShot.png)
+![Learn C++](./src/components/Assets/Images/LearnC%2B%2BScreenShot.png)
 ## **Table of Contents**
 - [License](#license)
 - [Project Overview](#project-overview)

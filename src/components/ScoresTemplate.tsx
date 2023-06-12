@@ -13,7 +13,7 @@ const ScoresTemplate = () => {
     const totalScore = location.state?.totalScore || 0;
 
     // Getting the quiz (and lesson) number from params
-    let { quizNumber } = useParams<string>();
+    let { quizNumber } = useParams();
     let quizIndexString = 'quiz' + quizNumber;
     let quizIndex = quizIndexString as keyof typeof userData.quizScores;
 

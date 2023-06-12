@@ -23,7 +23,7 @@ const Challenge2Component = () => {
             <Description>
                 <p>Now that we have everything set up, let's make sure we can run our programs! Copy and paste the code below into VSCode:</p>
             </Description>
-            <SyntaxHighlighterContainer>
+            <SyntaxHighlighterContainer data-testid="syntax-highlighter">
                 <SyntaxHighlighter language="cpp" style={tomorrow} customStyle={customStyle}>
             
                 {

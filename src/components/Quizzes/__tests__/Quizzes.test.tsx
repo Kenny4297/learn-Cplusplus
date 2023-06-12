@@ -50,9 +50,6 @@ describe('Quizzes component', () => {
             </MemoryRouter>
         );
 
-        // eslint-disable-next-line testing-library/no-debugging-utils
-        screen.debug();
-
         expect(screen.getByText('Loading...')).toBeInTheDocument();
 
         await waitFor(() => {

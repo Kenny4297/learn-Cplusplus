@@ -515,7 +515,7 @@ const TutorialsButton = styled.button`
     animation: ${fadeIn} 3s ease-in-out forwards;
     /* border: 2px solid green; */
     background-color: var(--blue);
-    box-shadow: 1px 2px 5px 1px var(--purple);
+    box-shadow: 1px 2px 1px 1px var(--purple);
     border: none;
     border-radius: 2px;
     padding: 0.2rem;

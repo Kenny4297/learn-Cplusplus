@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import HomePage from "./HomePage";
-import { UserContext } from "../App";
+import HomePage from "../HomePage";
+import { UserContext } from "../../App";
 
 // Mock useNavigate
 jest.mock("react-router-dom", () => ({

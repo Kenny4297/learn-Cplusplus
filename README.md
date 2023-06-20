@@ -4,9 +4,14 @@
 ## **Table of Contents**
 - [License](#license)
 - [Project Overview](#project-overview)
+- [Landing Page](#landing-page)
+- [Lesson Example](#lesson-example)
+- [Quiz Example](#quiz-example)
+- [Challenge Example](#challenge-example)
 - [Purpose and Inspiration](#purpose-and-inspiration)
 - [Unique Technologies](#technologies)
 - [Functionality and Features](#functionality-and-features)
+- [Technologies Used](#technologies-used)
 - [Deployment](#Deployment)
 - [Testing](#testing)
 
@@ -15,6 +20,19 @@ This project is licensed under the MIT license.
 
 ## **Project Overview**
 "Learn C++" is an innovative, hands-on learning platform that focuses on practicality, starting with real-world projects and dissecting them to teach users the fundamentals of C++. The platform engages users through a combination of interactive lessons, quizzes, and challenges, effectively fostering a deep understanding of C++ basics. 
+
+## **Landing Page**
+![](./src/components/Assets/Images/landingPage.png)
+
+## **Lesson Example**
+![](./src/components/Assets/Images/lessonPage.png)
+
+## **Quiz Example**
+![](./src/components/Assets/Images/quizExample.png)
+
+## **Challenge Example**
+![](./src/components/Assets/Images/challengeExample.png)
+
 
 ## **Purpose and Inspiration**
 Jay Padrnos approached me with a unique request - he was keen on learning C++, but not in the conventional way. Jay wanted to try a more hands-on approach that allowed him to engage with the language directly. He proposed an interesting challenge for me: to create a learning platform that starts with projects and then deconstructs them, contrary to the traditional method of learning code first and then applying it. Embracing this fresh perspective, I embarked on designing a platform tailored to Jay's learning style, all the while fostering his curiosity and passion for C++.
@@ -31,6 +49,13 @@ Quizzes are meant to test the basics of the lessons, with one question dedicated
 Finally, the challenges are designed for the user to build the section's project from 'scratch'. The user is given starter code, but as the challenges get harder, they start with less starter code. It is also encouraged to repeat the challenge over and over, starting with less and less starter code, until they can complete the challenge without any starter code.
 
 I made the decision to use dangerouslySetInnerHTML for this particular project because the data being loaded into the application is static and fully under my control, which eliminates the risk of XSS attacks. However, I'm fully aware of the security implications and in a production application where user-generated or external data is being handled, I would certainly use a different approach to mitigate security risks.
+
+## **Technologies Used**
+* React.js
+* TypeScript (JavaScript)
+* CSS
+* HTML
+* Styled-components
 
 ## **Deployment**
 [Deployment Link](https://learn-c-plus-plus.netlify.app/)

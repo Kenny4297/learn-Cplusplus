@@ -525,14 +525,17 @@ const TutorialsButton = styled.button`
         color: var(--gray);
         cursor: pointer;
     }
-    @media (max-width: 640px) {
-        margin: 0 auto;
-        margin-top: 1rem;
+    @media (max-width: 982px) {
+        font-size: .75rem;
     }
     @media (min-height: 800px) {
         font-size: 1.25rem;
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+    @media (max-width: 640px) {
+        margin: 0 auto;
+        margin-top: 1rem;
     }
 `;
 
@@ -560,11 +563,12 @@ const IndividualLessonSection = styled.div<IndividualLessonSectionProps>`
         font-size: 1rem;
         height: auto;
     }
-    @media (max-width: 665px) {
+    @media (max-width: 763px) {
         flex-direction: column;
+        align-items: center;
     }
     @media (min-height: 800px) {
-        font-size: 2.25rem;
+        font-size: 1.5;
     }
 
 `;
@@ -580,7 +584,7 @@ const Lesson2Span = styled.div`
         &:hover {
             color: var(--blue);
         }
-        @media (max-width: 840px) {
+        @media (max-width: 982px) {
             font-size: 1rem;
             top: -0.4rem;
             padding-top: 1rem;
@@ -609,7 +613,7 @@ const Span = styled.span`
         &:hover {
             color: var(--blue);
         }
-        @media (max-width: 840px) {
+        @media (max-width: 982px) {
             font-size: 1rem;
         }
         @media (max-width: 640px) {
@@ -648,7 +652,7 @@ const ButtonSection = styled.div`
         border: none;
         border-radius: 2px;
         padding: 0.2rem;
-        @media (max-width: 840px) {
+        @media (max-width: 982px) {
             font-size: 0.75rem;
         }
         @media (max-width: 640px) {

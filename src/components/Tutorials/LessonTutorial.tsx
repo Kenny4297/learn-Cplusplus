@@ -97,8 +97,8 @@ const P = styled.div`
         color: white;
         padding: 2rem 2rem;
         width: 100%;
+        line-height: 1.5rem;
         @media (max-width: 650px) {
-            text-align: center;
             width: 100%
         }
         @media (min-height: 800px) {

@@ -11,6 +11,7 @@ html, body {
   padding: 0;
   height: 100%;
   background-color: var(--teal);
+  font-size: 1.2rem;
 }
 
 * {
@@ -51,6 +52,7 @@ code {
 
 button {
   font-family: 'Raleway', sans-serif;
+  font-weight: bold;
 }
 
 .orange {

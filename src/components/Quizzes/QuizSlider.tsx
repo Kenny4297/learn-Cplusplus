@@ -1,58 +1,70 @@
-import styled from 'styled-components';
-import { QuizSlideInterface } from './QuizData/Quiz1Data';
-import { useState, useImperativeHandle, forwardRef, useEffect } from 'react'
+import styled from "styled-components";
+import { QuizSlideInterface } from "./QuizData/Quiz1Data";
+import { useState, useImperativeHandle, forwardRef, useEffect } from "react";
 
 interface QuizSlideProps {
     slide: QuizSlideInterface;
     onCorrectAnswer: () => void;
 }
 
+interface AnswerButtonProps {
+    onClick: () => void;
+    selected: boolean;
+    isCorrect: boolean;
+}
+
 const QuizSlider = forwardRef<{}, QuizSlideProps>((props, ref) => {
     const { slide, onCorrectAnswer } = props;
-
     const { question, answer1, answer2, answer3, answer4, correct } = slide;
 
-    const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
-    const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+    const answers = [answer1, answer2, answer3, answer4].filter(
+        (answer) => answer
+    );
+    const initialButtonStates = answers.map((answer) => ({
+        answer,
+        selected: false,
+        isCorrect: false,
+    }));
+
+    const [buttonStates, setButtonStates] = useState(initialButtonStates);
 
     useImperativeHandle(ref, () => ({
-        hasAnsweredCurrentQuestion: () => selectedAnswer !== null
-      }));
+        hasAnsweredCurrentQuestion: () =>
+            buttonStates.some((state) => state.selected),
+    }));
 
-    const handleAnswerClick = (answer: string) => {
-        if (selectedAnswer !== null) return; 
-        setSelectedAnswer(answer);
-        const correctAnswer = answer === correct;
-        setIsCorrect(correctAnswer);
-        if (correctAnswer) {
-          onCorrectAnswer();
+    const handleAnswerClick = (clickedAnswer: string) => {
+        setButtonStates((states) =>
+            states.map((state) =>
+                state.answer === clickedAnswer
+                    ? {
+                          ...state,
+                          selected: true,
+                          isCorrect: state.answer === correct,
+                      }
+                    : state
+            )
+        );
+
+        if (clickedAnswer === correct) {
+            onCorrectAnswer();
         }
     };
 
     useEffect(() => {
-        setSelectedAnswer(null);
-        setIsCorrect(null);
+        setButtonStates(initialButtonStates);
     }, [slide]);
-
     return (
         <Container>
-            <Question>
-                {question}
-            </Question>
-
-            {[answer1, answer2, answer3, answer4].filter(answer => answer).map((answer, index) => (
+            <Question>{question}</Question>
+            {buttonStates.map((state, index) => (
                 <AnswerButton
                     key={index}
-                    onClick={() => handleAnswerClick(answer)}
-                    style={{
-                        backgroundColor: selectedAnswer === answer
-                            ? isCorrect
-                                ? "green"
-                                : "red"
-                            : "transparent"
-                    }}
+                    onClick={() => handleAnswerClick(state.answer)}
+                    selected={state.selected}
+                    isCorrect={state.isCorrect}
                 >
-                    {answer}
+                    {state.answer}
                 </AnswerButton>
             ))}
         </Container>
@@ -63,9 +75,9 @@ export default QuizSlider;
 
 const Container = styled.div`
     /* border: 2px solid blue; */
-    width:80%;
+    width: 80%;
     height: auto;
-    font-size: .5rem;
+    font-size: 0.5rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -83,13 +95,33 @@ const Question = styled.h2`
     }
 `;
 
-const AnswerButton = styled.button`
+const AnswerButton = styled.button<AnswerButtonProps>`
     border: 2px solid var(--purple);
-    margin-bottom: .5rem;
-    border-radius: .2rem;
-    padding: .25rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.2rem;
+    padding: 0.25rem;
     color: var(--gray);
     width: 25rem;
+    background-color: ${(props) =>
+        props.selected ? (props.isCorrect ? "green" : "red") : "transparent"};
+    color: ${(props) => (props.selected ? "white" : "var(--gray)")};
+
+    &:hover {
+        background-color: ${(props) =>
+            props.selected
+                ? props.isCorrect
+                    ? "green"
+                    : "red"
+                : "var(--blue)"};
+        color: ${(props) => (props.selected ? "white" : "var(--teal)")};
+        cursor: pointer;
+    }
+    &[selected]:hover {
+        background-color: ${(props) =>
+            props.isCorrect ? "green" : "red"} !important;
+        color: white !important;
+    }
+
     @media (max-width: 500px) {
         width: 15rem;
     }
@@ -99,9 +131,3 @@ const AnswerButton = styled.button`
         margin-bottom: 1rem;
     }
 `;
-
-
-
-
-
-

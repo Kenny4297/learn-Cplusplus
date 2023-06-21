@@ -53,7 +53,9 @@ const QuizSlider = forwardRef<{}, QuizSlideProps>((props, ref) => {
 
     useEffect(() => {
         setButtonStates(initialButtonStates);
-    }, [slide, initialButtonStates]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [slide]);
+
     return (
         <Container>
             <Question>{question}</Question>

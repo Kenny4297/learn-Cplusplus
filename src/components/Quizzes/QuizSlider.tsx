@@ -53,7 +53,7 @@ const QuizSlider = forwardRef<{}, QuizSlideProps>((props, ref) => {
 
     useEffect(() => {
         setButtonStates(initialButtonStates);
-    }, [slide]);
+    }, [slide, initialButtonStates]);
     return (
         <Container>
             <Question>{question}</Question>
